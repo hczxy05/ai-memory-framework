@@ -1,0 +1,85 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import { spawn,execFileSync } from "node:child_process";
+import { randomUUID,createHash } from "node:crypto";
+import { startServer,toolCall } from "../../integrations/codex-tdai-local/test-support.mjs";
+
+if(process.env.AI_MEMORY_DOCKER_LAB!=="1")throw Error("Isolated Docker opt-in required");
+const out=path.resolve(process.argv[2]||"/lab/reports/comprehensive-profile");fs.mkdirSync(out,{recursive:true});
+const previous=JSON.parse(fs.readFileSync("/lab/reports/comprehensive-openclaw/results.json","utf8"));
+const original=path.join(previous.root,"store-a");
+const dir=path.join(previous.root,"profile-"+randomUUID()),state=path.join(dir,"state"),workspace=path.join(dir,"workspace"),cfg=JSON.parse(fs.readFileSync(path.join(original,"openclaw.json"),"utf8"));
+fs.mkdirSync(state,{recursive:true});fs.mkdirSync(workspace,{recursive:true});
+for(const name of ["AGENTS","PROJECT","SOUL","IDENTITY","USER","TOOLS"])fs.copyFileSync(path.join(original,"workspace",name+".md"),path.join(workspace,name+".md"));
+// OpenClaw may consume BOOTSTRAP.md after the first successful turn.
+fs.writeFileSync(path.join(workspace,"BOOTSTRAP.md"),"# Purpose\nPreconfigured synthetic fixture; follow AGENTS.md. No onboarding or external actions.\n");
+cfg.agents.defaults.workspace=workspace;cfg.agents.entries["tdai-poc"].workspace=workspace;
+const plugin=cfg.plugins.entries["memory-tencentdb"].config;
+plugin.pipeline.l2DelayAfterL1Seconds=1;plugin.pipeline.l2MinIntervalSeconds=3600;plugin.pipeline.l2MaxIntervalSeconds=86400;plugin.persona.triggerEveryN=1;
+const config=path.join(dir,"profile-openclaw.json");fs.writeFileSync(config,JSON.stringify(cfg,null,2),{mode:0o600});
+const env={...process.env,OPENCLAW_STATE_DIR:state,OPENCLAW_CONFIG_PATH:config},cli="/lab/tools/bin/openclaw";
+const report={schema:1,exploratoryExtension:true,started:new Date().toISOString(),purpose:"Actual L2 scene/L3 fictional persona generation; no user memory or authority update",freshState:true,checks:[],files:[]};
+const project=path.join(workspace,"PROJECT.md"),beforeHash=createHash("sha256").update(fs.readFileSync(project)).digest("hex");
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const data=path.join(state,"memory-tdai"),sceneDir=path.join(data,"scene_blocks"),persona=path.join(data,"persona.md");
+const logFile=path.join(out,"gateway.log"),fd=fs.openSync(logFile,"a");
+let gateway;
+const check=(name,passed,extra={})=>report.checks.push({name,passed,...extra});
+try{
+  report.budgetBefore=await(await fetch("http://ai-memory-p2-budget:8080/health")).json();assert.ok(report.budgetBefore.reservedRmb<85);
+  execFileSync(cli,["config","validate"],{env,timeout:30000,stdio:["ignore","pipe","pipe"]});
+  gateway=spawn(cli,["gateway","run","--port","18791"],{env,stdio:["ignore",fd,fd]});fs.closeSync(fd);
+  let ready=false;
+  for(let n=0;n<120;n++){
+    if(gateway.exitCode!==null||gateway.signalCode!==null)throw Error("Gateway exited at startup");
+    try{if((await fetch("http://127.0.0.1:18791/healthz",{signal:AbortSignal.timeout(500)})).ok){ready=true;break}}catch{}
+    await sleep(500);
+  }
+  assert.ok(ready);
+  const scope="agent:tdai-poc:persona-"+randomUUID(),id=randomUUID();
+  const message="以下仅描述虚构测试角色 SYNTHETIC PERSONA，不是实际用户：这个虚构角色长期使用 Rust，偏好简体中文技术说明，坚持修改代码前先运行测试；其合成项目 HELIOS 的遥测端口固定为 5507。以上为此虚构角色明确确认的稳定可复用信息。只回复 ACK。";
+  const result=await new Promise((resolve,reject)=>{
+    const child=spawn(cli,["agent","--agent","tdai-poc","--session-key",scope,"--session-id",id,"--message",message,"--thinking","off","--timeout","120","--json"],{env,stdio:["ignore","pipe","pipe"]});
+    let stdout="",stderr="";child.stdout.on("data",b=>stdout+=b);child.stderr.on("data",b=>stderr+=b);
+    child.once("exit",code=>{if(code!==0)return reject(Error(stderr.slice(-800)));try{assert.ok(!/falling back to embedded/i.test(stderr));resolve(JSON.parse(stdout))}catch(error){reject(error)}});
+  });
+  report.turn={scope,id,message,response:result};
+  const deadline=Date.now()+180000;
+  while(Date.now()<deadline){
+    const scenes=fs.existsSync(sceneDir)?fs.readdirSync(sceneDir).filter(f=>f.endsWith(".md")):[];
+    const log=fs.readFileSync(logFile,"utf8");
+    const body=fs.existsSync(persona)?fs.readFileSync(persona,"utf8"):"";
+    if(scenes.length&&/Rust/i.test(body)&&/中文|Chinese/i.test(body)&&/Persona generation succeeded/.test(log))break;
+    await sleep(1000);
+  }
+  const scenes=fs.existsSync(sceneDir)?fs.readdirSync(sceneDir).filter(f=>f.endsWith(".md")):[];
+  for(const name of scenes)report.files.push({path:"scene_blocks/"+name,content:fs.readFileSync(path.join(sceneDir,name),"utf8")});
+  if(fs.existsSync(persona))report.files.push({path:"persona.md",content:fs.readFileSync(persona,"utf8")});
+  check("actual L2 wrote nonempty scene Markdown",scenes.length>0&&report.files.some(f=>f.path.startsWith("scene_blocks/")&&f.content.includes("Rust")));
+  check("actual L3 completed fictional persona generation",fs.existsSync(persona)&&/Persona generation succeeded/.test(fs.readFileSync(logFile,"utf8")));
+  const body=fs.existsSync(persona)?fs.readFileSync(persona,"utf8"):"";
+  check("generated fictional persona retains the provided language and coding preference",/Rust/i.test(body)&&/中文|Chinese/i.test(body));
+  const client=startServer(data,{TDAI_SESSION_KEY:scope,TDAI_ALLOW_STORE:""});
+  try{
+    let ok=0;
+    for(let n=0;n<report.files.length;n++){
+      const response=await toolCall(client,n+1,"tdai_read_cos",{path:report.files[n].path});
+      assert.ok(!response.result.isError);assert.match(response.result.content[0].text,/authority="historical-evidence"/);ok++;
+    }
+    check("actual generated L2/L3 files are readable through bounded MCP with historical boundary",ok>=2,{files:ok});
+  }finally{await client.close()}
+}catch(error){check("profile pipeline completed without runtime error",false,{error:error.message})}
+finally{
+  if(gateway&&gateway.exitCode===null&&gateway.signalCode===null){
+    await new Promise(resolve=>{
+      const timer=setTimeout(()=>{check("Gateway graceful drain",false,{error:"55 second shutdown deadline"});gateway.kill("SIGKILL")},55000);
+      gateway.once("exit",()=>{clearTimeout(timer);resolve()});gateway.kill("SIGTERM");
+    });
+  }
+  check("authoritative PROJECT.md remains byte-identical",createHash("sha256").update(fs.readFileSync(project)).digest("hex")===beforeHash);
+  report.budgetAfter=await(await fetch("http://ai-memory-p2-budget:8080/health")).json();report.completed=new Date().toISOString();report.passed=report.checks.every(c=>c.passed);
+  report.limitations=["Exploratory extension added after the frozen primary evaluation; no relabeling or replacement of primary results.","Persona content describes a fictional test role and is historical experience, never actual user facts.","Scene/persona text quality is checked for supplied anchor facts only; it is not a general semantic accuracy benchmark."];
+  fs.writeFileSync(path.join(out,"results.json"),JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify({report:path.join(out,"results.json"),passed:report.passed,checks:report.checks,budget:report.budgetAfter}));
+  if(!report.passed)process.exitCode=1;
+}

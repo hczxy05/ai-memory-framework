@@ -8,11 +8,11 @@ Read `<ai-memory-path>/AGENTS.md` first. This workspace file is supplementary an
 
 - `IDENTITY.md` — agent display identity.
 - `SOUL.md` — persona, tone, and boundaries.
-- `USER.md` — small workspace user profile; stable facts defer to `memory/universal-memory.md`.
+- `USER.md` — small workspace user profile; stable facts defer to `<ai-memory-path>/personal/universal-memory.md`.
 - `TOOLS.md` — local tool and environment notes.
 - `MEMORY.md` — optional bootstrap cache, never a source of truth.
 
-All memory loading, query, update, safety, and priority rules are defined in the external `AGENTS.md` and `memory/memory-policy.md`.
+All memory loading, query, update, safety, and priority rules are defined in `<ai-memory-path>/AGENTS.md` and `<ai-memory-path>/rules/memory-policy.md`.
 
 ## Communication
 

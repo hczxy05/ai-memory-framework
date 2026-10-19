@@ -8,13 +8,19 @@ This document defines the priority of different information sources. When confli
 
 ### Level 0 — User Instruction（用户当前指令）
 
-Highest priority. The user's current explicit instruction overrides everything.
+Highest information priority. The user's current explicit instruction overrides earlier facts and decisions. This hierarchy does not grant permission to perform operations; apply the Operation Authorization rules below separately.
 
 Examples:
 - User explicitly changes a decision
 - User overrides previous architecture
 - "Change database from SQLite to PostgreSQL" → immediately overrides previous decisions
-- "This time skip confirmation, just delete" → overrides Rules for this action only
+- "Delete the obsolete local fixture at `<exact-path>`" → authorizes that specific deletion, subject to verifying its target and scope
+
+### Operation Authorization
+
+Explicit user approval is required for destructive operations, physical actuation, external deployment or publication, financial commitments, and skill installation, update, or removal (see `AGENTS.md` and `rules/memory-policy.md`).
+
+Approval must identify the action, target, and scope. A current instruction that already authorizes that exact operation needs no repeated confirmation. A general preference for speed or "skip confirmation" alone supplies no missing permission and cannot authorize unspecified operations. Read-only inspection and reversible local verification need no additional approval.
 
 ### Level 1 — Agent Rules（Agent规则）
 
@@ -104,7 +110,7 @@ Rules (Level 1):         Must confirm before deleting
 Personal (Level 3):      User prefers fast action
 
 → Rules win
-→ Ask user for explicit override if needed
+→ Obtain authorization for the specific deletion and target if it has not already been given
 ```
 
 Example:
@@ -119,7 +125,7 @@ Agent Memory (Level 5):  Python 3.11
 
 ## Rules
 
-1. User Instruction overrides everything.
+1. User Instruction has highest information priority; operation authorization is evaluated separately.
 2. Rules govern agent behavior — preferences cannot bypass safety.
 3. Project Memory is source of truth for project facts.
 4. Personal Memory provides context, not authority.

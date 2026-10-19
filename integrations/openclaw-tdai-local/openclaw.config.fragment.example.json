@@ -1,11 +1,8 @@
 {
   "agents": {
-    "list": [
-      {
-        "id": "main"
-      },
-      {
-        "id": "tdai-poc",
+    "entries": {
+      "main": {},
+      "tdai-poc": {
         "workspace": "<isolated-workspace-path>",
         "model": "<provider/model>",
         "tools": {
@@ -17,7 +14,8 @@
           ]
         }
       }
-    ]
+    },
+    "ownership": "explicit"
   },
   "plugins": {
     "entries": {

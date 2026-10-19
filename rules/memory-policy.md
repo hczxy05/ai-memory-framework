@@ -25,7 +25,7 @@ See `rules/authority.md` for the full authority specification. Summary:
 
 | Level | Source | Priority |
 |---|---|---|
-| 0 | User Instruction | Highest — overrides everything |
+| 0 | User Instruction | Highest information priority; operation approval is separate |
 | 1 | Agent Rules (`rules/`) | Governance — safety, confirmation, workflow |
 | 2 | Project Memory (`STATUS.md`, `ARCHITECTURE.md`, etc.) | Current verified project truth |
 | 3 | Personal Memory (`personal/universal-memory.md`) | User preferences and background |
@@ -35,7 +35,7 @@ See `rules/authority.md` for the full authority specification. Summary:
 
 ### Conflict Rules
 
-1. User Instruction overrides everything.
+1. User Instruction has highest information priority; operation authorization is evaluated separately.
 2. Rules govern agent behavior — preferences cannot bypass safety.
 3. Project Memory is source of truth for project facts.
 4. Personal Memory provides context, not authority.
@@ -181,7 +181,7 @@ Then obtain explicit user approval unless the current instruction already reques
 
 After writing, report what changed, why it changed, and how consistency was verified.
 
-Separate approval is also required before destructive file or data operations, physical actuation, external deployment or publication, financial commitments, and skill installation, update, or removal.
+Explicit approval is also required before destructive file or data operations, physical actuation, external deployment or publication, financial commitments, and skill installation, update, or removal. Approval must cover the specific action, target, and scope. A current instruction that already authorizes that exact operation needs no repeated confirmation. General preferences or "skip confirmation" alone do not grant missing permission. Information priority is separate from operation authorization; see `rules/authority.md`.
 
 ## Lifecycle and Maintenance
 

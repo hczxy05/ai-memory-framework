@@ -1,0 +1,135 @@
+{
+  "gateway": {
+    "mode": "local",
+    "bind": "loopback"
+  },
+  "models": {
+    "providers": {
+      "lab": {
+        "baseUrl": "http://ai-memory-p2-budget:8080/v1",
+        "apiKey": "lab-budget-proxy",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "deepseek-flash",
+            "name": "DeepSeek bounded test proxy",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 32768,
+            "maxTokens": 512
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "lab/deepseek-flash"
+      },
+      "workspace": "/lab/e2e/workspace",
+      "heartbeat": {
+        "every": "0m"
+      }
+    },
+    "entries": {
+      "tdai-poc": {
+        "workspace": "/lab/e2e/workspace",
+        "tools": {
+          "profile": "minimal",
+          "alsoAllow": [
+            "tdai_memory_search",
+            "tdai_conversation_search",
+            "tdai_read_cos"
+          ]
+        }
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "anthropic": {
+        "config": {
+          "sessionCatalog": {
+            "enabled": false
+          }
+        }
+      },
+      "codex": {
+        "config": {
+          "sessionCatalog": {
+            "enabled": false
+          }
+        }
+      },
+      "memory-tencentdb": {
+        "enabled": true,
+        "hooks": {
+          "allowConversationAccess": true
+        },
+        "config": {
+          "mode": "local",
+          "storeBackend": "sqlite",
+          "capture": {
+            "enabled": true,
+            "l0l1RetentionDays": 0
+          },
+          "extraction": {
+            "enabled": true,
+            "enableDedup": false,
+            "maxMemoriesPerSession": 2
+          },
+          "pipeline": {
+            "everyNConversations": 1,
+            "enableWarmup": false,
+            "l1IdleTimeoutSeconds": 10,
+            "l2DelayAfterL1Seconds": 3600,
+            "l2MinIntervalSeconds": 3600
+          },
+          "persona": {
+            "triggerEveryN": 1000
+          },
+          "recall": {
+            "enabled": false,
+            "maxResults": 3
+          },
+          "embedding": {
+            "enabled": false,
+            "provider": "none"
+          },
+          "bm25": {
+            "enabled": false
+          },
+          "llm": {
+            "enabled": true,
+            "baseUrl": "http://ai-memory-p2-budget:8080/v1",
+            "apiKey": "lab-budget-proxy",
+            "model": "deepseek-flash",
+            "maxTokens": 512,
+            "timeoutMs": 45000
+          },
+          "offload": {
+            "enabled": false
+          },
+          "report": {
+            "enabled": false
+          }
+        }
+      },
+      "memory-core": {
+        "enabled": false
+      }
+    },
+    "allow": [
+      "memory-tencentdb"
+    ],
+    "slots": {
+      "memory": "none"
+    }
+  },
+  "cron": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "calls": 316,
+  "completedUsage": 315,
+  "reservedRmb": 85.66311999999996,
+  "promptTokens": 642701,
+  "completionTokens": 36132,
+  "estimatedPeakKnownRmb": 1.574458,
+  "oldMissingUsageReserveRmb": 0.34011,
+  "estimatedWithOldMissingReserveRmb": 1.914568,
+  "maxCalls": 350,
+  "maxReservedRmb": 90,
+  "userAuthorizationRmb": 100,
+  "notProviderInvoice": true,
+  "policyReason": "Leave room for native background L2 scheduling; the cumulative 90 RMB reservation hard ceiling, prior ledger and expiry are unchanged."
+}

@@ -1,0 +1,33 @@
+{
+  "usage": {
+    "calls": 6,
+    "completed": 6,
+    "promptTokens": 21345,
+    "completionTokens": 810,
+    "reservedRmb": 2.01333,
+    "estimatedPeakCostRmb": 0.04917,
+    "pricing": "DeepSeek Flash peak 2/8 RMB per million; cache discounts ignored; verified 2026-10-16"
+  },
+  "completed": "2026-10-16T17:57:37.585Z",
+  "authorityProof": "/authority/docs/proof.json",
+  "gateway": "real OpenClaw 2026.10.4",
+  "operatorApproval": "synthetic fixture simulation only",
+  "sourceCommit": "681801cdd9ca93466fd918028bde0d23cb9f3d04",
+  "pullRequest": "https://github.com/hczxy05/ai-memory-framework/pull/1",
+  "ci": "https://github.com/Tcx086/ai-memory-framework/actions/runs/38944286606",
+  "services": {
+    "gateway": "stopped",
+    "budgetProxy": "stopped"
+  },
+  "offlineTests": {
+    "total": 36,
+    "passed": 36,
+    "failed": 0,
+    "skipped": 0
+  },
+  "benchmark": "/lab/reports/retrieval-benchmark.json",
+  "endToEnd": "/lab/reports/openclaw-e2e.json",
+  "hostWorkspace": "unchanged; P2 sources and generated reports are in Docker volumes only",
+  "ciConclusion": "success",
+  "ciMatrixPassed": 4
+}

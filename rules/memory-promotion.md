@@ -157,3 +157,7 @@ Written to `BUGS.md`:
 **Status:** Resolved
 ```
 Status: Authoritative. Project truth.
+
+## Optional executable gate
+
+The operator CLI in `integrations/promotion-gate/` enforces signed, scoped, expiring approval bound to exact candidate and target bytes. It appends one reviewed long-term entry to an allowed existing project document. Deploy it with a private operator key and Agent read-only access to authority; otherwise direct writes can bypass any workflow. Verification evidence is reviewed by the operator, not proven true by the CLI. See `integrations/promotion-gate/README.md`.

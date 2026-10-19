@@ -1,0 +1,56 @@
+
+> codex-tdai-local@1.1.0 test
+> node --test server.integration.test.mjs boundary-extra.test.mjs ../promotion-gate/gate.test.mjs ../openclaw-tdai-local/budget-proxy.test.mjs
+
+✔ proxy keeps upstream, model, output and total calls bounded without exposing the key (40.022468ms)
+✔ budget state survives restart, rejects concurrent owners, and fails closed (6.056549ms)
+✔ expanded budget policy cannot exceed the hard ceiling or accept negative state (3.600066ms)
+✔ reservation cannot be bypassed by remote media or hosted paid tools (4.891355ms)
+✔ signed approval appends exact reviewed content and provenance once (4.585883ms)
+✔ flags, missing receipts, forged signatures and wrong keys cannot authorize promotion (0.99225ms)
+✔ approval binds content, scope, target, evidence, expiry and root (0.819503ms)
+✔ stale target and expired candidate require fresh review (0.56807ms)
+✔ path escapes, governance targets, secrets and unverified candidates are denied (0.690276ms)
+✔ links are denied and existing promotion locks are preserved (0.831027ms)
+✔ approval key must be private and cannot be overwritten by initialization (0.47096ms)
+✔ CLI refuses approval from a noninteractive agent pipe (29.673515ms)
+✔ oversized promotion fails before replacing the document (7.999508ms)
+✔ COS refuses an allowed filename that hardlinks a non-allowlisted file (34.044879ms)
+✔ oversized MCP input is rejected and the following request still works (30.238376ms)
+✔ test client correlates asynchronous MCP replies by id (30.275806ms)
+✔ fallback ranks lexical coverage before its bounded candidate cutoff (50.942507ms)
+✔ scene candidate cutoff retains the best term coverage when FTS also matches (51.332318ms)
+✔ abrupt writer exit leaves recoverable SQLite and FTS state (72.409225ms)
+✔ initialize returns correct protocol version and server info (892.570915ms)
+✔ tools/list returns all 4 tools (1007.292531ms)
+✔ tdai_memory_search returns real results from SQLite (966.759985ms)
+✔ tdai_conversation_search returns real results from SQLite (1008.539509ms)
+✔ search ranking: exact match scores higher (937.832912ms)
+✔ priority -1 (global instruction) gets a boost (1035.002097ms)
+✔ tdai_experience_store rejects without authorization flags (960.890192ms)
+✔ tdai_experience_store rejects sensitive content (1001.702446ms)
+✔ tdai_experience_store rejects sensitive scene_name (833.266804ms)
+✔ tdai_experience_store stores valid experience and detects duplicates (837.781958ms)
+✔ tdai_read_cos rejects absolute paths (746.176875ms)
+✔ tdai_read_cos rejects '..' traversal (808.895822ms)
+✔ writes are hidden and rejected by default even with all admission flags (738.378418ms)
+✔ truthy non-boolean admission flags cannot authorize writes (955.010019ms)
+✔ search and store fail closed without a host-configured scope (784.134905ms)
+✔ searches and deduplication respect host scope (FTS5) (830.309934ms)
+✔ searches and deduplication respect host scope (LIKE) (766.627778ms)
+✔ bounded LIKE fallback preserves older exact matches and clamps result counts (830.245977ms)
+✔ new writes distinguish process sessions within the same host scope (872.445729ms)
+✔ failed FTS insertion rolls back the L1 write (843.552136ms)
+✔ read_cos permits bounded Markdown and denies metadata, databases, directories and oversized UTF-8 (772.102316ms)
+✔ read_cos blocks directory symlink/junction escapes and metadata aliases (833.72664ms)
+✔ read_cos rejects a file symlink even when its target is an allowed file (741.025412ms)
+✔ unknown method returns error, does not crash (829.548614ms)
+✔ malformed JSON does not crash the server (748.681919ms)
+ℹ tests 44
+ℹ suites 0
+ℹ pass 44
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 22110.596035

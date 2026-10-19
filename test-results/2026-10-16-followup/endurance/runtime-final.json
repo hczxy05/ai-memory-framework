@@ -1,0 +1,108 @@
+{
+  "checkedAt": "2026-10-19T20:38:53.601397+00:00",
+  "containers": [
+    {
+      "name": "/ai-memory-followup-alpha-gateway-1",
+      "image": "sha256:2396c4e85208864d3ee60ad78fe194757681a56706ec117b90d8304eabc19bc8",
+      "status": "running",
+      "oomKilled": false,
+      "restartCount": 0,
+      "health": "unhealthy",
+      "readOnly": true,
+      "user": "1000:1000",
+      "memoryLimit": 2147483648,
+      "nanoCpus": 1000000000,
+      "pidsLimit": 128,
+      "capDrop": [
+        "ALL"
+      ],
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "portBindings": {},
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "ai-memory-followup-alpha_state",
+          "Destination": "/home/node/.openclaw",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "ai-memory-followup-alpha_workspace",
+          "Destination": "/home/node/workspace",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "ai-memory-followup-alpha_config",
+          "Destination": "/home/node/config",
+          "RW": false
+        }
+      ],
+      "networks": [
+        "ai-memory-followup-alpha_default",
+        "ai-memory-p2-net"
+      ],
+      "cgroup": {
+        "memoryCurrent": "177647616",
+        "memoryPeak": "2147487744",
+        "memoryEvents": "low 0\nhigh 0\nmax 13668\noom 0\noom_kill 0\noom_group_kill 0",
+        "cpuMax": "100000 100000",
+        "pidsMax": "128"
+      }
+    },
+    {
+      "name": "/ai-memory-followup-beta-gateway-1",
+      "image": "sha256:2396c4e85208864d3ee60ad78fe194757681a56706ec117b90d8304eabc19bc8",
+      "status": "running",
+      "oomKilled": false,
+      "restartCount": 0,
+      "health": "unhealthy",
+      "readOnly": true,
+      "user": "1000:1000",
+      "memoryLimit": 2147483648,
+      "nanoCpus": 1000000000,
+      "pidsLimit": 128,
+      "capDrop": [
+        "ALL"
+      ],
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "portBindings": {},
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "ai-memory-followup-beta_state",
+          "Destination": "/home/node/.openclaw",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "ai-memory-followup-beta_workspace",
+          "Destination": "/home/node/workspace",
+          "RW": true
+        },
+        {
+          "Type": "volume",
+          "Name": "ai-memory-followup-beta_config",
+          "Destination": "/home/node/config",
+          "RW": false
+        }
+      ],
+      "networks": [
+        "ai-memory-followup-beta_default",
+        "ai-memory-p2-net"
+      ],
+      "cgroup": {
+        "memoryCurrent": "178515968",
+        "memoryPeak": "2147487744",
+        "memoryEvents": "low 0\nhigh 0\nmax 11987\noom 0\noom_kill 0\noom_group_kill 0",
+        "cpuMax": "100000 100000",
+        "pidsMax": "128"
+      }
+    }
+  ],
+  "terminalHealthExplanation": "The successful harness stops its child Gateway at completion and retains the container supervisor for operator collection; terminal Docker health is therefore unhealthy. No restart was performed."
+}

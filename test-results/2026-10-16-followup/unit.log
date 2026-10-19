@@ -1,0 +1,60 @@
+
+> codex-tdai-local@1.1.0 test
+> node --test server.integration.test.mjs boundary-extra.test.mjs ../promotion-gate/gate.test.mjs ../openclaw-tdai-local/budget-proxy.test.mjs ../openclaw-tdai-local/project-config.test.mjs ../../tests/comprehensive/holdout.test.mjs
+
+✔ free-response scoring rejects guessed facts, invented evidence and duplicate citations (0.611552ms)
+✔ holdout corpus has distinct questions and only valid expected source ids (1.354563ms)
+✔ proxy keeps upstream, model, output and total calls bounded without exposing the key (47.020604ms)
+✔ budget state survives restart, rejects concurrent owners, and fails closed (7.117095ms)
+✔ expanded budget policy cannot exceed the hard ceiling or accept negative state (4.144728ms)
+✔ reservation cannot be bypassed by remote media or hosted paid tools (5.833563ms)
+✔ project bundles isolate all persistent state, disable auto recall and expose no host port (1.592329ms)
+✔ CLI refuses to overwrite an existing private project bundle (63.554237ms)
+✔ signed approval appends exact reviewed content and provenance once (5.686752ms)
+✔ flags, missing receipts, forged signatures and wrong keys cannot authorize promotion (1.216486ms)
+✔ approval binds content, scope, target, evidence, expiry and root (1.249074ms)
+✔ stale target and expired candidate require fresh review (0.792279ms)
+✔ path escapes, governance targets, secrets and unverified candidates are denied (0.743748ms)
+✔ links are denied and existing promotion locks are preserved (0.768239ms)
+✔ approval key must be private and cannot be overwritten by initialization (0.481997ms)
+✔ CLI refuses approval from a noninteractive agent pipe (29.5036ms)
+✔ oversized promotion fails before replacing the document (8.703337ms)
+✔ COS refuses an allowed filename that hardlinks a non-allowlisted file (34.669626ms)
+✔ oversized MCP input is rejected and the following request still works (39.606692ms)
+✔ test client correlates asynchronous MCP replies by id (34.390304ms)
+✔ fallback ranks lexical coverage before its bounded candidate cutoff (54.849761ms)
+✔ scene candidate cutoff retains the best term coverage when FTS also matches (50.42722ms)
+✔ abrupt writer exit leaves recoverable SQLite and FTS state (74.932569ms)
+✔ initialize returns correct protocol version and server info (1719.913577ms)
+✔ tools/list returns all 4 tools (1865.68849ms)
+✔ tdai_memory_search returns real results from SQLite (1780.51033ms)
+✔ tdai_conversation_search returns real results from SQLite (2064.266258ms)
+✔ search ranking: exact match scores higher (1882.685074ms)
+✔ priority -1 (global instruction) gets a boost (1399.70762ms)
+✔ tdai_experience_store rejects without authorization flags (1799.658435ms)
+✔ tdai_experience_store rejects sensitive content (1220.433676ms)
+✔ tdai_experience_store rejects sensitive scene_name (1223.431545ms)
+✔ tdai_experience_store stores valid experience and detects duplicates (1243.962175ms)
+✔ tdai_read_cos rejects absolute paths (1297.625309ms)
+✔ tdai_read_cos rejects '..' traversal (1003.32292ms)
+✔ writes are hidden and rejected by default even with all admission flags (1108.249973ms)
+✔ truthy non-boolean admission flags cannot authorize writes (933.219567ms)
+✔ search and store fail closed without a host-configured scope (997.288337ms)
+✔ searches and deduplication respect host scope (FTS5) (939.48246ms)
+✔ searches and deduplication respect host scope (LIKE) (1058.199512ms)
+✔ bounded LIKE fallback preserves older exact matches and clamps result counts (939.162304ms)
+✔ new writes distinguish process sessions within the same host scope (1098.447204ms)
+✔ failed FTS insertion rolls back the L1 write (912.009132ms)
+✔ read_cos permits bounded Markdown and denies metadata, databases, directories and oversized UTF-8 (1018.744006ms)
+✔ read_cos blocks directory symlink/junction escapes and metadata aliases (912.889623ms)
+✔ read_cos rejects a file symlink even when its target is an allowed file (1008.910134ms)
+✔ unknown method returns error, does not crash (927.097562ms)
+✔ malformed JSON does not crash the server (992.159759ms)
+ℹ tests 48
+ℹ suites 0
+ℹ pass 48
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 32087.522904

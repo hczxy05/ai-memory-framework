@@ -12,10 +12,10 @@
 
 ## Authoritative Pointers
 
-- User profile: `memory/universal-memory.md`
-- Project index: `memory/projects.md`
+- User profile: `<ai-memory-path>/personal/universal-memory.md`
+- Project index: `<ai-memory-path>/project/projects.md`
 - Current project state: project `STATUS.md` or `PROJECT.md`
-- Governance: external `AGENTS.md` and `memory/memory-policy.md`
+- Governance: `<ai-memory-path>/AGENTS.md` and `<ai-memory-path>/rules/memory-policy.md`
 
 ## Store Boundary
 

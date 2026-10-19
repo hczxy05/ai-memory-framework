@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "authorizedTotalCapRmb": 100,
+  "enforcedCumulativeReservationCapRmb": 90,
+  "enforcedCallCap": 350,
+  "requestCount": 302,
+  "usageRecords": 301,
+  "priorMissingUsageRequests": 1,
+  "currentCampaignRequests": 295,
+  "currentCampaignCompleteUsageRecords": 295,
+  "promptTokens": 615444,
+  "completionTokens": 32831,
+  "estimatedKnownCostAtPeakNoCacheRmb": 1.493536,
+  "retainedPriorMissingUsageReservationRmb": 0.34011,
+  "conservativeKnownPlusMissingEstimateRmb": 1.833646,
+  "cumulativeReservationRmb": 81.94566999999999,
+  "pricing": {
+    "inputPerMillionRmb": 2,
+    "outputPerMillionRmb": 8,
+    "model": "deepseek-flash",
+    "verifiedDate": "2026-10-16",
+    "source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+  },
+  "notes": [
+    "Reservation is not actual spending.",
+    "Known cost ignores cache discounts and off-peak reductions. Actual account billing was not inspected.",
+    "The one missing usage record predates this campaign and keeps its original reservation; all current campaign requests have complete usage.",
+    "The text/media hardening was verified offline and then exercised by the fresh L2/L3 function-tool pipeline."
+  ]
+}

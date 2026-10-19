@@ -1,0 +1,12 @@
+✔ proxy keeps upstream, model, output and total calls bounded without exposing the key (41.213957ms)
+✔ budget state survives restart, rejects concurrent owners, and fails closed (6.367068ms)
+✔ expanded budget policy cannot exceed the hard ceiling or accept negative state (2.390692ms)
+✔ reservation cannot be bypassed by remote media or hosted paid tools (5.96786ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 110.803236

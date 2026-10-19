@@ -1,0 +1,887 @@
+﻿2026-10-16T18:35:00.0777242Z Current runner version: '2.337.0'
+2026-10-16T18:35:00.0796714Z ##[group]Runner Image Provisioner
+2026-10-16T18:35:00.0797306Z Hosted Compute Agent
+2026-10-16T18:35:00.0797752Z Version: 20261012.601
+2026-10-16T18:35:00.0798148Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-16T18:35:00.0798625Z Build Date: 2026-10-12T17:48:21Z
+2026-10-16T18:35:00.0799104Z Worker ID: {1d7704d8-dd9c-4830-b1e0-df2c763b3e5e}
+2026-10-16T18:35:00.0799557Z Region: westus3
+2026-10-16T18:35:00.0799949Z Cloud: Azure
+2026-10-16T18:35:00.0800293Z ##[endgroup]
+2026-10-16T18:35:00.0801218Z ##[group]Operating System
+2026-10-16T18:35:00.0801666Z Ubuntu
+2026-10-16T18:35:00.0801997Z 24.04.5
+2026-10-16T18:35:00.0802356Z LTS
+2026-10-16T18:35:00.0802680Z ##[endgroup]
+2026-10-16T18:35:00.0803018Z ##[group]Runner Image
+2026-10-16T18:35:00.0803464Z Image: ubuntu-24.04
+2026-10-16T18:35:00.0803850Z Version: 20261012.334.1
+2026-10-16T18:35:00.0804776Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-16T18:35:00.0805672Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-16T18:35:00.0806360Z ##[endgroup]
+2026-10-16T18:35:00.0807360Z ##[group]GITHUB_TOKEN Permissions
+2026-10-16T18:35:00.0808847Z Contents: read
+2026-10-16T18:35:00.0809207Z Metadata: read
+2026-10-16T18:35:00.0809634Z ##[endgroup]
+2026-10-16T18:35:00.0811080Z Secret source: Actions
+2026-10-16T18:35:00.0811720Z Cache mode: write
+2026-10-16T18:35:00.0812159Z Prepare workflow directory
+2026-10-16T18:35:00.1043914Z Prepare all required actions
+2026-10-16T18:35:00.1077324Z Getting action download info
+2026-10-16T18:35:00.4249436Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-16T18:35:00.7853416Z Download action repository 'actions/setup-node@v7' (SHA:949feb2413d6458794dcd2491c4babbbce0c15c1)
+2026-10-16T18:35:01.7629028Z Complete job name: test (ubuntu-latest, 22)
+2026-10-16T18:35:01.8114468Z ##[group]Run actions/checkout@v7
+2026-10-16T18:35:01.8114974Z with:
+2026-10-16T18:35:01.8115257Z   persist-credentials: false
+2026-10-16T18:35:01.8115593Z   repository: Tcx086/ai-memory-framework
+2026-10-16T18:35:01.8117983Z   token: ***
+2026-10-16T18:35:01.8118248Z   ssh-strict: true
+2026-10-16T18:35:01.8118529Z   ssh-user: git
+2026-10-16T18:35:01.8118791Z   clean: true
+2026-10-16T18:35:01.8119070Z   sparse-checkout-cone-mode: true
+2026-10-16T18:35:01.8119391Z   fetch-depth: 1
+2026-10-16T18:35:01.8119662Z   fetch-tags: false
+2026-10-16T18:35:01.8119939Z   show-progress: true
+2026-10-16T18:35:01.8120221Z   lfs: false
+2026-10-16T18:35:01.8120489Z   submodules: false
+2026-10-16T18:35:01.8120776Z   set-safe-directory: true
+2026-10-16T18:35:01.8121090Z   allow-unsafe-pr-checkout: false
+2026-10-16T18:35:01.8121488Z ##[endgroup]
+2026-10-16T18:35:01.8823771Z Syncing repository: Tcx086/ai-memory-framework
+2026-10-16T18:35:01.8825482Z ##[group]Getting Git version info
+2026-10-16T18:35:01.8826084Z Working directory is '/home/runner/work/ai-memory-framework/ai-memory-framework'
+2026-10-16T18:35:01.8826930Z [command]/usr/bin/git version
+2026-10-16T18:35:01.8899598Z git version 2.55.0
+2026-10-16T18:35:01.8913376Z ##[endgroup]
+2026-10-16T18:35:01.8921659Z Temporarily overriding HOME='/home/runner/work/_temp/adcaa786-44a3-407b-ac48-99a9e00d23d0' before making global git config changes
+2026-10-16T18:35:01.8922536Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-16T18:35:01.8926978Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ai-memory-framework/ai-memory-framework
+2026-10-16T18:35:01.8971239Z Deleting the contents of '/home/runner/work/ai-memory-framework/ai-memory-framework'
+2026-10-16T18:35:01.8973383Z ##[group]Determining repository object format
+2026-10-16T18:35:01.8974523Z ##[endgroup]
+2026-10-16T18:35:01.8975255Z ##[group]Initializing the repository
+2026-10-16T18:35:01.8977629Z [command]/usr/bin/git init /home/runner/work/ai-memory-framework/ai-memory-framework
+2026-10-16T18:35:01.9073165Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-16T18:35:01.9074906Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-16T18:35:01.9076041Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-16T18:35:01.9076920Z hint: call:
+2026-10-16T18:35:01.9077453Z hint:
+2026-10-16T18:35:01.9078120Z hint: 	git config --global init.defaultBranch <name>
+2026-10-16T18:35:01.9078859Z hint:
+2026-10-16T18:35:01.9079568Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-16T18:35:01.9080636Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-16T18:35:01.9081487Z hint:
+2026-10-16T18:35:01.9082030Z hint: 	git branch -m <name>
+2026-10-16T18:35:01.9082630Z hint:
+2026-10-16T18:35:01.9084251Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-16T18:35:01.9085631Z Initialized empty Git repository in /home/runner/work/ai-memory-framework/ai-memory-framework/.git/
+2026-10-16T18:35:01.9087394Z [command]/usr/bin/git remote add origin https://github.com/Tcx086/ai-memory-framework
+2026-10-16T18:35:01.9135773Z ##[endgroup]
+2026-10-16T18:35:01.9136568Z ##[group]Disabling automatic garbage collection
+2026-10-16T18:35:01.9139347Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-16T18:35:01.9174965Z ##[endgroup]
+2026-10-16T18:35:01.9176177Z ##[group]Setting up auth
+2026-10-16T18:35:01.9181035Z Removing SSH command configuration
+2026-10-16T18:35:01.9185662Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-16T18:35:01.9222751Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-16T18:35:01.9554759Z Removing HTTP extra header
+2026-10-16T18:35:01.9559299Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-16T18:35:01.9590705Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-16T18:35:01.9769194Z Removing includeIf entries pointing to credentials config files
+2026-10-16T18:35:01.9773292Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-16T18:35:01.9806795Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-16T18:35:02.0003793Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-ca1db4a8-52bf-4a3f-8b60-714cedb494c5.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-16T18:35:02.0038563Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/ai-memory-framework/ai-memory-framework/.git.path /home/runner/work/_temp/git-credentials-ca1db4a8-52bf-4a3f-8b60-714cedb494c5.config
+2026-10-16T18:35:02.0100468Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/ai-memory-framework/ai-memory-framework/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-ca1db4a8-52bf-4a3f-8b60-714cedb494c5.config
+2026-10-16T18:35:02.0132635Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-ca1db4a8-52bf-4a3f-8b60-714cedb494c5.config
+2026-10-16T18:35:02.0164230Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-ca1db4a8-52bf-4a3f-8b60-714cedb494c5.config
+2026-10-16T18:35:02.0192160Z ##[endgroup]
+2026-10-16T18:35:02.0192882Z ##[group]Fetching the repository
+2026-10-16T18:35:02.0198051Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a134818be7e220eb9a8a8d2a2fd12570fc48b5f1:refs/remotes/origin/codex/fix-memory-security-boundaries
+2026-10-16T18:35:02.6125512Z From https://github.com/Tcx086/ai-memory-framework
+2026-10-16T18:35:02.6126314Z  * [new ref]         a134818be7e220eb9a8a8d2a2fd12570fc48b5f1 -> origin/codex/fix-memory-security-boundaries
+2026-10-16T18:35:02.6133377Z [command]/usr/bin/git branch --list --remote origin/codex/fix-memory-security-boundaries
+2026-10-16T18:35:02.6162262Z   origin/codex/fix-memory-security-boundaries
+2026-10-16T18:35:02.6168779Z [command]/usr/bin/git rev-parse refs/remotes/origin/codex/fix-memory-security-boundaries
+2026-10-16T18:35:02.6193650Z a134818be7e220eb9a8a8d2a2fd12570fc48b5f1
+2026-10-16T18:35:02.6197188Z ##[endgroup]
+2026-10-16T18:35:02.6197799Z ##[group]Determining the checkout info
+2026-10-16T18:35:02.6198474Z ##[endgroup]
+2026-10-16T18:35:02.6200890Z [command]/usr/bin/git sparse-checkout disable
+2026-10-16T18:35:02.6252663Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-16T18:35:02.6283632Z ##[group]Checking out the ref
+2026-10-16T18:35:02.6287445Z [command]/usr/bin/git checkout --progress --force -B codex/fix-memory-security-boundaries refs/remotes/origin/codex/fix-memory-security-boundaries
+2026-10-16T18:35:02.6379852Z Switched to a new branch 'codex/fix-memory-security-boundaries'
+2026-10-16T18:35:02.6383885Z branch 'codex/fix-memory-security-boundaries' set up to track 'origin/codex/fix-memory-security-boundaries'.
+2026-10-16T18:35:02.6389400Z ##[endgroup]
+2026-10-16T18:35:02.6430937Z [command]/usr/bin/git log -1 --format=%H
+2026-10-16T18:35:02.6456038Z a134818be7e220eb9a8a8d2a2fd12570fc48b5f1
+2026-10-16T18:35:02.6463268Z ##[group]Removing auth
+2026-10-16T18:35:02.6463754Z Removing SSH command configuration
+2026-10-16T18:35:02.6466239Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-16T18:35:02.6496437Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-16T18:35:02.6686707Z Removing HTTP extra header
+2026-10-16T18:35:02.6688829Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-16T18:35:02.6719547Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-16T18:35:02.6898661Z Removing includeIf entries pointing to credentials config files
+2026-10-16T18:35:02.6900550Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-16T18:35:02.6928546Z includeif.gitdir:/home/runner/work/ai-memory-framework/ai-memory-framework/.git.path
+2026-10-16T18:35:02.6929265Z includeif.gitdir:/home/runner/work/ai-memory-framework/ai-memory-framework/.git/worktrees/*.path
+2026-10-16T18:35:02.6929815Z includeif.gitdir:/github/workspace/.git.path
+2026-10-16T18:35:02.6930322Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-16T18:35:02.6935212Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/ai-memory-framework/ai-memory-framework/.git.path
+2026-10-16T18:35:02.6957779Z /home/runner/work/_temp/git-credentials-ca1db4a8-52bf-4a3f-8b60-714cedb494c5.config
+2026-10-16T18:35:02.6964757Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/ai-memory-framework/ai-memory-framework/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-ca1db4a8\-52bf\-4a3f\-8b60\-714cedb494c5\.config
+2026-10-16T18:35:02.7001169Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/ai-memory-framework/ai-memory-framework/.git/worktrees/*.path
+2026-10-16T18:35:02.7024140Z /home/runner/work/_temp/git-credentials-ca1db4a8-52bf-4a3f-8b60-714cedb494c5.config
+2026-10-16T18:35:02.7029402Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/ai-memory-framework/ai-memory-framework/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-ca1db4a8\-52bf\-4a3f\-8b60\-714cedb494c5\.config
+2026-10-16T18:35:02.7064631Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-16T18:35:02.7119512Z /github/runner_temp/git-credentials-ca1db4a8-52bf-4a3f-8b60-714cedb494c5.config
+2026-10-16T18:35:02.7137144Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-ca1db4a8\-52bf\-4a3f\-8b60\-714cedb494c5\.config
+2026-10-16T18:35:02.7170361Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-16T18:35:02.7194736Z /github/runner_temp/git-credentials-ca1db4a8-52bf-4a3f-8b60-714cedb494c5.config
+2026-10-16T18:35:02.7199380Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-ca1db4a8\-52bf\-4a3f\-8b60\-714cedb494c5\.config
+2026-10-16T18:35:02.7232090Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-16T18:35:02.7418450Z Removing credentials config '/home/runner/work/_temp/git-credentials-ca1db4a8-52bf-4a3f-8b60-714cedb494c5.config'
+2026-10-16T18:35:02.7426073Z ##[endgroup]
+2026-10-16T18:35:02.7618555Z ##[group]Run actions/setup-node@v7
+2026-10-16T18:35:02.7618865Z with:
+2026-10-16T18:35:02.7619095Z   node-version: 22
+2026-10-16T18:35:02.7619356Z   package-manager-cache: false
+2026-10-16T18:35:02.7619639Z   check-latest: false
+2026-10-16T18:35:02.7621789Z   token: ***
+2026-10-16T18:35:02.7622026Z ##[endgroup]
+2026-10-16T18:35:02.8555421Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-16T18:35:02.9313260Z ##[group]Environment details
+2026-10-16T18:35:03.1781069Z node: v22.23.3
+2026-10-16T18:35:03.1781825Z npm: 10.9.9
+2026-10-16T18:35:03.1782304Z yarn: 1.22.22
+2026-10-16T18:35:03.1783381Z ##[endgroup]
+2026-10-16T18:35:03.1916084Z ##[group]Run npm test
+2026-10-16T18:35:03.1916897Z [36;1mnpm test[0m
+2026-10-16T18:35:03.2148037Z shell: /usr/bin/bash -e {0}
+2026-10-16T18:35:03.2148796Z ##[endgroup]
+2026-10-16T18:35:03.3034514Z
+2026-10-16T18:35:03.3040160Z > codex-tdai-local@1.1.0 test
+2026-10-16T18:35:03.3042273Z > node --test server.integration.test.mjs boundary-extra.test.mjs ../promotion-gate/gate.test.mjs ../openclaw-tdai-local/budget-proxy.test.mjs
+2026-10-16T18:35:03.3043736Z
+2026-10-16T18:35:03.3411696Z TAP version 13
+2026-10-16T18:35:03.5227459Z # Subtest: proxy keeps upstream, model, output and total calls bounded without exposing the key
+2026-10-16T18:35:03.5266187Z ok 1 - proxy keeps upstream, model, output and total calls bounded without exposing the key
+2026-10-16T18:35:03.5281246Z   ---
+2026-10-16T18:35:03.5296650Z   duration_ms: 127.004578
+2026-10-16T18:35:03.5297956Z   type: 'test'
+2026-10-16T18:35:03.5298984Z   ...
+2026-10-16T18:35:03.5332052Z # Subtest: budget state survives restart, rejects concurrent owners, and fails closed
+2026-10-16T18:35:03.5340270Z ok 2 - budget state survives restart, rejects concurrent owners, and fails closed
+2026-10-16T18:35:03.5342199Z   ---
+2026-10-16T18:35:03.5343133Z   duration_ms: 21.884883
+2026-10-16T18:35:03.5343934Z   type: 'test'
+2026-10-16T18:35:03.5345151Z   ...
+2026-10-16T18:35:03.5375199Z # Subtest: expanded budget policy cannot exceed the hard ceiling or accept negative state
+2026-10-16T18:35:03.5383107Z ok 3 - expanded budget policy cannot exceed the hard ceiling or accept negative state
+2026-10-16T18:35:03.5385345Z   ---
+2026-10-16T18:35:03.5386387Z   duration_ms: 4.612155
+2026-10-16T18:35:03.5387541Z   type: 'test'
+2026-10-16T18:35:03.5388611Z   ...
+2026-10-16T18:35:03.5508808Z # Subtest: reservation cannot be bypassed by remote media or hosted paid tools
+2026-10-16T18:35:03.5511775Z ok 4 - reservation cannot be bypassed by remote media or hosted paid tools
+2026-10-16T18:35:03.5513801Z   ---
+2026-10-16T18:35:03.5515000Z   duration_ms: 13.492028
+2026-10-16T18:35:03.5516170Z   type: 'test'
+2026-10-16T18:35:03.5517308Z   ...
+2026-10-16T18:35:03.5618368Z # Subtest: signed approval appends exact reviewed content and provenance once
+2026-10-16T18:35:03.5628762Z ok 5 - signed approval appends exact reviewed content and provenance once
+2026-10-16T18:35:03.5635806Z   ---
+2026-10-16T18:35:03.5641992Z   duration_ms: 25.444987
+2026-10-16T18:35:03.5643312Z   type: 'test'
+2026-10-16T18:35:03.5644621Z   ...
+2026-10-16T18:35:03.5646677Z # Subtest: flags, missing receipts, forged signatures and wrong keys cannot authorize promotion
+2026-10-16T18:35:03.5649758Z ok 6 - flags, missing receipts, forged signatures and wrong keys cannot authorize promotion
+2026-10-16T18:35:03.5651956Z   ---
+2026-10-16T18:35:03.5652943Z   duration_ms: 4.043052
+2026-10-16T18:35:03.5654458Z   type: 'test'
+2026-10-16T18:35:03.5655511Z   ...
+2026-10-16T18:35:03.5657364Z # Subtest: approval binds content, scope, target, evidence, expiry and root
+2026-10-16T18:35:03.5660001Z ok 7 - approval binds content, scope, target, evidence, expiry and root
+2026-10-16T18:35:03.5661952Z   ---
+2026-10-16T18:35:03.5662972Z   duration_ms: 2.61201
+2026-10-16T18:35:03.5664220Z   type: 'test'
+2026-10-16T18:35:03.5665151Z   ...
+2026-10-16T18:35:03.5666683Z # Subtest: stale target and expired candidate require fresh review
+2026-10-16T18:35:03.5668802Z ok 8 - stale target and expired candidate require fresh review
+2026-10-16T18:35:03.5670451Z   ---
+2026-10-16T18:35:03.5671434Z   duration_ms: 1.307758
+2026-10-16T18:35:03.5672491Z   type: 'test'
+2026-10-16T18:35:03.5673448Z   ...
+2026-10-16T18:35:03.5675316Z # Subtest: path escapes, governance targets, secrets and unverified candidates are denied
+2026-10-16T18:35:03.5677941Z ok 9 - path escapes, governance targets, secrets and unverified candidates are denied
+2026-10-16T18:35:03.5679930Z   ---
+2026-10-16T18:35:03.5680890Z   duration_ms: 1.798392
+2026-10-16T18:35:03.5681909Z   type: 'test'
+2026-10-16T18:35:03.5682818Z   ...
+2026-10-16T18:35:03.5684782Z # Subtest: links are denied and existing promotion locks are preserved
+2026-10-16T18:35:03.5687076Z ok 10 - links are denied and existing promotion locks are preserved
+2026-10-16T18:35:03.5689179Z   ---
+2026-10-16T18:35:03.5690161Z   duration_ms: 1.641277
+2026-10-16T18:35:03.5691178Z   type: 'test'
+2026-10-16T18:35:03.5692086Z   ...
+2026-10-16T18:35:03.5693694Z # Subtest: approval key must be private and cannot be overwritten by initialization
+2026-10-16T18:35:03.5696165Z ok 11 - approval key must be private and cannot be overwritten by initialization
+2026-10-16T18:35:03.5698081Z   ---
+2026-10-16T18:35:03.5699020Z   duration_ms: 1.006747
+2026-10-16T18:35:03.5700032Z   type: 'test'
+2026-10-16T18:35:03.5701091Z   ...
+2026-10-16T18:35:03.5702460Z # Subtest: CLI refuses approval from a noninteractive agent pipe
+2026-10-16T18:35:03.5704502Z ok 12 - CLI refuses approval from a noninteractive agent pipe
+2026-10-16T18:35:03.5706109Z   ---
+2026-10-16T18:35:03.5707013Z   duration_ms: 42.249335
+2026-10-16T18:35:03.5708092Z   type: 'test'
+2026-10-16T18:35:03.5709024Z   ...
+2026-10-16T18:35:03.5710396Z # Subtest: oversized promotion fails before replacing the document
+2026-10-16T18:35:03.5712450Z ok 13 - oversized promotion fails before replacing the document
+2026-10-16T18:35:03.5714537Z   ---
+2026-10-16T18:35:03.5715595Z   duration_ms: 18.206785
+2026-10-16T18:35:03.5716681Z   type: 'test'
+2026-10-16T18:35:03.5717603Z   ...
+2026-10-16T18:35:04.4522090Z # (node:2229) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+2026-10-16T18:35:04.4523368Z # (Use `node --trace-warnings ...` to show where the warning was created)
+2026-10-16T18:35:04.4524365Z # Subtest: COS refuses an allowed filename that hardlinks a non-allowlisted file
+2026-10-16T18:35:04.4525163Z ok 14 - COS refuses an allowed filename that hardlinks a non-allowlisted file
+2026-10-16T18:35:04.4525720Z   ---
+2026-10-16T18:35:04.4526113Z   duration_ms: 82.011371
+2026-10-16T18:35:04.4526522Z   type: 'test'
+2026-10-16T18:35:04.4526939Z   ...
+2026-10-16T18:35:04.4527631Z # Subtest: oversized MCP input is rejected and the following request still works
+2026-10-16T18:35:04.4528946Z ok 15 - oversized MCP input is rejected and the following request still works
+2026-10-16T18:35:04.4529526Z   ---
+2026-10-16T18:35:04.4529900Z   duration_ms: 81.294347
+2026-10-16T18:35:04.4530315Z   type: 'test'
+2026-10-16T18:35:04.4530683Z   ...
+2026-10-16T18:35:04.4531274Z # Subtest: test client correlates asynchronous MCP replies by id
+2026-10-16T18:35:04.4531973Z ok 16 - test client correlates asynchronous MCP replies by id
+2026-10-16T18:35:04.4532462Z   ---
+2026-10-16T18:35:04.4532831Z   duration_ms: 54.003651
+2026-10-16T18:35:04.4533223Z   type: 'test'
+2026-10-16T18:35:04.4533585Z   ...
+2026-10-16T18:35:04.9436176Z # Subtest: fallback ranks lexical coverage before its bounded candidate cutoff
+2026-10-16T18:35:04.9436872Z ok 17 - fallback ranks lexical coverage before its bounded candidate cutoff
+2026-10-16T18:35:04.9437130Z   ---
+2026-10-16T18:35:04.9437302Z   duration_ms: 912.290181
+2026-10-16T18:35:04.9437528Z   type: 'test'
+2026-10-16T18:35:04.9437652Z   ...
+2026-10-16T18:35:04.9933882Z # Subtest: scene candidate cutoff retains the best term coverage when FTS also matches
+2026-10-16T18:35:04.9935518Z ok 18 - scene candidate cutoff retains the best term coverage when FTS also matches
+2026-10-16T18:35:04.9936138Z   ---
+2026-10-16T18:35:04.9937372Z   duration_ms: 481.552019
+2026-10-16T18:35:04.9937819Z   type: 'test'
+2026-10-16T18:35:04.9938174Z   ...
+2026-10-16T18:35:05.1370116Z # Subtest: abrupt writer exit leaves recoverable SQLite and FTS state
+2026-10-16T18:35:05.1371228Z ok 19 - abrupt writer exit leaves recoverable SQLite and FTS state
+2026-10-16T18:35:05.1371587Z   ---
+2026-10-16T18:35:05.1371836Z   duration_ms: 152.036436
+2026-10-16T18:35:05.1372103Z   type: 'test'
+2026-10-16T18:35:05.1372277Z   ...
+2026-10-16T18:35:05.3876370Z # (node:2268) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+2026-10-16T18:35:05.3877286Z # (Use `node --trace-warnings ...` to show where the warning was created)
+2026-10-16T18:35:05.3905110Z # Subtest: initialize returns correct protocol version and server info
+2026-10-16T18:35:05.3934693Z ok 20 - initialize returns correct protocol version and server info
+2026-10-16T18:35:05.3934935Z   ---
+2026-10-16T18:35:05.3935150Z   duration_ms: 933.196832
+2026-10-16T18:35:05.3935327Z   type: 'test'
+2026-10-16T18:35:05.3935445Z   ...
+2026-10-16T18:35:05.3935598Z # Subtest: tools/list returns all 4 tools
+2026-10-16T18:35:05.3935833Z ok 21 - tools/list returns all 4 tools
+2026-10-16T18:35:05.3936018Z   ---
+2026-10-16T18:35:05.3936134Z   duration_ms: 479.751378
+2026-10-16T18:35:05.3936265Z   type: 'test'
+2026-10-16T18:35:05.3936373Z   ...
+2026-10-16T18:35:05.8188211Z # Subtest: tdai_memory_search returns real results from SQLite
+2026-10-16T18:35:05.8189814Z ok 22 - tdai_memory_search returns real results from SQLite
+2026-10-16T18:35:05.8190104Z   ---
+2026-10-16T18:35:05.8190288Z   duration_ms: 465.703423
+2026-10-16T18:35:05.8190544Z   type: 'test'
+2026-10-16T18:35:05.8190717Z   ...
+2026-10-16T18:35:06.2466651Z # Subtest: tdai_conversation_search returns real results from SQLite
+2026-10-16T18:35:06.2467327Z ok 23 - tdai_conversation_search returns real results from SQLite
+2026-10-16T18:35:06.2467759Z   ---
+2026-10-16T18:35:06.2467963Z   duration_ms: 428.638665
+2026-10-16T18:35:06.2468173Z   type: 'test'
+2026-10-16T18:35:06.2468405Z   ...
+2026-10-16T18:35:06.6665049Z # Subtest: search ranking: exact match scores higher
+2026-10-16T18:35:06.6665706Z ok 24 - search ranking: exact match scores higher
+2026-10-16T18:35:06.6666038Z   ---
+2026-10-16T18:35:06.6666238Z   duration_ms: 429.81446
+2026-10-16T18:35:06.6666483Z   type: 'test'
+2026-10-16T18:35:06.6666676Z   ...
+2026-10-16T18:35:07.4839109Z # Subtest: priority -1 (global instruction) gets a boost
+2026-10-16T18:35:07.4839925Z ok 25 - priority -1 (global instruction) gets a boost
+2026-10-16T18:35:07.4840236Z   ---
+2026-10-16T18:35:07.4840428Z   duration_ms: 417.631367
+2026-10-16T18:35:07.4840668Z   type: 'test'
+2026-10-16T18:35:07.4840843Z   ...
+2026-10-16T18:35:07.9130835Z # Subtest: tdai_experience_store rejects without authorization flags
+2026-10-16T18:35:07.9132163Z ok 26 - tdai_experience_store rejects without authorization flags
+2026-10-16T18:35:07.9132785Z   ---
+2026-10-16T18:35:07.9133068Z   duration_ms: 816.91833
+2026-10-16T18:35:07.9133277Z   type: 'test'
+2026-10-16T18:35:07.9133456Z   ...
+2026-10-16T18:35:08.3406066Z # Subtest: tdai_experience_store rejects sensitive content
+2026-10-16T18:35:08.3406900Z ok 27 - tdai_experience_store rejects sensitive content
+2026-10-16T18:35:08.3407257Z   ---
+2026-10-16T18:35:08.3407450Z   duration_ms: 422.111463
+2026-10-16T18:35:08.3407656Z   type: 'test'
+2026-10-16T18:35:08.3407828Z   ...
+2026-10-16T18:35:08.7555448Z # Subtest: tdai_experience_store rejects sensitive scene_name
+2026-10-16T18:35:08.7556175Z ok 28 - tdai_experience_store rejects sensitive scene_name
+2026-10-16T18:35:08.7556536Z   ---
+2026-10-16T18:35:08.7573762Z   duration_ms: 428.217234
+2026-10-16T18:35:08.7574309Z   type: 'test'
+2026-10-16T18:35:08.7577186Z   ...
+2026-10-16T18:35:09.1886661Z # Subtest: tdai_experience_store stores valid experience and detects duplicates
+2026-10-16T18:35:09.1887929Z ok 29 - tdai_experience_store stores valid experience and detects duplicates
+2026-10-16T18:35:09.1888279Z   ---
+2026-10-16T18:35:09.1888472Z   duration_ms: 424.337701
+2026-10-16T18:35:09.1888678Z   type: 'test'
+2026-10-16T18:35:09.1888848Z   ...
+2026-10-16T18:35:09.5846132Z # Subtest: tdai_read_cos rejects absolute paths
+2026-10-16T18:35:09.5846713Z ok 30 - tdai_read_cos rejects absolute paths
+2026-10-16T18:35:09.5846970Z   ---
+2026-10-16T18:35:09.5850979Z   duration_ms: 422.081568
+2026-10-16T18:35:09.5851228Z   type: 'test'
+2026-10-16T18:35:09.5851414Z   ...
+2026-10-16T18:35:09.9827063Z # Subtest: tdai_read_cos rejects '..' traversal
+2026-10-16T18:35:09.9827515Z ok 31 - tdai_read_cos rejects '..' traversal
+2026-10-16T18:35:09.9827831Z   ---
+2026-10-16T18:35:09.9828027Z   duration_ms: 396.483453
+2026-10-16T18:35:09.9828551Z   type: 'test'
+2026-10-16T18:35:09.9828750Z   ...
+2026-10-16T18:35:10.3925750Z # Subtest: writes are hidden and rejected by default even with all admission flags
+2026-10-16T18:35:10.3926163Z ok 32 - writes are hidden and rejected by default even with all admission flags
+2026-10-16T18:35:10.3926377Z   ---
+2026-10-16T18:35:10.3926500Z   duration_ms: 396.762405
+2026-10-16T18:35:10.3926640Z   type: 'test'
+2026-10-16T18:35:10.3926751Z   ...
+2026-10-16T18:35:10.7910640Z # Subtest: truthy non-boolean admission flags cannot authorize writes
+2026-10-16T18:35:10.7911375Z ok 33 - truthy non-boolean admission flags cannot authorize writes
+2026-10-16T18:35:10.7911747Z   ---
+2026-10-16T18:35:10.7911948Z   duration_ms: 411.128972
+2026-10-16T18:35:10.7912161Z   type: 'test'
+2026-10-16T18:35:10.7912384Z   ...
+2026-10-16T18:35:11.2115430Z # Subtest: search and store fail closed without a host-configured scope
+2026-10-16T18:35:11.2116077Z ok 34 - search and store fail closed without a host-configured scope
+2026-10-16T18:35:11.2122088Z   ---
+2026-10-16T18:35:11.2122307Z   duration_ms: 405.344275
+2026-10-16T18:35:11.2122546Z   type: 'test'
+2026-10-16T18:35:11.2122723Z   ...
+2026-10-16T18:35:11.6292056Z # Subtest: searches and deduplication respect host scope (FTS5)
+2026-10-16T18:35:11.6292656Z ok 35 - searches and deduplication respect host scope (FTS5)
+2026-10-16T18:35:11.6292959Z   ---
+2026-10-16T18:35:11.6293155Z   duration_ms: 425.538677
+2026-10-16T18:35:11.6293401Z   type: 'test'
+2026-10-16T18:35:11.6293580Z   ...
+2026-10-16T18:35:12.0353368Z # Subtest: searches and deduplication respect host scope (LIKE)
+2026-10-16T18:35:12.0353734Z ok 36 - searches and deduplication respect host scope (LIKE)
+2026-10-16T18:35:12.0353930Z   ---
+2026-10-16T18:35:12.0354240Z   duration_ms: 412.873972
+2026-10-16T18:35:12.0354377Z   type: 'test'
+2026-10-16T18:35:12.0354491Z   ...
+2026-10-16T18:35:14.1957544Z # Subtest: bounded LIKE fallback preserves older exact matches and clamps result counts
+2026-10-16T18:35:14.1988893Z ok 37 - bounded LIKE fallback preserves older exact matches and clamps result counts
+2026-10-16T18:35:14.1989744Z   ---
+2026-10-16T18:35:14.1990024Z   duration_ms: 408.614364
+2026-10-16T18:35:14.1990310Z   type: 'test'
+2026-10-16T18:35:14.1990555Z   ...
+2026-10-16T18:35:16.5264307Z # Subtest: new writes distinguish process sessions within the same host scope
+2026-10-16T18:35:16.5264916Z ok 38 - new writes distinguish process sessions within the same host scope
+2026-10-16T18:35:16.5265265Z   ---
+2026-10-16T18:35:16.5265463Z   duration_ms: 2659.782378
+2026-10-16T18:35:16.5265678Z   type: 'test'
+2026-10-16T18:35:16.5265856Z   ...
+2026-10-16T18:35:16.9730874Z # Subtest: failed FTS insertion rolls back the L1 write
+2026-10-16T18:35:16.9731409Z ok 39 - failed FTS insertion rolls back the L1 write
+2026-10-16T18:35:16.9731726Z   ---
+2026-10-16T18:35:16.9731986Z   duration_ms: 1823.035171
+2026-10-16T18:35:16.9732230Z   type: 'test'
+2026-10-16T18:35:16.9732450Z   ...
+2026-10-16T18:35:17.4045357Z # Subtest: read_cos permits bounded Markdown and denies metadata, databases, directories and oversized UTF-8
+2026-10-16T18:35:17.4045942Z ok 40 - read_cos permits bounded Markdown and denies metadata, databases, directories and oversized UTF-8
+2026-10-16T18:35:17.4046365Z   ---
+2026-10-16T18:35:17.4046558Z   duration_ms: 456.705176
+2026-10-16T18:35:17.4046770Z   type: 'test'
+2026-10-16T18:35:17.4046949Z   ...
+2026-10-16T18:35:17.8031173Z # Subtest: read_cos blocks directory symlink/junction escapes and metadata aliases
+2026-10-16T18:35:17.8031923Z ok 41 - read_cos blocks directory symlink/junction escapes and metadata aliases
+2026-10-16T18:35:17.8032240Z   ---
+2026-10-16T18:35:17.8032440Z   duration_ms: 420.265997
+2026-10-16T18:35:17.8032650Z   type: 'test'
+2026-10-16T18:35:17.8032820Z   ...
+2026-10-16T18:35:18.2324835Z # Subtest: read_cos rejects a file symlink even when its target is an allowed file
+2026-10-16T18:35:18.2325462Z ok 42 - read_cos rejects a file symlink even when its target is an allowed file
+2026-10-16T18:35:18.2326102Z   ---
+2026-10-16T18:35:18.2326318Z   duration_ms: 399.496498
+2026-10-16T18:35:18.2326589Z   type: 'test'
+2026-10-16T18:35:18.2326771Z   ...
+2026-10-16T18:35:18.6455941Z # Subtest: unknown method returns error, does not crash
+2026-10-16T18:35:18.6456391Z ok 43 - unknown method returns error, does not crash
+2026-10-16T18:35:18.6456667Z   ---
+2026-10-16T18:35:18.6456848Z   duration_ms: 428.306127
+2026-10-16T18:35:18.6457054Z   type: 'test'
+2026-10-16T18:35:18.6457236Z   ...
+2026-10-16T18:35:18.6708189Z # Subtest: malformed JSON does not crash the server
+2026-10-16T18:35:18.6708626Z ok 44 - malformed JSON does not crash the server
+2026-10-16T18:35:18.6708900Z   ---
+2026-10-16T18:35:18.6709100Z   duration_ms: 410.803094
+2026-10-16T18:35:18.6709306Z   type: 'test'
+2026-10-16T18:35:18.6709477Z   ...
+2026-10-16T18:35:18.6784293Z 1..44
+2026-10-16T18:35:18.6784505Z # tests 44
+2026-10-16T18:35:18.6784675Z # suites 0
+2026-10-16T18:35:18.6784851Z # pass 44
+2026-10-16T18:35:18.6785053Z # fail 0
+2026-10-16T18:35:18.6802722Z # cancelled 0
+2026-10-16T18:35:18.6803187Z # skipped 0
+2026-10-16T18:35:18.6803489Z # todo 0
+2026-10-16T18:35:18.6803791Z # duration_ms 15350.984796
+2026-10-16T18:35:18.6918884Z ##[group]Run npm run benchmark
+2026-10-16T18:35:18.6919070Z [36;1mnpm run benchmark[0m
+2026-10-16T18:35:18.6974752Z shell: /usr/bin/bash -e {0}
+2026-10-16T18:35:18.6974905Z ##[endgroup]
+2026-10-16T18:35:18.7652068Z
+2026-10-16T18:35:18.7652564Z > codex-tdai-local@1.1.0 benchmark
+2026-10-16T18:35:18.7652818Z > node benchmark.mjs
+2026-10-16T18:35:18.7652901Z
+2026-10-16T18:35:19.0215250Z (node:2527) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+2026-10-16T18:35:19.0216006Z (Use `node --trace-warnings ...` to show where the warning was created)
+2026-10-16T18:35:19.3649603Z {
+2026-10-16T18:35:19.3649882Z   "schema": 1,
+2026-10-16T18:35:19.3650164Z   "fixture": "benchmark-fixture.json",
+2026-10-16T18:35:19.3650641Z   "description": "Synthetic keyword retrieval regression corpus; not a production or semantic model evaluation.",
+2026-10-16T18:35:19.3651443Z   "baseline": "Same MCP engine with fixture scope keys coalesced, simulating unscoped access; not a historical binary comparison.",
+2026-10-16T18:35:19.3652705Z   "metrics": "Recall/MRR average answerable queries; precision/leakage use all returned rows; request time includes cold process startup.",
+2026-10-16T18:35:19.3653264Z   "reports": [
+2026-10-16T18:35:19.3653460Z     {
+2026-10-16T18:35:19.3653641Z       "retrieval": "fts5",
+2026-10-16T18:35:19.3653914Z       "mode": "unscoped-fixture-baseline",
+2026-10-16T18:35:19.3654309Z       "cases": 7,
+2026-10-16T18:35:19.3654493Z       "answerable": 6,
+2026-10-16T18:35:19.3654731Z       "recallAt3": 0.8333333333333334,
+2026-10-16T18:35:19.3654996Z       "mrrAt3": 0.5833333333333334,
+2026-10-16T18:35:19.3655269Z       "precisionOnReturned": 0.5555555555555556,
+2026-10-16T18:35:19.3655573Z       "scopeLeakRate": 0.4444444444444444,
+2026-10-16T18:35:19.3655836Z       "noMatchCorrect": true,
+2026-10-16T18:35:19.3656044Z       "details": [
+2026-10-16T18:35:19.3656242Z         {
+2026-10-16T18:35:19.3656444Z           "case": "english",
+2026-10-16T18:35:19.3656676Z           "returned": [
+2026-10-16T18:35:19.3656899Z             "beta-isolation",
+2026-10-16T18:35:19.3657112Z             "alpha-isolation"
+2026-10-16T18:35:19.3657357Z           ],
+2026-10-16T18:35:19.3657536Z           "expected": [
+2026-10-16T18:35:19.3657794Z             "alpha-isolation"
+2026-10-16T18:35:19.3658004Z           ],
+2026-10-16T18:35:19.3658198Z           "relevant": 1,
+2026-10-16T18:35:19.3658413Z           "leaks": 1,
+2026-10-16T18:35:19.3658650Z           "reciprocalRank": 0.5,
+2026-10-16T18:35:19.3658895Z           "elapsedMs": 36.08
+2026-10-16T18:35:19.3659116Z         },
+2026-10-16T18:35:19.3659293Z         {
+2026-10-16T18:35:19.3659505Z           "case": "other-owner",
+2026-10-16T18:35:19.3659690Z           "returned": [
+2026-10-16T18:35:19.3659890Z             "beta-isolation",
+2026-10-16T18:35:19.3660043Z             "alpha-isolation"
+2026-10-16T18:35:19.3660171Z           ],
+2026-10-16T18:35:19.3660307Z           "expected": [
+2026-10-16T18:35:19.3660452Z             "beta-isolation"
+2026-10-16T18:35:19.3660579Z           ],
+2026-10-16T18:35:19.3660705Z           "relevant": 1,
+2026-10-16T18:35:19.3660830Z           "leaks": 1,
+2026-10-16T18:35:19.3660981Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3661119Z           "elapsedMs": 0.75
+2026-10-16T18:35:19.3661248Z         },
+2026-10-16T18:35:19.3661350Z         {
+2026-10-16T18:35:19.3661457Z           "case": "chinese",
+2026-10-16T18:35:19.3661590Z           "returned": [
+2026-10-16T18:35:19.3661715Z             "beta-bytes",
+2026-10-16T18:35:19.3661860Z             "alpha-bytes"
+2026-10-16T18:35:19.3661986Z           ],
+2026-10-16T18:35:19.3662113Z           "expected": [
+2026-10-16T18:35:19.3662237Z             "alpha-bytes"
+2026-10-16T18:35:19.3662356Z           ],
+2026-10-16T18:35:19.3662468Z           "relevant": 1,
+2026-10-16T18:35:19.3662605Z           "leaks": 1,
+2026-10-16T18:35:19.3662739Z           "reciprocalRank": 0.5,
+2026-10-16T18:35:19.3662886Z           "elapsedMs": 5.97
+2026-10-16T18:35:19.3663262Z         },
+2026-10-16T18:35:19.3663422Z         {
+2026-10-16T18:35:19.3663551Z           "case": "scene-only",
+2026-10-16T18:35:19.3663758Z           "returned": [
+2026-10-16T18:35:19.3663971Z             "beta-rollback",
+2026-10-16T18:35:19.3664670Z             "alpha-rollback"
+2026-10-16T18:35:19.3664875Z           ],
+2026-10-16T18:35:19.3665000Z           "expected": [
+2026-10-16T18:35:19.3665125Z             "alpha-rollback"
+2026-10-16T18:35:19.3665275Z           ],
+2026-10-16T18:35:19.3665386Z           "relevant": 1,
+2026-10-16T18:35:19.3665511Z           "leaks": 1,
+2026-10-16T18:35:19.3665647Z           "reciprocalRank": 0.5,
+2026-10-16T18:35:19.3665787Z           "elapsedMs": 0.66
+2026-10-16T18:35:19.3665911Z         },
+2026-10-16T18:35:19.3666015Z         {
+2026-10-16T18:35:19.3666123Z           "case": "budget",
+2026-10-16T18:35:19.3666251Z           "returned": [
+2026-10-16T18:35:19.3666380Z             "alpha-budget"
+2026-10-16T18:35:19.3666622Z           ],
+2026-10-16T18:35:19.3666733Z           "expected": [
+2026-10-16T18:35:19.3666856Z             "alpha-budget"
+2026-10-16T18:35:19.3666978Z           ],
+2026-10-16T18:35:19.3667086Z           "relevant": 1,
+2026-10-16T18:35:19.3667209Z           "leaks": 0,
+2026-10-16T18:35:19.3667343Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3667479Z           "elapsedMs": 0.7
+2026-10-16T18:35:19.3667600Z         },
+2026-10-16T18:35:19.3667702Z         {
+2026-10-16T18:35:19.3667826Z           "case": "semantic-gap",
+2026-10-16T18:35:19.3667971Z           "returned": [],
+2026-10-16T18:35:19.3668097Z           "expected": [
+2026-10-16T18:35:19.3668222Z             "alpha-rollback"
+2026-10-16T18:35:19.3668346Z           ],
+2026-10-16T18:35:19.3668457Z           "relevant": 0,
+2026-10-16T18:35:19.3668578Z           "leaks": 0,
+2026-10-16T18:35:19.3668710Z           "reciprocalRank": 0,
+2026-10-16T18:35:19.3668848Z           "elapsedMs": 0.67
+2026-10-16T18:35:19.3668971Z         },
+2026-10-16T18:35:19.3669074Z         {
+2026-10-16T18:35:19.3669187Z           "case": "no-match",
+2026-10-16T18:35:19.3669321Z           "returned": [],
+2026-10-16T18:35:19.3669446Z           "expected": [],
+2026-10-16T18:35:19.3669573Z           "relevant": 0,
+2026-10-16T18:35:19.3669695Z           "leaks": 0,
+2026-10-16T18:35:19.3669825Z           "reciprocalRank": 0,
+2026-10-16T18:35:19.3669959Z           "elapsedMs": 0.71
+2026-10-16T18:35:19.3670082Z         }
+2026-10-16T18:35:19.3670185Z       ]
+2026-10-16T18:35:19.3670292Z     },
+2026-10-16T18:35:19.3670392Z     {
+2026-10-16T18:35:19.3670504Z       "retrieval": "fts5",
+2026-10-16T18:35:19.3670632Z       "mode": "scoped",
+2026-10-16T18:35:19.3670755Z       "cases": 7,
+2026-10-16T18:35:19.3670870Z       "answerable": 6,
+2026-10-16T18:35:19.3671009Z       "recallAt3": 0.8333333333333334,
+2026-10-16T18:35:19.3671169Z       "mrrAt3": 0.8333333333333334,
+2026-10-16T18:35:19.3671326Z       "precisionOnReturned": 1,
+2026-10-16T18:35:19.3671468Z       "scopeLeakRate": 0,
+2026-10-16T18:35:19.3671603Z       "noMatchCorrect": true,
+2026-10-16T18:35:19.3671738Z       "details": [
+2026-10-16T18:35:19.3671848Z         {
+2026-10-16T18:35:19.3671961Z           "case": "english",
+2026-10-16T18:35:19.3672090Z           "returned": [
+2026-10-16T18:35:19.3672217Z             "alpha-isolation"
+2026-10-16T18:35:19.3672347Z           ],
+2026-10-16T18:35:19.3672456Z           "expected": [
+2026-10-16T18:35:19.3672580Z             "alpha-isolation"
+2026-10-16T18:35:19.3672708Z           ],
+2026-10-16T18:35:19.3672817Z           "relevant": 1,
+2026-10-16T18:35:19.3689943Z           "leaks": 0,
+2026-10-16T18:35:19.3690309Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3690529Z           "elapsedMs": 31.06
+2026-10-16T18:35:19.3690684Z         },
+2026-10-16T18:35:19.3690791Z         {
+2026-10-16T18:35:19.3690918Z           "case": "other-owner",
+2026-10-16T18:35:19.3691061Z           "returned": [
+2026-10-16T18:35:19.3691190Z             "beta-isolation"
+2026-10-16T18:35:19.3691319Z           ],
+2026-10-16T18:35:19.3691433Z           "expected": [
+2026-10-16T18:35:19.3691779Z             "beta-isolation"
+2026-10-16T18:35:19.3691905Z           ],
+2026-10-16T18:35:19.3692022Z           "relevant": 1,
+2026-10-16T18:35:19.3692146Z           "leaks": 0,
+2026-10-16T18:35:19.3692281Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3692427Z           "elapsedMs": 30.59
+2026-10-16T18:35:19.3692552Z         },
+2026-10-16T18:35:19.3692656Z         {
+2026-10-16T18:35:19.3692766Z           "case": "chinese",
+2026-10-16T18:35:19.3692893Z           "returned": [
+2026-10-16T18:35:19.3693019Z             "alpha-bytes"
+2026-10-16T18:35:19.3693142Z           ],
+2026-10-16T18:35:19.3693250Z           "expected": [
+2026-10-16T18:35:19.3693373Z             "alpha-bytes"
+2026-10-16T18:35:19.3693494Z           ],
+2026-10-16T18:35:19.3693605Z           "relevant": 1,
+2026-10-16T18:35:19.3693727Z           "leaks": 0,
+2026-10-16T18:35:19.3693859Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3694129Z           "elapsedMs": 1.9
+2026-10-16T18:35:19.3694393Z         },
+2026-10-16T18:35:19.3694499Z         {
+2026-10-16T18:35:19.3694622Z           "case": "scene-only",
+2026-10-16T18:35:19.3694758Z           "returned": [
+2026-10-16T18:35:19.3694884Z             "alpha-rollback"
+2026-10-16T18:35:19.3695011Z           ],
+2026-10-16T18:35:19.3695120Z           "expected": [
+2026-10-16T18:35:19.3695243Z             "alpha-rollback"
+2026-10-16T18:35:19.3695371Z           ],
+2026-10-16T18:35:19.3695481Z           "relevant": 1,
+2026-10-16T18:35:19.3695604Z           "leaks": 0,
+2026-10-16T18:35:19.3695736Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3695873Z           "elapsedMs": 0.8
+2026-10-16T18:35:19.3695996Z         },
+2026-10-16T18:35:19.3696098Z         {
+2026-10-16T18:35:19.3696212Z           "case": "budget",
+2026-10-16T18:35:19.3696343Z           "returned": [
+2026-10-16T18:35:19.3696469Z             "alpha-budget"
+2026-10-16T18:35:19.3696592Z           ],
+2026-10-16T18:35:19.3696702Z           "expected": [
+2026-10-16T18:35:19.3696829Z             "alpha-budget"
+2026-10-16T18:35:19.3696957Z           ],
+2026-10-16T18:35:19.3697070Z           "relevant": 1,
+2026-10-16T18:35:19.3697193Z           "leaks": 0,
+2026-10-16T18:35:19.3697325Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3697461Z           "elapsedMs": 0.6
+2026-10-16T18:35:19.3697583Z         },
+2026-10-16T18:35:19.3697687Z         {
+2026-10-16T18:35:19.3697810Z           "case": "semantic-gap",
+2026-10-16T18:35:19.3697954Z           "returned": [],
+2026-10-16T18:35:19.3698082Z           "expected": [
+2026-10-16T18:35:19.3698207Z             "alpha-rollback"
+2026-10-16T18:35:19.3698333Z           ],
+2026-10-16T18:35:19.3698443Z           "relevant": 0,
+2026-10-16T18:35:19.3698569Z           "leaks": 0,
+2026-10-16T18:35:19.3698701Z           "reciprocalRank": 0,
+2026-10-16T18:35:19.3698902Z           "elapsedMs": 0.64
+2026-10-16T18:35:19.3699103Z         },
+2026-10-16T18:35:19.3699256Z         {
+2026-10-16T18:35:19.3699437Z           "case": "no-match",
+2026-10-16T18:35:19.3699661Z           "returned": [],
+2026-10-16T18:35:19.3699861Z           "expected": [],
+2026-10-16T18:35:19.3700010Z           "relevant": 0,
+2026-10-16T18:35:19.3700163Z           "leaks": 0,
+2026-10-16T18:35:19.3700299Z           "reciprocalRank": 0,
+2026-10-16T18:35:19.3700434Z           "elapsedMs": 0.55
+2026-10-16T18:35:19.3700563Z         }
+2026-10-16T18:35:19.3700681Z       ]
+2026-10-16T18:35:19.3700803Z     },
+2026-10-16T18:35:19.3700925Z     {
+2026-10-16T18:35:19.3701049Z       "retrieval": "like",
+2026-10-16T18:35:19.3701226Z       "mode": "unscoped-fixture-baseline",
+2026-10-16T18:35:19.3701383Z       "cases": 7,
+2026-10-16T18:35:19.3701517Z       "answerable": 6,
+2026-10-16T18:35:19.3701674Z       "recallAt3": 0.8333333333333334,
+2026-10-16T18:35:19.3701849Z       "mrrAt3": 0.5833333333333334,
+2026-10-16T18:35:19.3702046Z       "precisionOnReturned": 0.5555555555555556,
+2026-10-16T18:35:19.3702227Z       "scopeLeakRate": 0.4444444444444444,
+2026-10-16T18:35:19.3702382Z       "noMatchCorrect": true,
+2026-10-16T18:35:19.3702621Z       "details": [
+2026-10-16T18:35:19.3702735Z         {
+2026-10-16T18:35:19.3702847Z           "case": "english",
+2026-10-16T18:35:19.3702978Z           "returned": [
+2026-10-16T18:35:19.3703105Z             "beta-isolation",
+2026-10-16T18:35:19.3703242Z             "alpha-isolation"
+2026-10-16T18:35:19.3703376Z           ],
+2026-10-16T18:35:19.3703486Z           "expected": [
+2026-10-16T18:35:19.3703611Z             "alpha-isolation"
+2026-10-16T18:35:19.3703739Z           ],
+2026-10-16T18:35:19.3703848Z           "relevant": 1,
+2026-10-16T18:35:19.3703970Z           "leaks": 1,
+2026-10-16T18:35:19.3704283Z           "reciprocalRank": 0.5,
+2026-10-16T18:35:19.3704426Z           "elapsedMs": 36.83
+2026-10-16T18:35:19.3704554Z         },
+2026-10-16T18:35:19.3704656Z         {
+2026-10-16T18:35:19.3704774Z           "case": "other-owner",
+2026-10-16T18:35:19.3704911Z           "returned": [
+2026-10-16T18:35:19.3705041Z             "beta-isolation",
+2026-10-16T18:35:19.3705263Z             "alpha-isolation"
+2026-10-16T18:35:19.3705391Z           ],
+2026-10-16T18:35:19.3705501Z           "expected": [
+2026-10-16T18:35:19.3705627Z             "beta-isolation"
+2026-10-16T18:35:19.3705752Z           ],
+2026-10-16T18:35:19.3705865Z           "relevant": 1,
+2026-10-16T18:35:19.3705992Z           "leaks": 1,
+2026-10-16T18:35:19.3706124Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3706262Z           "elapsedMs": 0.58
+2026-10-16T18:35:19.3706388Z         },
+2026-10-16T18:35:19.3706490Z         {
+2026-10-16T18:35:19.3706597Z           "case": "chinese",
+2026-10-16T18:35:19.3706730Z           "returned": [
+2026-10-16T18:35:19.3706854Z             "beta-bytes",
+2026-10-16T18:35:19.3706982Z             "alpha-bytes"
+2026-10-16T18:35:19.3707103Z           ],
+2026-10-16T18:35:19.3707214Z           "expected": [
+2026-10-16T18:35:19.3707338Z             "alpha-bytes"
+2026-10-16T18:35:19.3707459Z           ],
+2026-10-16T18:35:19.3707571Z           "relevant": 1,
+2026-10-16T18:35:19.3707696Z           "leaks": 1,
+2026-10-16T18:35:19.3707832Z           "reciprocalRank": 0.5,
+2026-10-16T18:35:19.3707973Z           "elapsedMs": 1.69
+2026-10-16T18:35:19.3708100Z         },
+2026-10-16T18:35:19.3708203Z         {
+2026-10-16T18:35:19.3708326Z           "case": "scene-only",
+2026-10-16T18:35:19.3708462Z           "returned": [
+2026-10-16T18:35:19.3708587Z             "beta-rollback",
+2026-10-16T18:35:19.3708720Z             "alpha-rollback"
+2026-10-16T18:35:19.3708845Z           ],
+2026-10-16T18:35:19.3708954Z           "expected": [
+2026-10-16T18:35:19.3709081Z             "alpha-rollback"
+2026-10-16T18:35:19.3709208Z           ],
+2026-10-16T18:35:19.3709317Z           "relevant": 1,
+2026-10-16T18:35:19.3709440Z           "leaks": 1,
+2026-10-16T18:35:19.3709571Z           "reciprocalRank": 0.5,
+2026-10-16T18:35:19.3709711Z           "elapsedMs": 0.51
+2026-10-16T18:35:19.3709840Z         },
+2026-10-16T18:35:19.3709942Z         {
+2026-10-16T18:35:19.3710048Z           "case": "budget",
+2026-10-16T18:35:19.3710178Z           "returned": [
+2026-10-16T18:35:19.3710304Z             "alpha-budget"
+2026-10-16T18:35:19.3710430Z           ],
+2026-10-16T18:35:19.3710540Z           "expected": [
+2026-10-16T18:35:19.3710667Z             "alpha-budget"
+2026-10-16T18:35:19.3710790Z           ],
+2026-10-16T18:35:19.3710900Z           "relevant": 1,
+2026-10-16T18:35:19.3711026Z           "leaks": 0,
+2026-10-16T18:35:19.3711160Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3711297Z           "elapsedMs": 0.53
+2026-10-16T18:35:19.3711421Z         },
+2026-10-16T18:35:19.3711523Z         {
+2026-10-16T18:35:19.3711677Z           "case": "semantic-gap",
+2026-10-16T18:35:19.3711820Z           "returned": [],
+2026-10-16T18:35:19.3711946Z           "expected": [
+2026-10-16T18:35:19.3712071Z             "alpha-rollback"
+2026-10-16T18:35:19.3712198Z           ],
+2026-10-16T18:35:19.3712308Z           "relevant": 0,
+2026-10-16T18:35:19.3712430Z           "leaks": 0,
+2026-10-16T18:35:19.3712564Z           "reciprocalRank": 0,
+2026-10-16T18:35:19.3712798Z           "elapsedMs": 0.46
+2026-10-16T18:35:19.3712927Z         },
+2026-10-16T18:35:19.3713028Z         {
+2026-10-16T18:35:19.3713137Z           "case": "no-match",
+2026-10-16T18:35:19.3713271Z           "returned": [],
+2026-10-16T18:35:19.3713399Z           "expected": [],
+2026-10-16T18:35:19.3713526Z           "relevant": 0,
+2026-10-16T18:35:19.3713647Z           "leaks": 0,
+2026-10-16T18:35:19.3713775Z           "reciprocalRank": 0,
+2026-10-16T18:35:19.3713909Z           "elapsedMs": 0.58
+2026-10-16T18:35:19.3714245Z         }
+2026-10-16T18:35:19.3714398Z       ]
+2026-10-16T18:35:19.3714509Z     },
+2026-10-16T18:35:19.3714680Z     {
+2026-10-16T18:35:19.3714811Z       "retrieval": "like",
+2026-10-16T18:35:19.3714941Z       "mode": "scoped",
+2026-10-16T18:35:19.3715061Z       "cases": 7,
+2026-10-16T18:35:19.3715176Z       "answerable": 6,
+2026-10-16T18:35:19.3715316Z       "recallAt3": 0.8333333333333334,
+2026-10-16T18:35:19.3715471Z       "mrrAt3": 0.8333333333333334,
+2026-10-16T18:35:19.3715717Z       "precisionOnReturned": 1,
+2026-10-16T18:35:19.3715861Z       "scopeLeakRate": 0,
+2026-10-16T18:35:19.3715993Z       "noMatchCorrect": true,
+2026-10-16T18:35:19.3716125Z       "details": [
+2026-10-16T18:35:19.3716235Z         {
+2026-10-16T18:35:19.3716345Z           "case": "english",
+2026-10-16T18:35:19.3716474Z           "returned": [
+2026-10-16T18:35:19.3716599Z             "alpha-isolation"
+2026-10-16T18:35:19.3716726Z           ],
+2026-10-16T18:35:19.3716834Z           "expected": [
+2026-10-16T18:35:19.3716957Z             "alpha-isolation"
+2026-10-16T18:35:19.3717087Z           ],
+2026-10-16T18:35:19.3717197Z           "relevant": 1,
+2026-10-16T18:35:19.3717319Z           "leaks": 0,
+2026-10-16T18:35:19.3717449Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3717584Z           "elapsedMs": 29.87
+2026-10-16T18:35:19.3717708Z         },
+2026-10-16T18:35:19.3717811Z         {
+2026-10-16T18:35:19.3717928Z           "case": "other-owner",
+2026-10-16T18:35:19.3718066Z           "returned": [
+2026-10-16T18:35:19.3718192Z             "beta-isolation"
+2026-10-16T18:35:19.3718316Z           ],
+2026-10-16T18:35:19.3718423Z           "expected": [
+2026-10-16T18:35:19.3718546Z             "beta-isolation"
+2026-10-16T18:35:19.3718671Z           ],
+2026-10-16T18:35:19.3718779Z           "relevant": 1,
+2026-10-16T18:35:19.3718926Z           "leaks": 0,
+2026-10-16T18:35:19.3719056Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3719189Z           "elapsedMs": 29.29
+2026-10-16T18:35:19.3719313Z         },
+2026-10-16T18:35:19.3719416Z         {
+2026-10-16T18:35:19.3719521Z           "case": "chinese",
+2026-10-16T18:35:19.3719650Z           "returned": [
+2026-10-16T18:35:19.3719772Z             "alpha-bytes"
+2026-10-16T18:35:19.3719895Z           ],
+2026-10-16T18:35:19.3720002Z           "expected": [
+2026-10-16T18:35:19.3720128Z             "alpha-bytes"
+2026-10-16T18:35:19.3720249Z           ],
+2026-10-16T18:35:19.3720359Z           "relevant": 1,
+2026-10-16T18:35:19.3720483Z           "leaks": 0,
+2026-10-16T18:35:19.3720615Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3720754Z           "elapsedMs": 1.7
+2026-10-16T18:35:19.3720876Z         },
+2026-10-16T18:35:19.3720979Z         {
+2026-10-16T18:35:19.3721096Z           "case": "scene-only",
+2026-10-16T18:35:19.3721230Z           "returned": [
+2026-10-16T18:35:19.3721356Z             "alpha-rollback"
+2026-10-16T18:35:19.3721479Z           ],
+2026-10-16T18:35:19.3721587Z           "expected": [
+2026-10-16T18:35:19.3721711Z             "alpha-rollback"
+2026-10-16T18:35:19.3721834Z           ],
+2026-10-16T18:35:19.3721945Z           "relevant": 1,
+2026-10-16T18:35:19.3722065Z           "leaks": 0,
+2026-10-16T18:35:19.3722194Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3722330Z           "elapsedMs": 0.56
+2026-10-16T18:35:19.3722458Z         },
+2026-10-16T18:35:19.3722560Z         {
+2026-10-16T18:35:19.3722669Z           "case": "budget",
+2026-10-16T18:35:19.3722797Z           "returned": [
+2026-10-16T18:35:19.3722921Z             "alpha-budget"
+2026-10-16T18:35:19.3723043Z           ],
+2026-10-16T18:35:19.3723245Z           "expected": [
+2026-10-16T18:35:19.3723373Z             "alpha-budget"
+2026-10-16T18:35:19.3723493Z           ],
+2026-10-16T18:35:19.3723601Z           "relevant": 1,
+2026-10-16T18:35:19.3723721Z           "leaks": 0,
+2026-10-16T18:35:19.3723850Z           "reciprocalRank": 1,
+2026-10-16T18:35:19.3724127Z           "elapsedMs": 0.45
+2026-10-16T18:35:19.3724277Z         },
+2026-10-16T18:35:19.3724394Z         {
+2026-10-16T18:35:19.3724514Z           "case": "semantic-gap",
+2026-10-16T18:35:19.3724654Z           "returned": [],
+2026-10-16T18:35:19.3724781Z           "expected": [
+2026-10-16T18:35:19.3724906Z             "alpha-rollback"
+2026-10-16T18:35:19.3725034Z           ],
+2026-10-16T18:35:19.3725143Z           "relevant": 0,
+2026-10-16T18:35:19.3725265Z           "leaks": 0,
+2026-10-16T18:35:19.3725393Z           "reciprocalRank": 0,
+2026-10-16T18:35:19.3725526Z           "elapsedMs": 0.48
+2026-10-16T18:35:19.3725734Z         },
+2026-10-16T18:35:19.3725838Z         {
+2026-10-16T18:35:19.3725947Z           "case": "no-match",
+2026-10-16T18:35:19.3726079Z           "returned": [],
+2026-10-16T18:35:19.3726206Z           "expected": [],
+2026-10-16T18:35:19.3726330Z           "relevant": 0,
+2026-10-16T18:35:19.3726450Z           "leaks": 0,
+2026-10-16T18:35:19.3726582Z           "reciprocalRank": 0,
+2026-10-16T18:35:19.3726720Z           "elapsedMs": 0.42
+2026-10-16T18:35:19.3726843Z         }
+2026-10-16T18:35:19.3726961Z       ]
+2026-10-16T18:35:19.3727063Z     }
+2026-10-16T18:35:19.3727165Z   ]
+2026-10-16T18:35:19.3727267Z }
+2026-10-16T18:35:19.3762800Z ##[group]Run node --disable-warning=ExperimentalWarning tests/comprehensive/offline.mjs
+2026-10-16T18:35:19.3763172Z [36;1mnode --disable-warning=ExperimentalWarning tests/comprehensive/offline.mjs[0m
+2026-10-16T18:35:19.3816626Z shell: /usr/bin/bash -e {0}
+2026-10-16T18:35:19.3816772Z ##[endgroup]
+2026-10-16T18:35:28.7233259Z {"report":"/home/runner/work/ai-memory-framework/ai-memory-framework/offline-results.json","passed":true,"checks":[{"name":"fts5 retrieval and isolation","passed":true},{"name":"like retrieval and isolation","passed":true},{"name":"concurrent SQLite writes and scope-specific deduplication","passed":true},{"name":"database lock failure rolls back and the same process recovers","passed":true},{"name":"missing/corrupt store errors do not crash MCP and replacement recovers","passed":true},{"name":"concurrent Promotion Gate permits exactly one signed commit","passed":true}],"retrieval":[{"mode":"fts5","recallAt3":1,"identifierRecall":1,"phraseRecall":1},{"mode":"like","recallAt3":1,"identifierRecall":1,"phraseRecall":1}],"soak":null}
+2026-10-16T18:35:28.7355255Z Post job cleanup.
+2026-10-16T18:35:28.8251278Z Post job cleanup.
+2026-10-16T18:35:28.8863800Z [command]/usr/bin/git version
+2026-10-16T18:35:28.8899071Z git version 2.55.0
+2026-10-16T18:35:28.8930001Z Temporarily overriding HOME='/home/runner/work/_temp/0a3e7feb-909b-400f-957e-82d2290e7e9b' before making global git config changes
+2026-10-16T18:35:28.8930614Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-16T18:35:28.8934154Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ai-memory-framework/ai-memory-framework
+2026-10-16T18:35:28.8965321Z Removing SSH command configuration
+2026-10-16T18:35:28.8969991Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-16T18:35:28.8997908Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-16T18:35:28.9215589Z Removing HTTP extra header
+2026-10-16T18:35:28.9221129Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-16T18:35:28.9264616Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-16T18:35:28.9469944Z Removing includeIf entries pointing to credentials config files
+2026-10-16T18:35:28.9476246Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-16T18:35:28.9508285Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-16T18:35:28.9817536Z Cleaning up orphan processes

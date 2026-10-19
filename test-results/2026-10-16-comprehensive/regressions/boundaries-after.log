@@ -1,0 +1,11 @@
+✔ COS refuses an allowed filename that hardlinks a non-allowlisted file (33.88337ms)
+✔ oversized MCP input is rejected and the following request still works (29.422847ms)
+✔ test client correlates asynchronous MCP replies by id (28.728566ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 131.675041

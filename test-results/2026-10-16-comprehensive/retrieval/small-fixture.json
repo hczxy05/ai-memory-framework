@@ -1,0 +1,409 @@
+{
+  "schema": 1,
+  "fixture": "benchmark-fixture.json",
+  "description": "Synthetic keyword retrieval regression corpus; not a production or semantic model evaluation.",
+  "baseline": "Same MCP engine with fixture scope keys coalesced, simulating unscoped access; not a historical binary comparison.",
+  "metrics": "Recall/MRR average answerable queries; precision/leakage use all returned rows; request time includes cold process startup.",
+  "reports": [
+    {
+      "retrieval": "fts5",
+      "mode": "unscoped-fixture-baseline",
+      "cases": 7,
+      "answerable": 6,
+      "recallAt3": 0.8333333333333334,
+      "mrrAt3": 0.5833333333333334,
+      "precisionOnReturned": 0.5555555555555556,
+      "scopeLeakRate": 0.4444444444444444,
+      "noMatchCorrect": true,
+      "details": [
+        {
+          "case": "english",
+          "returned": [
+            "beta-isolation",
+            "alpha-isolation"
+          ],
+          "expected": [
+            "alpha-isolation"
+          ],
+          "relevant": 1,
+          "leaks": 1,
+          "reciprocalRank": 0.5,
+          "elapsedMs": 30.13
+        },
+        {
+          "case": "other-owner",
+          "returned": [
+            "beta-isolation",
+            "alpha-isolation"
+          ],
+          "expected": [
+            "beta-isolation"
+          ],
+          "relevant": 1,
+          "leaks": 1,
+          "reciprocalRank": 1,
+          "elapsedMs": 0.67
+        },
+        {
+          "case": "chinese",
+          "returned": [
+            "beta-bytes",
+            "alpha-bytes"
+          ],
+          "expected": [
+            "alpha-bytes"
+          ],
+          "relevant": 1,
+          "leaks": 1,
+          "reciprocalRank": 0.5,
+          "elapsedMs": 3.81
+        },
+        {
+          "case": "scene-only",
+          "returned": [
+            "beta-rollback",
+            "alpha-rollback"
+          ],
+          "expected": [
+            "alpha-rollback"
+          ],
+          "relevant": 1,
+          "leaks": 1,
+          "reciprocalRank": 0.5,
+          "elapsedMs": 0.66
+        },
+        {
+          "case": "budget",
+          "returned": [
+            "alpha-budget"
+          ],
+          "expected": [
+            "alpha-budget"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 0.61
+        },
+        {
+          "case": "semantic-gap",
+          "returned": [],
+          "expected": [
+            "alpha-rollback"
+          ],
+          "relevant": 0,
+          "leaks": 0,
+          "reciprocalRank": 0,
+          "elapsedMs": 0.59
+        },
+        {
+          "case": "no-match",
+          "returned": [],
+          "expected": [],
+          "relevant": 0,
+          "leaks": 0,
+          "reciprocalRank": 0,
+          "elapsedMs": 0.67
+        }
+      ]
+    },
+    {
+      "retrieval": "fts5",
+      "mode": "scoped",
+      "cases": 7,
+      "answerable": 6,
+      "recallAt3": 0.8333333333333334,
+      "mrrAt3": 0.8333333333333334,
+      "precisionOnReturned": 1,
+      "scopeLeakRate": 0,
+      "noMatchCorrect": true,
+      "details": [
+        {
+          "case": "english",
+          "returned": [
+            "alpha-isolation"
+          ],
+          "expected": [
+            "alpha-isolation"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 30.64
+        },
+        {
+          "case": "other-owner",
+          "returned": [
+            "beta-isolation"
+          ],
+          "expected": [
+            "beta-isolation"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 31.03
+        },
+        {
+          "case": "chinese",
+          "returned": [
+            "alpha-bytes"
+          ],
+          "expected": [
+            "alpha-bytes"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 2.25
+        },
+        {
+          "case": "scene-only",
+          "returned": [
+            "alpha-rollback"
+          ],
+          "expected": [
+            "alpha-rollback"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 0.8
+        },
+        {
+          "case": "budget",
+          "returned": [
+            "alpha-budget"
+          ],
+          "expected": [
+            "alpha-budget"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 0.63
+        },
+        {
+          "case": "semantic-gap",
+          "returned": [],
+          "expected": [
+            "alpha-rollback"
+          ],
+          "relevant": 0,
+          "leaks": 0,
+          "reciprocalRank": 0,
+          "elapsedMs": 0.59
+        },
+        {
+          "case": "no-match",
+          "returned": [],
+          "expected": [],
+          "relevant": 0,
+          "leaks": 0,
+          "reciprocalRank": 0,
+          "elapsedMs": 0.5
+        }
+      ]
+    },
+    {
+      "retrieval": "like",
+      "mode": "unscoped-fixture-baseline",
+      "cases": 7,
+      "answerable": 6,
+      "recallAt3": 0.8333333333333334,
+      "mrrAt3": 0.5833333333333334,
+      "precisionOnReturned": 0.5555555555555556,
+      "scopeLeakRate": 0.4444444444444444,
+      "noMatchCorrect": true,
+      "details": [
+        {
+          "case": "english",
+          "returned": [
+            "beta-isolation",
+            "alpha-isolation"
+          ],
+          "expected": [
+            "alpha-isolation"
+          ],
+          "relevant": 1,
+          "leaks": 1,
+          "reciprocalRank": 0.5,
+          "elapsedMs": 31.09
+        },
+        {
+          "case": "other-owner",
+          "returned": [
+            "beta-isolation",
+            "alpha-isolation"
+          ],
+          "expected": [
+            "beta-isolation"
+          ],
+          "relevant": 1,
+          "leaks": 1,
+          "reciprocalRank": 1,
+          "elapsedMs": 0.63
+        },
+        {
+          "case": "chinese",
+          "returned": [
+            "beta-bytes",
+            "alpha-bytes"
+          ],
+          "expected": [
+            "alpha-bytes"
+          ],
+          "relevant": 1,
+          "leaks": 1,
+          "reciprocalRank": 0.5,
+          "elapsedMs": 1.51
+        },
+        {
+          "case": "scene-only",
+          "returned": [
+            "beta-rollback",
+            "alpha-rollback"
+          ],
+          "expected": [
+            "alpha-rollback"
+          ],
+          "relevant": 1,
+          "leaks": 1,
+          "reciprocalRank": 0.5,
+          "elapsedMs": 0.62
+        },
+        {
+          "case": "budget",
+          "returned": [
+            "alpha-budget"
+          ],
+          "expected": [
+            "alpha-budget"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 0.63
+        },
+        {
+          "case": "semantic-gap",
+          "returned": [],
+          "expected": [
+            "alpha-rollback"
+          ],
+          "relevant": 0,
+          "leaks": 0,
+          "reciprocalRank": 0,
+          "elapsedMs": 0.48
+        },
+        {
+          "case": "no-match",
+          "returned": [],
+          "expected": [],
+          "relevant": 0,
+          "leaks": 0,
+          "reciprocalRank": 0,
+          "elapsedMs": 0.56
+        }
+      ]
+    },
+    {
+      "retrieval": "like",
+      "mode": "scoped",
+      "cases": 7,
+      "answerable": 6,
+      "recallAt3": 0.8333333333333334,
+      "mrrAt3": 0.8333333333333334,
+      "precisionOnReturned": 1,
+      "scopeLeakRate": 0,
+      "noMatchCorrect": true,
+      "details": [
+        {
+          "case": "english",
+          "returned": [
+            "alpha-isolation"
+          ],
+          "expected": [
+            "alpha-isolation"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 29.93
+        },
+        {
+          "case": "other-owner",
+          "returned": [
+            "beta-isolation"
+          ],
+          "expected": [
+            "beta-isolation"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 29.86
+        },
+        {
+          "case": "chinese",
+          "returned": [
+            "alpha-bytes"
+          ],
+          "expected": [
+            "alpha-bytes"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 1.55
+        },
+        {
+          "case": "scene-only",
+          "returned": [
+            "alpha-rollback"
+          ],
+          "expected": [
+            "alpha-rollback"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 0.61
+        },
+        {
+          "case": "budget",
+          "returned": [
+            "alpha-budget"
+          ],
+          "expected": [
+            "alpha-budget"
+          ],
+          "relevant": 1,
+          "leaks": 0,
+          "reciprocalRank": 1,
+          "elapsedMs": 0.51
+        },
+        {
+          "case": "semantic-gap",
+          "returned": [],
+          "expected": [
+            "alpha-rollback"
+          ],
+          "relevant": 0,
+          "leaks": 0,
+          "reciprocalRank": 0,
+          "elapsedMs": 0.46
+        },
+        {
+          "case": "no-match",
+          "returned": [],
+          "expected": [],
+          "relevant": 0,
+          "leaks": 0,
+          "reciprocalRank": 0,
+          "elapsedMs": 0.37
+        }
+      ]
+    }
+  ]
+}

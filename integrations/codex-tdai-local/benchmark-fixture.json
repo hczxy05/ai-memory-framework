@@ -1,0 +1,110 @@
+{
+  "description": "Synthetic keyword retrieval regression corpus; not a production or semantic model evaluation.",
+  "records": [
+    {
+      "id": "alpha-isolation",
+      "scope": "alpha",
+      "content": "vector isolation requires exact project identity",
+      "scene": "storage security",
+      "priority": 60
+    },
+    {
+      "id": "beta-isolation",
+      "scope": "beta",
+      "content": "vector isolation requires exact project identity",
+      "scene": "storage security",
+      "priority": 100
+    },
+    {
+      "id": "alpha-bytes",
+      "scope": "alpha",
+      "content": "文件 读取 上限 65536 字节",
+      "scene": "读取 安全",
+      "priority": 60
+    },
+    {
+      "id": "beta-bytes",
+      "scope": "beta",
+      "content": "文件 读取 上限 1048576 字节",
+      "scene": "读取 安全",
+      "priority": 100
+    },
+    {
+      "id": "alpha-rollback",
+      "scope": "alpha",
+      "content": "Keep the previous verified revision",
+      "scene": "release rollback plan",
+      "priority": 60
+    },
+    {
+      "id": "beta-rollback",
+      "scope": "beta",
+      "content": "release rollback plan for beta",
+      "scene": "release rollback",
+      "priority": 100
+    },
+    {
+      "id": "alpha-budget",
+      "scope": "alpha",
+      "content": "DeepSeek test request quota is capped at twelve calls",
+      "scene": "benchmark budget",
+      "priority": 60
+    }
+  ],
+  "queries": [
+    {
+      "id": "english",
+      "scope": "alpha",
+      "query": "vector isolation",
+      "relevant": [
+        "alpha-isolation"
+      ]
+    },
+    {
+      "id": "other-owner",
+      "scope": "beta",
+      "query": "vector isolation",
+      "relevant": [
+        "beta-isolation"
+      ]
+    },
+    {
+      "id": "chinese",
+      "scope": "alpha",
+      "query": "文件 上限",
+      "relevant": [
+        "alpha-bytes"
+      ]
+    },
+    {
+      "id": "scene-only",
+      "scope": "alpha",
+      "query": "release rollback",
+      "relevant": [
+        "alpha-rollback"
+      ]
+    },
+    {
+      "id": "budget",
+      "scope": "alpha",
+      "query": "request quota",
+      "relevant": [
+        "alpha-budget"
+      ]
+    },
+    {
+      "id": "semantic-gap",
+      "scope": "alpha",
+      "query": "restore deployment",
+      "relevant": [
+        "alpha-rollback"
+      ]
+    },
+    {
+      "id": "no-match",
+      "scope": "alpha",
+      "query": "zznonexistent",
+      "relevant": []
+    }
+  ]
+}

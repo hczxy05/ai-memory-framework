@@ -50,4 +50,4 @@ Avoided:
 
 ## Project Navigation
 
-See memory/projects.md for the complete project index.
+See `project/projects.md` for the complete project index (relative to the AI-Memory repository root).

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "filesystem": "dedicated tmpfs",
+  "fillBytes": 67047424,
+  "error": "ENOSPC",
+  "writeWhileFull": {
+    "isError": true,
+    "content": [
+      {
+        "type": "text",
+        "text": "database or disk is full"
+      }
+    ]
+  },
+  "writeAfterSpaceRecovered": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Stored approved TDAI experience: m_codex_1792178532487_a01cffb7"
+      }
+    ],
+    "structuredContent": {
+      "stored": true,
+      "duplicate": false,
+      "id": "m_codex_1792178532487_a01cffb7",
+      "source": "tdai-local-l1",
+      "authority": "historical-evidence"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "syntheticOnly": true,
+  "automatedApprovalIsSimulation": true,
+  "agentUid": 1000,
+  "operatorUid": 1001,
+  "agentDenials": [
+    {
+      "action": "read approval key",
+      "denied": true,
+      "code": "EACCES"
+    },
+    {
+      "action": "write authoritative document",
+      "denied": true,
+      "code": "EACCES"
+    },
+    {
+      "action": "replace protected executor",
+      "denied": true,
+      "code": "EACCES"
+    },
+    {
+      "action": "replace operator directory",
+      "denied": true,
+      "code": "EACCES"
+    },
+    {
+      "action": "forge approval using caller flags",
+      "denied": true
+    }
+  ],
+  "applied": {
+    "promoted": true,
+    "digest": "a47cfd09f7d8cf39cdf2d48574ddcb613e5842431f338c7e27280455f046cfac",
+    "target": "LESSONS.md",
+    "sha256": "9373d493a8bfb5e8e2fe975868b200cd7c3a73f40bedd08d6d854a7fbbea2ce2"
+  },
+  "tamperedRejected": true,
+  "forgedRejected": true,
+  "replayRejected": true
+}

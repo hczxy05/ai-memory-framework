@@ -1,0 +1,11 @@
+{
+  "capture": {
+    "project": "alpha",
+    "l0": 2,
+    "l1": 0,
+    "cause": "Observed first wording produced L0=2/L1=0. A later confirmed engineering wording produced L1=1. Omission because of explicitly fictional wording is a hypothesis; no extractor rationale was verified."
+  },
+  "objectRead": {
+    "cause": "Initial probe seeded pipeline-root files, but native read_cos resolves the distinct cos-storage subdirectory. Corrected fixture uses the actual native backend root; no symlinks or vendor code patch."
+  }
+}

@@ -62,7 +62,7 @@ When multiple agents produce conflicting information, the authority system deter
 
 | Level | Source | Rule |
 |---|---|---|
-| 0 | User Instruction | Highest — overrides everything |
+| 0 | User Instruction | Highest information priority; operation approval is separate |
 | 1 | Agent Rules (`rules/`) | Governance, safety |
 | 2 | Project Memory | Current verified truth |
 | 3 | Personal Memory | User preferences |
@@ -92,7 +92,7 @@ Example (STM32 PWM bug):
 | Verified | "Modified to use CCER control — PWM works correctly" |
 | Authoritative | Written to `BUGS.md` as confirmed root cause |
 
-See `rules/memory-promotion.md` for full rules.
+See `rules/memory-promotion.md` for full rules and [Promotion Gate](integrations/promotion-gate/README.md) for optional executable enforcement.
 
 ## Repository Layout
 
@@ -192,6 +192,8 @@ OpenClaw users can copy `workspace-example/` and fill in identity, user, and too
 
 ## Security
 
+This is a memory governance policy framework with a local MCP adapter. The adapter enforces scoped SQLite access, bounded file reads, and a host-controlled write switch. The optional [operator Promotion Gate](integrations/promotion-gate/README.md) validates signed approval and atomically appends reviewed candidates. Human fact review and OS isolation remain host responsibilities.
+
 - Never store passwords, API keys, tokens, or private keys in memory.
 - Never commit runtime databases, raw conversations, or full tool configurations to this repo.
 - Deployment, destructive operations, financial actions, and physical control require explicit authorization first.
@@ -203,3 +205,9 @@ OpenClaw users can copy `workspace-example/` and fill in identity, user, and too
 ## Credits
 
 Built through iterative human-AI collaboration across real engineering workflows.
+
+## Validation evidence
+
+The [2026-10-16 comprehensive report](test-results/2026-10-16-comprehensive/README.md) includes full synthetic test data, failures, costs and reproducible scripts. It reports the limits of keyword retrieval, native-plugin storage isolation and model policy guidance.
+
+The [completed follow-up report](test-results/2026-10-16-followup/README.md) adds isolated two-project deployment, 24 frozen free-answer scenarios and two completed 72-hour observed endurance runs with real L0/L1 checkpoints. Both answer conditions scored equally; no accuracy uplift is established. Full evidence includes restart memory pressure and the source line-ending provenance.

@@ -1,0 +1,12 @@
+{
+  "own": "SYNTHALPHA7X",
+  "peer": "SYNTHBETA9Z",
+  "checks": [
+    "tdai_memory_search own positive / peer negative",
+    "tdai_conversation_search own positive / peer negative",
+    "persona.md isolated",
+    "scene_blocks/SYNTHALPHA7X.md isolated",
+    "peer scene absent"
+  ],
+  "passed": true
+}

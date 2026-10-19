@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "own": "SYNTHBETA9Z",
+  "peer": "SYNTHALPHA7X",
+  "mode": "--smoke",
+  "targetSeconds": 120,
+  "started": "2026-10-16T19:26:02.241Z",
+  "observedSeconds": 120.49361967700001,
+  "cycles": 16,
+  "mcpRequests": 64,
+  "nativeChecks": 80,
+  "faults": 4,
+  "paidCheckpoints": [],
+  "events": [
+    {
+      "time": "2026-10-16T19:26:35.349Z",
+      "type": "start-or-resume",
+      "sourceSha256": "46fc3c736105f1b08b6241dc862885d23d99e8c9b0b155a888fca2483253015d"
+    },
+    {
+      "time": "2026-10-16T19:27:40.956Z",
+      "type": "forced-gateway-kill-and-mcp-restart",
+      "retainedL1": 1
+    },
+    {
+      "time": "2026-10-16T19:28:45.641Z",
+      "type": "forced-gateway-kill-and-mcp-restart",
+      "retainedL1": 1
+    },
+    {
+      "time": "2026-10-16T19:29:47.945Z",
+      "type": "forced-gateway-kill-and-mcp-restart",
+      "retainedL1": 1
+    },
+    {
+      "time": "2026-10-16T19:30:52.650Z",
+      "type": "forced-gateway-kill-and-mcp-restart",
+      "retainedL1": 1
+    },
+    {
+      "time": "2026-10-16T19:30:52.652Z",
+      "type": "completed"
+    }
+  ],
+  "samples": [
+    {
+      "time": "2026-10-16T19:26:36.957Z",
+      "observedSeconds": 1.6070248490000012,
+      "memoryCurrent": "1610420224",
+      "memoryPeak": "1610616832",
+      "memoryEvents": "low 0\nhigh 0\nmax 843\noom 0\noom_kill 0\noom_group_kill 0"
+    }
+  ],
+  "complete": true,
+  "failed": false,
+  "sourceSha256": "46fc3c736105f1b08b6241dc862885d23d99e8c9b0b155a888fca2483253015d",
+  "authoritySha256": "237339d8ff6949bb5a52beb1688caa95f6c95ccf60e2b0d41b7e618fcc447e28",
+  "updated": "2026-10-16T19:30:54.099Z",
+  "passed": true,
+  "completed": "2026-10-16T19:30:52.651Z"
+}

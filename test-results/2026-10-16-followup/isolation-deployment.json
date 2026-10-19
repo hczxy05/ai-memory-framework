@@ -1,0 +1,58 @@
+{
+  "alpha": {
+    "image": "sha256:2396c4e85208864d3ee60ad78fe194757681a56706ec117b90d8304eabc19bc8",
+    "readonlyRootfs": true,
+    "user": "1000:1000",
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "ai-memory-followup-alpha_state",
+        "Destination": "/home/node/.openclaw",
+        "RW": true
+      },
+      {
+        "Type": "volume",
+        "Name": "ai-memory-followup-alpha_workspace",
+        "Destination": "/home/node/workspace",
+        "RW": true
+      },
+      {
+        "Type": "volume",
+        "Name": "ai-memory-followup-alpha_config",
+        "Destination": "/home/node/config",
+        "RW": false
+      }
+    ],
+    "portBindings": {},
+    "memoryLimit": 1610612736,
+    "cpus": 1000000000
+  },
+  "beta": {
+    "image": "sha256:2396c4e85208864d3ee60ad78fe194757681a56706ec117b90d8304eabc19bc8",
+    "readonlyRootfs": true,
+    "user": "1000:1000",
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "ai-memory-followup-beta_workspace",
+        "Destination": "/home/node/workspace",
+        "RW": true
+      },
+      {
+        "Type": "volume",
+        "Name": "ai-memory-followup-beta_config",
+        "Destination": "/home/node/config",
+        "RW": false
+      },
+      {
+        "Type": "volume",
+        "Name": "ai-memory-followup-beta_state",
+        "Destination": "/home/node/.openclaw",
+        "RW": true
+      }
+    ],
+    "portBindings": {},
+    "memoryLimit": 1610612736,
+    "cpus": 1000000000
+  }
+}

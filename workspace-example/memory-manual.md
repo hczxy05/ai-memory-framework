@@ -30,7 +30,7 @@
 
 | Level | Source | Rule |
 |---|---|---|
-| 0 | User Instruction | Highest — overrides everything |
+| 0 | User Instruction | Highest information priority; operation approval is separate |
 | 1 | Agent Rules | Governance, safety |
 | 2 | Project Memory | Current verified truth |
 | 3 | Personal Memory | User preferences |

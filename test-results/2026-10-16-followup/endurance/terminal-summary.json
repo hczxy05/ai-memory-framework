@@ -1,0 +1,268 @@
+{
+  "schema": 1,
+  "archivedAt": "2026-10-19T20:38:15.638Z",
+  "projects": {
+    "alpha": {
+      "mode": "--run",
+      "targetSeconds": 259200,
+      "observedSeconds": 259207.31043787827,
+      "complete": true,
+      "passed": true,
+      "failed": false,
+      "started": "2026-10-16T19:31:24.940Z",
+      "updated": "2026-10-19T19:38:55.004Z",
+      "cycles": 25921,
+      "mcpRequests": 103684,
+      "nativeChecks": 129605,
+      "faults": 11,
+      "paidCheckpoints": [
+        {
+          "day": 1,
+          "started": "2026-10-17T19:33:46.425Z",
+          "complete": true,
+          "tag": "SYNTHALPHA7XDAY1",
+          "l0": 6,
+          "l1": 2
+        },
+        {
+          "day": 2,
+          "started": "2026-10-18T19:36:14.700Z",
+          "complete": true,
+          "tag": "SYNTHALPHA7XDAY2",
+          "l0": 8,
+          "l1": 3
+        }
+      ],
+      "authoritySha256": "237339d8ff6949bb5a52beb1688caa95f6c95ccf60e2b0d41b7e618fcc447e28",
+      "rawSourceSha256": "97ae01322f00c4585c850b53d7370be6e92744da89593ab8bb861e44c83f5fee",
+      "lfSourceSha256": "6d6cba01a48a71f775ecaa8c58d32eafdbff06654280f0cee31f98d1e0099431",
+      "events": [
+        {
+          "time": "2026-10-16T19:31:56.122Z",
+          "type": "start-or-resume",
+          "sourceSha256": "97ae01322f00c4585c850b53d7370be6e92744da89593ab8bb861e44c83f5fee"
+        },
+        {
+          "time": "2026-10-17T01:32:39.673Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 1,
+          "recoverySeconds": 34.780653729997574
+        },
+        {
+          "time": "2026-10-17T07:33:26.565Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 1,
+          "recoverySeconds": 35.59997544000298
+        },
+        {
+          "time": "2026-10-17T13:34:08.340Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 1,
+          "recoverySeconds": 33.881083136998114
+        },
+        {
+          "time": "2026-10-17T19:33:57.938Z",
+          "type": "real-model-checkpoint",
+          "day": 1
+        },
+        {
+          "time": "2026-10-17T19:34:44.843Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 2,
+          "recoverySeconds": 36.811644307002425
+        },
+        {
+          "time": "2026-10-18T01:35:37.504Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 2,
+          "recoverySeconds": 43.84459361499548
+        },
+        {
+          "time": "2026-10-18T07:36:24.987Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 2,
+          "recoverySeconds": 37.04757061600685
+        },
+        {
+          "time": "2026-10-18T13:37:06.641Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 2,
+          "recoverySeconds": 33.544500424981116
+        },
+        {
+          "time": "2026-10-18T19:36:25.330Z",
+          "type": "real-model-checkpoint",
+          "day": 2
+        },
+        {
+          "time": "2026-10-18T19:37:41.313Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 3,
+          "recoverySeconds": 35.886114553004504
+        },
+        {
+          "time": "2026-10-19T01:38:34.888Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 3,
+          "recoverySeconds": 44.84744263800979
+        },
+        {
+          "time": "2026-10-19T07:39:21.758Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 3,
+          "recoverySeconds": 35.297483381986616
+        },
+        {
+          "time": "2026-10-19T13:40:03.658Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 3,
+          "recoverySeconds": 33.950331665992735
+        },
+        {
+          "time": "2026-10-19T19:38:51.725Z",
+          "type": "completed"
+        }
+      ],
+      "gaps": [],
+      "samples": 1297,
+      "lastSample": {
+        "time": "2026-10-19T19:38:41.783Z",
+        "observedSeconds": 259207.31043787827,
+        "memoryCurrent": "1242537984",
+        "memoryPeak": "2147487744",
+        "memoryEvents": "low 0\nhigh 0\nmax 13668\noom 0\noom_kill 0\noom_group_kill 0"
+      }
+    },
+    "beta": {
+      "mode": "--run",
+      "targetSeconds": 259200,
+      "observedSeconds": 259207.2282196263,
+      "complete": true,
+      "passed": true,
+      "failed": false,
+      "started": "2026-10-16T19:31:27.857Z",
+      "updated": "2026-10-19T19:38:54.931Z",
+      "cycles": 25921,
+      "mcpRequests": 103684,
+      "nativeChecks": 129605,
+      "faults": 11,
+      "paidCheckpoints": [
+        {
+          "day": 1,
+          "started": "2026-10-17T19:33:46.484Z",
+          "complete": true,
+          "tag": "SYNTHBETA9ZDAY1",
+          "l0": 4,
+          "l1": 2
+        },
+        {
+          "day": 2,
+          "started": "2026-10-18T19:36:14.699Z",
+          "complete": true,
+          "tag": "SYNTHBETA9ZDAY2",
+          "l0": 6,
+          "l1": 3
+        }
+      ],
+      "authoritySha256": "237339d8ff6949bb5a52beb1688caa95f6c95ccf60e2b0d41b7e618fcc447e28",
+      "rawSourceSha256": "97ae01322f00c4585c850b53d7370be6e92744da89593ab8bb861e44c83f5fee",
+      "lfSourceSha256": "6d6cba01a48a71f775ecaa8c58d32eafdbff06654280f0cee31f98d1e0099431",
+      "events": [
+        {
+          "time": "2026-10-16T19:31:57.697Z",
+          "type": "start-or-resume",
+          "sourceSha256": "97ae01322f00c4585c850b53d7370be6e92744da89593ab8bb861e44c83f5fee"
+        },
+        {
+          "time": "2026-10-17T01:32:39.639Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 1,
+          "recoverySeconds": 33.33115545300022
+        },
+        {
+          "time": "2026-10-17T07:33:26.546Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 1,
+          "recoverySeconds": 35.58295157999545
+        },
+        {
+          "time": "2026-10-17T13:34:08.584Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 1,
+          "recoverySeconds": 34.10276679699868
+        },
+        {
+          "time": "2026-10-17T19:33:57.410Z",
+          "type": "real-model-checkpoint",
+          "day": 1
+        },
+        {
+          "time": "2026-10-17T19:34:45.196Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 2,
+          "recoverySeconds": 37.691858109012244
+        },
+        {
+          "time": "2026-10-18T01:35:37.364Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 2,
+          "recoverySeconds": 43.38353552499414
+        },
+        {
+          "time": "2026-10-18T07:36:25.521Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 2,
+          "recoverySeconds": 37.58284141100943
+        },
+        {
+          "time": "2026-10-18T13:37:06.734Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 2,
+          "recoverySeconds": 33.01098931801319
+        },
+        {
+          "time": "2026-10-18T19:36:25.688Z",
+          "type": "real-model-checkpoint",
+          "day": 2
+        },
+        {
+          "time": "2026-10-18T19:37:40.779Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 3,
+          "recoverySeconds": 34.9940448770225
+        },
+        {
+          "time": "2026-10-19T01:38:34.748Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 3,
+          "recoverySeconds": 45.01195473599434
+        },
+        {
+          "time": "2026-10-19T07:39:21.650Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 3,
+          "recoverySeconds": 35.35629093298316
+        },
+        {
+          "time": "2026-10-19T13:40:03.720Z",
+          "type": "forced-gateway-kill-and-mcp-restart",
+          "retainedL1": 3,
+          "recoverySeconds": 34.02849643999338
+        },
+        {
+          "time": "2026-10-19T19:38:51.700Z",
+          "type": "completed"
+        }
+      ],
+      "gaps": [],
+      "samples": 1297,
+      "lastSample": {
+        "time": "2026-10-19T19:38:41.757Z",
+        "observedSeconds": 259207.2282196263,
+        "memoryCurrent": "1265532928",
+        "memoryPeak": "2147487744",
+        "memoryEvents": "low 0\nhigh 0\nmax 11987\noom 0\noom_kill 0\noom_group_kill 0"
+      }
+    }
+  }
+}

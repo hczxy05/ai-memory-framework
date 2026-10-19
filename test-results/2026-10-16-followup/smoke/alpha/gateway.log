@@ -1,0 +1,382 @@
+[gateway] startup phase: entry.run-main-import starting total=113.9ms
+[gateway] startup phase: entry.run-main-import 83.8ms total=197.7ms start=113.9ms
+[gateway] startup phase: cli.main.gateway-run-select-environment starting total=683.6ms
+[gateway] startup phase: cli.main.gateway-run-select-environment 303.9ms total=987.5ms start=683.6ms
+[gateway] startup phase: cli.main.gateway-run-imports starting total=1002.7ms
+[gateway] startup phase: cli.main.gateway-run-imports 4.0ms total=1006.7ms start=1002.7ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap starting total=1012.2ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap 3.3ms total=1015.5ms start=1012.2ms
+[gateway] startup phase: cli.main.gateway-run-bootstrap starting total=1015.6ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=1096.5ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 817.0ms total=1913.5ms start=1096.5ms agentCount=1 schemaProcessCount=1 schemaInspectionCount=1 schemaSnapshotCount=0
+[gateway] startup phase: cli.main.gateway-run-bootstrap 3678.4ms total=4694.0ms start=1015.6ms
+2026-10-16T19:25:59.944+00:00 [gateway] loading configuration…
+2026-10-16T19:26:00.270+00:00 [gateway] resolving authentication…
+2026-10-16T19:26:00.276+00:00 [gateway] starting...
+2026-10-16T19:26:00.864+00:00 [gateway] shutdown budget at startup: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T19:26:01.096+00:00 [gateway] spawn broker ready pid=131
+[gateway] startup phase: gateway.server-start-import starting total=6107.3ms
+[gateway] startup phase: gateway.server-start-import 502.8ms total=6610.1ms start=6107.3ms
+2026-10-16T19:26:01.684+00:00 [gateway] startup phase: process.bootstrap 6692.9ms total=6692.9ms
+2026-10-16T19:26:01.973+00:00 [gateway] startup phase: state.schema-preflight starting total=6983.0ms
+2026-10-16T19:26:02.215+00:00 [gateway] startup phase: state.schema-preflight 241.6ms total=7224.6ms
+2026-10-16T19:26:02.265+00:00 [gateway] seeded gateway.controlUi.allowedOrigins ["http://localhost:18789","http://127.0.0.1:18789"] for bind=lan (required since v2026.2.26; see issue #29385). Applied for this runtime without writing config; add other origins to gateway.controlUi.allowedOrigins if needed.
+2026-10-16T19:26:02.268+00:00 [gateway] startup phase: config.auth starting total=7278.0ms
+2026-10-16T19:26:02.472+00:00 [gateway] startup phase: config.auth 203.8ms total=7481.8ms
+2026-10-16T19:26:03.283+00:00 [gateway] startup phase: startup.maintenance starting total=8292.8ms
+[state/agent-db] agent database clean-close receipt: written
+2026-10-16T19:26:04.392+00:00 [session-sqlite] reclamation worker retired reason=exclusive-handoff kind=canonical-validation ageMs=930 opsServed=2
+2026-10-16T19:26:04.761+00:00 [gateway] startup phase: startup.maintenance 1477.0ms total=9769.8ms
+2026-10-16T19:26:05.272+00:00 [gateway] starting HTTP server...
+2026-10-16T19:26:05.475+00:00 [health-monitor] started (interval: 300s, startup-grace: 60s, channel-connect-grace: 120s)
+2026-10-16T19:26:07.021+00:00 [gateway] ⚠️  Gateway is binding to a non-loopback address. Ensure authentication is configured before exposing to public networks.
+2026-10-16T19:26:07.078+00:00 [gateway] startup phase: http.bound 0.0ms total=12088.0ms
+2026-10-16T19:26:27.580+00:00 [plugins] [memory-tdai] Registered tool: tdai_read_cos (storage backend resolved lazily on first call)
+2026-10-16T19:26:27.600+00:00 [gateway] agent model: lab/deepseek-flash (thinking=off, fast=off)
+2026-10-16T19:26:27.601+00:00 [gateway] http server listening (1 plugin: memory-tencentdb; 26.7s)
+2026-10-16T19:26:27.601+00:00 [gateway] log file: /tmp/openclaw/openclaw-2026-10-16.log
+2026-10-16T19:26:27.602+00:00 [gateway] Older local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; legacy direct writers remain supported.
+2026-10-16T19:26:27.603+00:00 [gateway] native runtime: {"pid":15,"platform":"linux","arch":"x64","node":"24.22.0","v8":"13.6.233.17-node.57","uv":"1.52.1","openssl":"3.5.8","sqlite":"3.53.4","sqliteClose":{"explicitSqliteCloseReleasesNativeResources":true,"decided":true,"reason":"Node runtime"}}
+2026-10-16T19:26:27.603+00:00 [gateway] worker startup state: {"workerCount":8,"workerLifecycle":[{"script":"other","started":1,"retired":[{"reason":"exit","count":1}]},{"script":"sqlite-store.worker.js","started":1,"retired":[]},{"script":"gateway-state-owner-heartbeat.worker.js","started":2,"retired":[{"reason":"exit","count":1}]},{"script":"openclaw-state-lease-heartbeat.worker.js","started":1,"retired":[]},{"script":"worker-native-lifecycle.worker.js","started":1,"retired":[]},{"script":"openclaw-state-read.worker.js","started":2,"retired":[]},{"script":"session-accessor.sqlite-archive.worker.js","started":1,"retired":[{"reason":"closed","count":1}]},{"script":"session-transcript.worker.js","started":2,"retired":[]}],"compute":{"limit":1,"active":0,"waitingPools":0,"pendingTasks":0,"pendingBytes":0}}
+2026-10-16T19:26:27.977+00:00 [gateway] starting channels and sidecars...
+2026-10-16T19:26:29.881+00:00 [plugins] [memory-tdai] read_cos: no COS credentials, using local backend (/home/node/.openclaw/memory-tdai/cos-storage). Place cos.env in /home/node/.openclaw/memory-tdai to enable COS.
+2026-10-16T19:26:29.882+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:26:29.882Z
+2026-10-16T19:26:29.887+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:26:30.070+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:26:30.069Z
+2026-10-16T19:26:30.071+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:26:30.167+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:26:30.167Z
+2026-10-16T19:26:30.168+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:26:30.498+00:00 [gateway] startup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=skipped (no-handlers-loaded); gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)
+2026-10-16T19:26:30.500+00:00 [gateway] ready
+2026-10-16T19:26:30.507+00:00 [gateway] startup phase: ready 4.2ms total=35518.0ms
+2026-10-16T19:26:30.577+00:00 [skill-workshop] scheduled skill collection reviews are disabled because the cron scheduler is disabled; enable cron and restart the gateway
+2026-10-16T19:26:30.578+00:00 [heartbeat] disabled
+2026-10-16T19:26:30.688+00:00 [gateway] failed to promote config last-known-good backup: FsSafeError: read-only filesystem (EROFS)
+2026-10-16T19:26:30.996+00:00 [state/database-verify] database integrity verification passed
+2026-10-16T19:26:31.296+00:00 [gateway] remote model catalog refresh failed
+2026-10-16T19:26:35.431+00:00 [diagnostics/memory] memory pressure: level=warning reason=rss_threshold rss=1.02 GiB heap=279.4 MiB threshold=768 MiB thresholdRatio=135.6% rssBytes=1092210688 heapUsedBytes=292959840 externalBytes=24233795 arrayBuffersBytes=14361272 workerHeapTotalBytes=373547008 workerHeapUsedBytes=160824696 workerExternalBytes=45455803 workerArrayBuffersBytes=2086834 workerCount=9 workerHeapSampledCount=6 workerArrayBuffersSampledCount=6 workerMemoryCoverage=partial workerMemoryScope=direct workerMemoryMissing=[{"script":"sqlite-store.worker.js","threadId":3,"reason":"pending"},{"script":"gateway-state-owner-heartbeat.worker.js","threadId":5,"reason":"pending"},{"script":"openclaw-state-lease-heartbeat.worker.js","threadId":6,"reason":"pending"}] workerHeaps=[{"script":"openclaw-state-read.worker.js","threadId":8,"heapUsed":40996384,"heapTotal":103215104,"external":12435442,"arrayBuffers":342475,"sampleAgeMs":32169},{"script":"openclaw-state-read.worker.js","threadId":11,"heapUsed":40967720,"heapTotal":102690816,"external":12435442,"arrayBuffers":342475,"sampleAgeMs":29227},{"script":"session-transcript.worker.js","threadId":10,"heapUsed":23869752,"heapTotal":52805632,"external":6326864,"arrayBuffers":421439,"sampleAgeMs":30806},{"script":"session-transcript.worker.js","threadId":13,"heapUsed":23804672,"heapTotal":52019200,"external":6326864,"arrayBuffers":486975,"sampleAgeMs":5858},{"script":"session-transcript.worker.js","threadId":12,"heapUsed":23799488,"heapTotal":52543488,"external":4525759,"arrayBuffers":421439,"sampleAgeMs":28766}] thresholdBytes=805306368 workerLimitScope=js-heap-only; external/ArrayBuffers are not capped; nested workers are not included. nextStep=run openclaw gateway status --deep and openclaw gateway diagnostics export; restart gateway if pressure persists
+2026-10-16T19:26:38.755+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:26:38.754Z
+2026-10-16T19:26:38.756+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:26:38.770+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:26:38.770Z
+2026-10-16T19:26:38.771+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:26:38.785+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:26:38.784Z
+2026-10-16T19:26:38.786+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:26:48.761+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:26:48.760Z
+2026-10-16T19:26:48.762+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:26:48.777+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:26:48.776Z
+2026-10-16T19:26:48.782+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:26:48.797+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:26:48.796Z
+2026-10-16T19:26:48.798+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:26:58.772+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:26:58.770Z
+2026-10-16T19:26:58.773+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:26:58.789+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:26:58.788Z
+2026-10-16T19:26:58.791+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:26:58.806+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:26:58.805Z
+2026-10-16T19:26:58.807+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+[gateway] startup phase: entry.run-main-import starting total=130.6ms
+[gateway] startup phase: entry.run-main-import 84.0ms total=214.6ms start=130.6ms
+[gateway] startup phase: cli.main.gateway-run-select-environment starting total=731.9ms
+[gateway] startup phase: cli.main.gateway-run-select-environment 325.6ms total=1057.5ms start=731.9ms
+[gateway] startup phase: cli.main.gateway-run-imports starting total=1081.4ms
+[gateway] startup phase: cli.main.gateway-run-imports 5.8ms total=1087.2ms start=1081.4ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap starting total=1094.6ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap 19.5ms total=1114.2ms start=1094.6ms
+[gateway] startup phase: cli.main.gateway-run-bootstrap starting total=1114.2ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=1231.9ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 896.7ms total=2128.5ms start=1231.9ms agentCount=1 schemaProcessCount=1 schemaInspectionCount=1 schemaSnapshotCount=0
+[gateway] startup phase: cli.main.gateway-run-bootstrap 4948.3ms total=6062.5ms start=1114.2ms
+2026-10-16T19:27:05.258+00:00 [gateway] loading configuration…
+2026-10-16T19:27:05.500+00:00 [gateway] resolving authentication…
+2026-10-16T19:27:05.503+00:00 [gateway] starting...
+2026-10-16T19:27:06.128+00:00 [gateway] shutdown budget at startup: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T19:27:06.374+00:00 [gateway] spawn broker ready pid=388
+[gateway] startup phase: gateway.server-start-import starting total=7429.7ms
+[gateway] startup phase: gateway.server-start-import 466.8ms total=7896.5ms start=7429.7ms
+2026-10-16T19:27:06.922+00:00 [gateway] startup phase: process.bootstrap 7975.5ms total=7975.5ms
+2026-10-16T19:27:07.206+00:00 [gateway] startup phase: state.schema-preflight starting total=8259.8ms
+2026-10-16T19:27:07.425+00:00 [gateway] startup phase: state.schema-preflight 218.8ms total=8478.6ms
+2026-10-16T19:27:07.501+00:00 [gateway] seeded gateway.controlUi.allowedOrigins ["http://localhost:18789","http://127.0.0.1:18789"] for bind=lan (required since v2026.2.26; see issue #29385). Applied for this runtime without writing config; add other origins to gateway.controlUi.allowedOrigins if needed.
+2026-10-16T19:27:07.504+00:00 [gateway] startup phase: config.auth starting total=8558.2ms
+2026-10-16T19:27:07.707+00:00 [gateway] startup phase: config.auth 202.3ms total=8760.6ms
+2026-10-16T19:27:08.575+00:00 [gateway] startup phase: startup.maintenance starting total=9628.1ms
+2026-10-16T19:27:09.291+00:00 [gateway] startup phase: startup.maintenance 718.2ms total=10346.2ms
+2026-10-16T19:27:09.799+00:00 [gateway] starting HTTP server...
+2026-10-16T19:27:10.019+00:00 [health-monitor] started (interval: 300s, startup-grace: 60s, channel-connect-grace: 120s)
+2026-10-16T19:27:11.610+00:00 [gateway] ⚠️  Gateway is binding to a non-loopback address. Ensure authentication is configured before exposing to public networks.
+2026-10-16T19:27:11.626+00:00 [gateway] startup phase: http.bound 0.0ms total=12681.4ms
+2026-10-16T19:27:32.125+00:00 [plugins] [memory-tdai] Registered tool: tdai_read_cos (storage backend resolved lazily on first call)
+2026-10-16T19:27:32.161+00:00 [gateway] agent model: lab/deepseek-flash (thinking=off, fast=off)
+2026-10-16T19:27:32.162+00:00 [gateway] http server listening (1 plugin: memory-tencentdb; 26.0s)
+2026-10-16T19:27:32.162+00:00 [gateway] log file: /tmp/openclaw/openclaw-2026-10-16.log
+2026-10-16T19:27:32.162+00:00 [gateway] Older local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; legacy direct writers remain supported.
+2026-10-16T19:27:32.163+00:00 [gateway] native runtime: {"pid":273,"platform":"linux","arch":"x64","node":"24.22.0","v8":"13.6.233.17-node.57","uv":"1.52.1","openssl":"3.5.8","sqlite":"3.53.4","sqliteClose":{"explicitSqliteCloseReleasesNativeResources":true,"decided":true,"reason":"Node runtime"}}
+2026-10-16T19:27:32.164+00:00 [gateway] worker startup state: {"workerCount":8,"workerLifecycle":[{"script":"other","started":1,"retired":[{"reason":"exit","count":1}]},{"script":"sqlite-store.worker.js","started":1,"retired":[]},{"script":"gateway-state-owner-heartbeat.worker.js","started":2,"retired":[{"reason":"exit","count":1}]},{"script":"openclaw-state-lease-heartbeat.worker.js","started":1,"retired":[]},{"script":"worker-native-lifecycle.worker.js","started":1,"retired":[]},{"script":"openclaw-state-read.worker.js","started":2,"retired":[]},{"script":"session-transcript.worker.js","started":2,"retired":[]}],"compute":{"limit":1,"active":0,"waitingPools":0,"pendingTasks":0,"pendingBytes":0}}
+2026-10-16T19:27:32.378+00:00 [gateway] starting channels and sidecars...
+2026-10-16T19:27:34.359+00:00 [plugins] [memory-tdai] read_cos: no COS credentials, using local backend (/home/node/.openclaw/memory-tdai/cos-storage). Place cos.env in /home/node/.openclaw/memory-tdai to enable COS.
+2026-10-16T19:27:34.362+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:27:34.360Z
+2026-10-16T19:27:34.372+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:27:34.473+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:27:34.473Z
+2026-10-16T19:27:34.476+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:27:34.573+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:27:34.572Z
+2026-10-16T19:27:34.574+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:27:35.083+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:27:35.082Z
+2026-10-16T19:27:35.086+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:27:35.182+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:27:35.181Z
+2026-10-16T19:27:35.184+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:27:35.429+00:00 [gateway] startup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=skipped (no-handlers-loaded); gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)
+2026-10-16T19:27:35.431+00:00 [gateway] ready
+2026-10-16T19:27:35.460+00:00 [gateway] startup phase: ready 25.6ms total=36514.8ms
+2026-10-16T19:27:35.488+00:00 [skill-workshop] scheduled skill collection reviews are disabled because the cron scheduler is disabled; enable cron and restart the gateway
+2026-10-16T19:27:35.490+00:00 [heartbeat] disabled
+2026-10-16T19:27:35.567+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:27:35.566Z
+2026-10-16T19:27:35.568+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:27:35.575+00:00 [gateway] failed to promote config last-known-good backup: FsSafeError: read-only filesystem (EROFS)
+2026-10-16T19:27:35.980+00:00 [state/database-verify] database integrity verification passed
+2026-10-16T19:27:36.193+00:00 [gateway] remote model catalog refresh failed
+2026-10-16T19:27:39.981+00:00 [diagnostics/memory] memory pressure: level=warning reason=rss_threshold rss=1.01 GiB heap=274.4 MiB threshold=768 MiB thresholdRatio=135.2% rssBytes=1088434176 heapUsedBytes=287678976 externalBytes=24497230 arrayBuffersBytes=14292316 workerHeapTotalBytes=374857728 workerHeapUsedBytes=158789376 workerExternalBytes=43785770 workerArrayBuffersBytes=2152370 workerCount=9 workerHeapSampledCount=6 workerArrayBuffersSampledCount=6 workerMemoryCoverage=partial workerMemoryScope=direct workerMemoryMissing=[{"script":"sqlite-store.worker.js","threadId":3,"reason":"pending"},{"script":"gateway-state-owner-heartbeat.worker.js","threadId":5,"reason":"pending"},{"script":"openclaw-state-lease-heartbeat.worker.js","threadId":6,"reason":"pending"}] workerHeaps=[{"script":"openclaw-state-read.worker.js","threadId":10,"heapUsed":41007536,"heapTotal":103739392,"external":12435442,"arrayBuffers":342475,"sampleAgeMs":29189},{"script":"openclaw-state-read.worker.js","threadId":8,"heapUsed":39012224,"heapTotal":103215104,"external":12435442,"arrayBuffers":342475,"sampleAgeMs":31480},{"script":"session-transcript.worker.js","threadId":11,"heapUsed":23949200,"heapTotal":52281344,"external":6326864,"arrayBuffers":421439,"sampleAgeMs":28762},{"script":"session-transcript.worker.js","threadId":9,"heapUsed":23720216,"heapTotal":52543488,"external":4591295,"arrayBuffers":486975,"sampleAgeMs":30799},{"script":"session-transcript.worker.js","threadId":12,"heapUsed":23712184,"heapTotal":52805632,"external":4591295,"arrayBuffers":486975,"sampleAgeMs":6110}] thresholdBytes=805306368 workerLimitScope=js-heap-only; external/ArrayBuffers are not capped; nested workers are not included. nextStep=run openclaw gateway status --deep and openclaw gateway diagnostics export; restart gateway if pressure persists
+2026-10-16T19:27:44.648+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:27:44.647Z
+2026-10-16T19:27:44.649+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:27:44.662+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:27:44.662Z
+2026-10-16T19:27:44.663+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:27:44.676+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:27:44.675Z
+2026-10-16T19:27:44.677+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:27:54.646+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:27:54.645Z
+2026-10-16T19:27:54.647+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:27:54.667+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:27:54.666Z
+2026-10-16T19:27:54.669+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:27:54.768+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:27:54.768Z
+2026-10-16T19:27:54.769+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:28:04.662+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:28:04.661Z
+2026-10-16T19:28:04.664+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:28:04.680+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:28:04.680Z
+2026-10-16T19:28:04.681+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:28:04.695+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:28:04.694Z
+2026-10-16T19:28:04.695+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+[gateway] startup phase: entry.run-main-import starting total=93.8ms
+[gateway] startup phase: entry.run-main-import 91.0ms total=184.8ms start=93.8ms
+[gateway] startup phase: cli.main.gateway-run-select-environment starting total=621.7ms
+[gateway] startup phase: cli.main.gateway-run-select-environment 310.7ms total=932.4ms start=621.7ms
+[gateway] startup phase: cli.main.gateway-run-imports starting total=961.7ms
+[gateway] startup phase: cli.main.gateway-run-imports 4.8ms total=966.5ms start=961.7ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap starting total=972.3ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap 3.1ms total=975.5ms start=972.3ms
+[gateway] startup phase: cli.main.gateway-run-bootstrap starting total=975.6ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=1031.1ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 777.9ms total=1809.0ms start=1031.1ms agentCount=1 schemaProcessCount=1 schemaInspectionCount=1 schemaSnapshotCount=0
+[gateway] startup phase: cli.main.gateway-run-bootstrap 4659.8ms total=5635.3ms start=975.6ms
+2026-10-16T19:28:10.689+00:00 [gateway] loading configuration…
+2026-10-16T19:28:10.924+00:00 [gateway] resolving authentication…
+2026-10-16T19:28:10.954+00:00 [gateway] starting...
+2026-10-16T19:28:11.558+00:00 [gateway] shutdown budget at startup: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T19:28:11.667+00:00 [gateway] spawn broker ready pid=605
+[gateway] startup phase: gateway.server-start-import starting total=6876.0ms
+[gateway] startup phase: gateway.server-start-import 454.2ms total=7330.2ms start=6876.0ms
+2026-10-16T19:28:12.220+00:00 [gateway] startup phase: process.bootstrap 7425.3ms total=7425.3ms
+2026-10-16T19:28:12.716+00:00 [gateway] startup phase: state.schema-preflight starting total=7921.7ms
+2026-10-16T19:28:12.977+00:00 [gateway] startup phase: state.schema-preflight 260.3ms total=8181.9ms
+2026-10-16T19:28:13.022+00:00 [gateway] seeded gateway.controlUi.allowedOrigins ["http://localhost:18789","http://127.0.0.1:18789"] for bind=lan (required since v2026.2.26; see issue #29385). Applied for this runtime without writing config; add other origins to gateway.controlUi.allowedOrigins if needed.
+2026-10-16T19:28:13.025+00:00 [gateway] startup phase: config.auth starting total=8230.7ms
+2026-10-16T19:28:13.254+00:00 [gateway] startup phase: config.auth 228.5ms total=8459.2ms
+2026-10-16T19:28:13.972+00:00 [gateway] startup phase: startup.maintenance starting total=9177.1ms
+2026-10-16T19:28:14.385+00:00 [gateway] startup phase: startup.maintenance 413.8ms total=9590.9ms
+2026-10-16T19:28:14.850+00:00 [gateway] starting HTTP server...
+2026-10-16T19:28:15.021+00:00 [health-monitor] started (interval: 300s, startup-grace: 60s, channel-connect-grace: 120s)
+2026-10-16T19:28:16.611+00:00 [gateway] ⚠️  Gateway is binding to a non-loopback address. Ensure authentication is configured before exposing to public networks.
+2026-10-16T19:28:16.629+00:00 [gateway] startup phase: http.bound 0.0ms total=11834.3ms
+2026-10-16T19:28:36.580+00:00 [plugins] [memory-tdai] Registered tool: tdai_read_cos (storage backend resolved lazily on first call)
+2026-10-16T19:28:36.596+00:00 [gateway] agent model: lab/deepseek-flash (thinking=off, fast=off)
+2026-10-16T19:28:36.596+00:00 [gateway] http server listening (1 plugin: memory-tencentdb; 25.0s)
+2026-10-16T19:28:36.597+00:00 [gateway] log file: /tmp/openclaw/openclaw-2026-10-16.log
+2026-10-16T19:28:36.598+00:00 [gateway] Older local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; legacy direct writers remain supported.
+2026-10-16T19:28:36.598+00:00 [gateway] native runtime: {"pid":503,"platform":"linux","arch":"x64","node":"24.22.0","v8":"13.6.233.17-node.57","uv":"1.52.1","openssl":"3.5.8","sqlite":"3.53.4","sqliteClose":{"explicitSqliteCloseReleasesNativeResources":true,"decided":true,"reason":"Node runtime"}}
+2026-10-16T19:28:36.599+00:00 [gateway] worker startup state: {"workerCount":8,"workerLifecycle":[{"script":"other","started":1,"retired":[{"reason":"exit","count":1}]},{"script":"sqlite-store.worker.js","started":1,"retired":[]},{"script":"gateway-state-owner-heartbeat.worker.js","started":2,"retired":[{"reason":"exit","count":1}]},{"script":"openclaw-state-lease-heartbeat.worker.js","started":1,"retired":[]},{"script":"worker-native-lifecycle.worker.js","started":1,"retired":[]},{"script":"openclaw-state-read.worker.js","started":2,"retired":[]},{"script":"session-transcript.worker.js","started":2,"retired":[]}],"compute":{"limit":1,"active":0,"waitingPools":0,"pendingTasks":0,"pendingBytes":0}}
+2026-10-16T19:28:36.955+00:00 [gateway] starting channels and sidecars...
+2026-10-16T19:28:38.172+00:00 [plugins] [memory-tdai] read_cos: no COS credentials, using local backend (/home/node/.openclaw/memory-tdai/cos-storage). Place cos.env in /home/node/.openclaw/memory-tdai to enable COS.
+2026-10-16T19:28:38.172+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:28:38.172Z
+2026-10-16T19:28:38.182+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:28:38.263+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:28:38.263Z
+2026-10-16T19:28:38.266+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:28:38.355+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:28:38.354Z
+2026-10-16T19:28:38.356+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:28:38.858+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:28:38.857Z
+2026-10-16T19:28:38.861+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:28:38.877+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:28:38.876Z
+2026-10-16T19:28:38.879+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:28:38.961+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:28:38.960Z
+2026-10-16T19:28:38.961+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:28:39.171+00:00 [gateway] startup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=skipped (no-handlers-loaded); gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)
+2026-10-16T19:28:39.173+00:00 [gateway] ready
+2026-10-16T19:28:39.181+00:00 [gateway] startup phase: ready 5.1ms total=34386.9ms
+2026-10-16T19:28:39.201+00:00 [skill-workshop] scheduled skill collection reviews are disabled because the cron scheduler is disabled; enable cron and restart the gateway
+2026-10-16T19:28:39.202+00:00 [heartbeat] disabled
+2026-10-16T19:28:39.270+00:00 [gateway] failed to promote config last-known-good backup: FsSafeError: read-only filesystem (EROFS)
+2026-10-16T19:28:39.663+00:00 [state/database-verify] database integrity verification passed
+2026-10-16T19:28:39.878+00:00 [gateway] remote model catalog refresh failed
+2026-10-16T19:28:44.995+00:00 [diagnostics/memory] memory pressure: level=warning reason=rss_threshold rss=1.01 GiB heap=265.6 MiB threshold=1 GiB thresholdRatio=101% rssBytes=1083957248 heapUsedBytes=278471056 externalBytes=25327941 arrayBuffersBytes=13962571 workerHeapTotalBytes=366206976 workerHeapUsedBytes=171200800 workerExternalBytes=44142378 workerArrayBuffersBytes=2574514 workerCount=9 workerHeapSampledCount=6 workerArrayBuffersSampledCount=6 workerMemoryCoverage=partial workerMemoryScope=direct workerMemoryMissing=[{"script":"sqlite-store.worker.js","threadId":3,"reason":"pending"},{"script":"gateway-state-owner-heartbeat.worker.js","threadId":5,"reason":"pending"},{"script":"openclaw-state-lease-heartbeat.worker.js","threadId":6,"reason":"pending"}] workerHeaps=[{"script":"openclaw-state-read.worker.js","threadId":8,"heapUsed":50337392,"heapTotal":97447936,"external":12712050,"arrayBuffers":619083,"sampleAgeMs":31083},{"script":"openclaw-state-read.worker.js","threadId":10,"heapUsed":42188928,"heapTotal":101904384,"external":12646514,"arrayBuffers":553547,"sampleAgeMs":29235},{"script":"session-transcript.worker.js","threadId":12,"heapUsed":23730768,"heapTotal":52281344,"external":6326864,"arrayBuffers":486975,"sampleAgeMs":7118},{"script":"session-transcript.worker.js","threadId":11,"heapUsed":23911624,"heapTotal":52543488,"external":4525759,"arrayBuffers":421439,"sampleAgeMs":28801},{"script":"session-transcript.worker.js","threadId":9,"heapUsed":23659032,"heapTotal":52019200,"external":4525759,"arrayBuffers":421439,"sampleAgeMs":30708}] thresholdBytes=1073741824 workerLimitScope=js-heap-only; external/ArrayBuffers are not capped; nested workers are not included. nextStep=run openclaw gateway status --deep and openclaw gateway diagnostics export; restart gateway if pressure persists
+2026-10-16T19:28:48.454+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:28:48.453Z
+2026-10-16T19:28:48.456+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:28:48.474+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:28:48.474Z
+2026-10-16T19:28:48.475+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:28:48.493+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:28:48.492Z
+2026-10-16T19:28:48.493+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:28:58.436+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:28:58.435Z
+2026-10-16T19:28:58.455+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:28:58.469+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:28:58.469Z
+2026-10-16T19:28:58.470+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:28:58.484+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:28:58.483Z
+2026-10-16T19:28:58.484+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:29:08.438+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:29:08.437Z
+2026-10-16T19:29:08.439+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:29:08.452+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:29:08.451Z
+2026-10-16T19:29:08.453+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:29:08.466+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:29:08.466Z
+2026-10-16T19:29:08.467+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+[gateway] startup phase: entry.run-main-import starting total=117.3ms
+[gateway] startup phase: entry.run-main-import 86.8ms total=204.1ms start=117.3ms
+[gateway] startup phase: cli.main.gateway-run-select-environment starting total=641.1ms
+[gateway] startup phase: cli.main.gateway-run-select-environment 307.9ms total=949.1ms start=641.1ms
+[gateway] startup phase: cli.main.gateway-run-imports starting total=967.2ms
+[gateway] startup phase: cli.main.gateway-run-imports 4.4ms total=971.6ms start=967.2ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap starting total=977.7ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap 4.0ms total=981.6ms start=977.7ms
+[gateway] startup phase: cli.main.gateway-run-bootstrap starting total=981.8ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=1043.7ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 795.3ms total=1839.0ms start=1043.7ms agentCount=1 schemaProcessCount=1 schemaInspectionCount=1 schemaSnapshotCount=0
+[gateway] startup phase: cli.main.gateway-run-bootstrap 4879.6ms total=5861.3ms start=981.8ms
+2026-10-16T19:29:14.683+00:00 [gateway] loading configuration…
+2026-10-16T19:29:14.906+00:00 [gateway] resolving authentication…
+2026-10-16T19:29:14.908+00:00 [gateway] starting...
+2026-10-16T19:29:15.611+00:00 [gateway] shutdown budget at startup: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T19:29:15.634+00:00 [gateway] restart-loop breaker tripped: 3 unclean boot(s) within 300000ms; suppressing channel/provider account auto-start. Inspect the stability bundle and fix the startup crash before restarting the service. Start a channel manually with: openclaw gateway call channels.start --params '{"channel":"<id>"}'
+2026-10-16T19:29:15.654+00:00 [gateway] wrote stability bundle: /home/node/.openclaw/logs/stability/openclaw-stability-2026-10-16T19-29-15-635Z-720-gateway.crash_loop_breaker.json
+2026-10-16T19:29:15.729+00:00 [gateway] spawn broker ready pid=834
+[gateway] startup phase: gateway.server-start-import starting total=7178.8ms
+[gateway] startup phase: gateway.server-start-import 489.2ms total=7668.1ms start=7178.8ms
+2026-10-16T19:29:16.295+00:00 [gateway] startup phase: process.bootstrap 7740.4ms total=7740.4ms
+2026-10-16T19:29:16.553+00:00 [gateway] startup phase: state.schema-preflight starting total=7999.1ms
+2026-10-16T19:29:16.779+00:00 [gateway] startup phase: state.schema-preflight 225.7ms total=8224.8ms
+2026-10-16T19:29:16.828+00:00 [gateway] seeded gateway.controlUi.allowedOrigins ["http://localhost:18789","http://127.0.0.1:18789"] for bind=lan (required since v2026.2.26; see issue #29385). Applied for this runtime without writing config; add other origins to gateway.controlUi.allowedOrigins if needed.
+2026-10-16T19:29:16.831+00:00 [gateway] startup phase: config.auth starting total=8276.8ms
+2026-10-16T19:29:17.052+00:00 [gateway] startup phase: config.auth 220.8ms total=8497.6ms
+2026-10-16T19:29:17.795+00:00 [gateway] startup phase: startup.maintenance starting total=9241.2ms
+2026-10-16T19:29:18.352+00:00 [gateway] startup phase: startup.maintenance 556.4ms total=9797.6ms
+2026-10-16T19:29:18.952+00:00 [gateway] starting HTTP server...
+2026-10-16T19:29:19.133+00:00 [health-monitor] started (interval: 300s, startup-grace: 60s, channel-connect-grace: 120s)
+2026-10-16T19:29:20.701+00:00 [gateway] ⚠️  Gateway is binding to a non-loopback address. Ensure authentication is configured before exposing to public networks.
+2026-10-16T19:29:20.754+00:00 [gateway] startup phase: http.bound 0.0ms total=12200.6ms
+2026-10-16T19:29:38.867+00:00 [plugins] [memory-tdai] Registered tool: tdai_read_cos (storage backend resolved lazily on first call)
+2026-10-16T19:29:38.901+00:00 [gateway] agent model: lab/deepseek-flash (thinking=off, fast=off)
+2026-10-16T19:29:38.901+00:00 [gateway] http server listening (1 plugin: memory-tencentdb; 23.3s)
+2026-10-16T19:29:38.902+00:00 [gateway] log file: /tmp/openclaw/openclaw-2026-10-16.log
+2026-10-16T19:29:38.902+00:00 [gateway] Older local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; legacy direct writers remain supported.
+2026-10-16T19:29:38.902+00:00 [gateway] native runtime: {"pid":720,"platform":"linux","arch":"x64","node":"24.22.0","v8":"13.6.233.17-node.57","uv":"1.52.1","openssl":"3.5.8","sqlite":"3.53.4","sqliteClose":{"explicitSqliteCloseReleasesNativeResources":true,"decided":true,"reason":"Node runtime"}}
+2026-10-16T19:29:38.903+00:00 [gateway] worker startup state: {"workerCount":8,"workerLifecycle":[{"script":"other","started":1,"retired":[{"reason":"exit","count":1}]},{"script":"sqlite-store.worker.js","started":1,"retired":[]},{"script":"gateway-state-owner-heartbeat.worker.js","started":2,"retired":[{"reason":"exit","count":1}]},{"script":"openclaw-state-lease-heartbeat.worker.js","started":1,"retired":[]},{"script":"worker-native-lifecycle.worker.js","started":1,"retired":[]},{"script":"openclaw-state-read.worker.js","started":2,"retired":[]},{"script":"session-transcript.worker.js","started":2,"retired":[]}],"compute":{"limit":1,"active":0,"waitingPools":0,"pendingTasks":0,"pendingBytes":0}}
+2026-10-16T19:29:38.984+00:00 [gateway] starting channels and sidecars...
+2026-10-16T19:29:40.766+00:00 [gateway] startup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=skipped (no-handlers-loaded); gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)
+2026-10-16T19:29:40.769+00:00 [gateway] ready
+2026-10-16T19:29:40.774+00:00 [gateway] startup phase: ready 3.1ms total=32221.5ms
+2026-10-16T19:29:40.860+00:00 [skill-workshop] scheduled skill collection reviews are disabled because the cron scheduler is disabled; enable cron and restart the gateway
+2026-10-16T19:29:40.861+00:00 [heartbeat] disabled
+2026-10-16T19:29:41.072+00:00 [gateway] failed to promote config last-known-good backup: FsSafeError: read-only filesystem (EROFS)
+2026-10-16T19:29:41.183+00:00 [plugins] [memory-tdai] read_cos: no COS credentials, using local backend (/home/node/.openclaw/memory-tdai/cos-storage). Place cos.env in /home/node/.openclaw/memory-tdai to enable COS.
+2026-10-16T19:29:41.251+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:29:41.250Z
+2026-10-16T19:29:41.254+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:29:41.270+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:29:41.269Z
+2026-10-16T19:29:41.272+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:29:41.290+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:29:41.289Z
+2026-10-16T19:29:41.290+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:29:41.550+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:29:41.490Z
+2026-10-16T19:29:41.552+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:29:41.568+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:29:41.568Z
+2026-10-16T19:29:41.570+00:00 [state/database-verify] database integrity verification passed
+2026-10-16T19:29:41.572+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:29:41.682+00:00 [main-session-restart-recovery] restart-loop breaker tripped; automatic main-session restart recovery paused until 2026-10-16T19:34:15.612Z
+2026-10-16T19:29:41.767+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:29:41.766Z
+2026-10-16T19:29:41.768+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:29:41.772+00:00 [gateway] remote model catalog refresh failed
+2026-10-16T19:29:49.106+00:00 [diagnostics/memory] memory pressure: level=warning reason=rss_threshold rss=1.05 GiB heap=339.2 MiB threshold=1 GiB thresholdRatio=104.9% rssBytes=1126531072 heapUsedBytes=355700680 externalBytes=24199114 arrayBuffersBytes=14334901 workerHeapTotalBytes=375906304 workerHeapUsedBytes=158079768 workerExternalBytes=45455803 workerArrayBuffersBytes=2086834 workerCount=9 workerHeapSampledCount=6 workerArrayBuffersSampledCount=6 workerMemoryCoverage=partial workerMemoryScope=direct workerMemoryMissing=[{"script":"sqlite-store.worker.js","threadId":3,"reason":"pending"},{"script":"gateway-state-owner-heartbeat.worker.js","threadId":5,"reason":"pending"},{"script":"openclaw-state-lease-heartbeat.worker.js","threadId":6,"reason":"pending"}] workerHeaps=[{"script":"openclaw-state-read.worker.js","threadId":10,"heapUsed":40293664,"heapTotal":103215104,"external":12435442,"arrayBuffers":342475,"sampleAgeMs":29251},{"script":"openclaw-state-read.worker.js","threadId":8,"heapUsed":39494840,"heapTotal":104787968,"external":12435442,"arrayBuffers":342475,"sampleAgeMs":31330},{"script":"session-transcript.worker.js","threadId":9,"heapUsed":23697360,"heapTotal":52281344,"external":6326864,"arrayBuffers":421439,"sampleAgeMs":30852},{"script":"session-transcript.worker.js","threadId":12,"heapUsed":23423176,"heapTotal":52805632,"external":6326864,"arrayBuffers":486975,"sampleAgeMs":8721},{"script":"session-transcript.worker.js","threadId":11,"heapUsed":23784120,"heapTotal":52543488,"external":4525759,"arrayBuffers":421439,"sampleAgeMs":28824}] thresholdBytes=1073741824 workerLimitScope=js-heap-only; external/ArrayBuffers are not capped; nested workers are not included. nextStep=run openclaw gateway status --deep and openclaw gateway diagnostics export; restart gateway if pressure persists
+2026-10-16T19:29:51.358+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:29:51.357Z
+2026-10-16T19:29:51.359+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:29:51.372+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:29:51.371Z
+2026-10-16T19:29:51.373+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:29:51.385+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:29:51.385Z
+2026-10-16T19:29:51.386+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:30:01.560+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:30:01.559Z
+2026-10-16T19:30:01.561+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:30:01.575+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:30:01.575Z
+2026-10-16T19:30:01.577+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:30:01.590+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:30:01.589Z
+2026-10-16T19:30:01.590+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:30:11.363+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:30:11.362Z
+2026-10-16T19:30:11.364+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:30:11.376+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:30:11.376Z
+2026-10-16T19:30:11.377+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:30:11.390+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:30:11.389Z
+2026-10-16T19:30:11.390+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+[gateway] startup phase: entry.run-main-import starting total=94.0ms
+[gateway] startup phase: entry.run-main-import 31.7ms total=125.7ms start=94.0ms
+[gateway] startup phase: cli.main.gateway-run-select-environment starting total=603.0ms
+[gateway] startup phase: cli.main.gateway-run-select-environment 290.7ms total=893.7ms start=603.0ms
+[gateway] startup phase: cli.main.gateway-run-imports starting total=908.9ms
+[gateway] startup phase: cli.main.gateway-run-imports 3.7ms total=912.7ms start=908.9ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap starting total=918.1ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap 3.0ms total=921.0ms start=918.1ms
+[gateway] startup phase: cli.main.gateway-run-bootstrap starting total=921.1ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=995.6ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 746.1ms total=1741.7ms start=995.6ms agentCount=1 schemaProcessCount=1 schemaInspectionCount=1 schemaSnapshotCount=0
+[gateway] startup phase: cli.main.gateway-run-bootstrap 4669.8ms total=5591.0ms start=921.1ms
+2026-10-16T19:30:17.311+00:00 [gateway] loading configuration…
+2026-10-16T19:30:17.576+00:00 [gateway] resolving authentication…
+2026-10-16T19:30:17.578+00:00 [gateway] starting...
+2026-10-16T19:30:18.176+00:00 [gateway] shutdown budget at startup: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T19:30:18.201+00:00 [gateway] restart-loop breaker tripped: 4 unclean boot(s) within 300000ms; suppressing channel/provider account auto-start. Inspect the stability bundle and fix the startup crash before restarting the service. Start a channel manually with: openclaw gateway call channels.start --params '{"channel":"<id>"}'
+2026-10-16T19:30:18.282+00:00 [gateway] spawn broker ready pid=1063
+[gateway] startup phase: gateway.server-start-import starting total=6807.3ms
+[gateway] startup phase: gateway.server-start-import 440.8ms total=7248.1ms start=6807.3ms
+2026-10-16T19:30:18.791+00:00 [gateway] startup phase: process.bootstrap 7314.8ms total=7314.8ms
+2026-10-16T19:30:19.209+00:00 [gateway] startup phase: state.schema-preflight starting total=7731.5ms
+2026-10-16T19:30:19.415+00:00 [gateway] startup phase: state.schema-preflight 206.4ms total=7937.9ms
+2026-10-16T19:30:19.494+00:00 [gateway] seeded gateway.controlUi.allowedOrigins ["http://localhost:18789","http://127.0.0.1:18789"] for bind=lan (required since v2026.2.26; see issue #29385). Applied for this runtime without writing config; add other origins to gateway.controlUi.allowedOrigins if needed.
+2026-10-16T19:30:19.496+00:00 [gateway] startup phase: config.auth starting total=8019.9ms
+2026-10-16T19:30:19.687+00:00 [gateway] startup phase: config.auth 190.4ms total=8210.2ms
+2026-10-16T19:30:20.557+00:00 [gateway] startup phase: startup.maintenance starting total=9079.4ms
+2026-10-16T19:30:21.151+00:00 [gateway] startup phase: startup.maintenance 594.4ms total=9673.8ms
+2026-10-16T19:30:21.791+00:00 [gateway] starting HTTP server...
+2026-10-16T19:30:22.008+00:00 [health-monitor] started (interval: 300s, startup-grace: 60s, channel-connect-grace: 120s)
+2026-10-16T19:30:23.780+00:00 [gateway] ⚠️  Gateway is binding to a non-loopback address. Ensure authentication is configured before exposing to public networks.
+2026-10-16T19:30:23.798+00:00 [gateway] startup phase: http.bound 0.0ms total=12321.1ms
+2026-10-16T19:30:43.772+00:00 [plugins] [memory-tdai] Registered tool: tdai_read_cos (storage backend resolved lazily on first call)
+2026-10-16T19:30:43.791+00:00 [gateway] agent model: lab/deepseek-flash (thinking=off, fast=off)
+2026-10-16T19:30:43.792+00:00 [gateway] http server listening (1 plugin: memory-tencentdb; 25.6s)
+2026-10-16T19:30:43.792+00:00 [gateway] log file: /tmp/openclaw/openclaw-2026-10-16.log
+2026-10-16T19:30:43.792+00:00 [gateway] Older local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; legacy direct writers remain supported.
+2026-10-16T19:30:43.793+00:00 [gateway] native runtime: {"pid":949,"platform":"linux","arch":"x64","node":"24.22.0","v8":"13.6.233.17-node.57","uv":"1.52.1","openssl":"3.5.8","sqlite":"3.53.4","sqliteClose":{"explicitSqliteCloseReleasesNativeResources":true,"decided":true,"reason":"Node runtime"}}
+2026-10-16T19:30:43.793+00:00 [gateway] worker startup state: {"workerCount":8,"workerLifecycle":[{"script":"other","started":1,"retired":[{"reason":"exit","count":1}]},{"script":"sqlite-store.worker.js","started":1,"retired":[]},{"script":"gateway-state-owner-heartbeat.worker.js","started":2,"retired":[{"reason":"exit","count":1}]},{"script":"openclaw-state-lease-heartbeat.worker.js","started":1,"retired":[]},{"script":"worker-native-lifecycle.worker.js","started":1,"retired":[]},{"script":"openclaw-state-read.worker.js","started":2,"retired":[]},{"script":"session-transcript.worker.js","started":2,"retired":[]}],"compute":{"limit":1,"active":0,"waitingPools":0,"pendingTasks":0,"pendingBytes":0}}
+2026-10-16T19:30:43.895+00:00 [gateway] starting channels and sidecars...
+2026-10-16T19:30:45.754+00:00 [gateway] startup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=skipped (no-handlers-loaded); gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)
+2026-10-16T19:30:45.756+00:00 [gateway] ready
+2026-10-16T19:30:45.763+00:00 [gateway] startup phase: ready 3.8ms total=34287.5ms
+2026-10-16T19:30:45.789+00:00 [skill-workshop] scheduled skill collection reviews are disabled because the cron scheduler is disabled; enable cron and restart the gateway
+2026-10-16T19:30:45.791+00:00 [heartbeat] disabled
+2026-10-16T19:30:46.077+00:00 [gateway] failed to promote config last-known-good backup: FsSafeError: read-only filesystem (EROFS)
+2026-10-16T19:30:46.255+00:00 [plugins] [memory-tdai] read_cos: no COS credentials, using local backend (/home/node/.openclaw/memory-tdai/cos-storage). Place cos.env in /home/node/.openclaw/memory-tdai to enable COS.
+2026-10-16T19:30:46.256+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="persona.md" timestamp=2026-10-16T19:30:46.256Z
+2026-10-16T19:30:46.259+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="persona.md" size=71B
+2026-10-16T19:30:46.276+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHALPHA7X.md" timestamp=2026-10-16T19:30:46.275Z
+2026-10-16T19:30:46.278+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< OK path="scene_blocks/SYNTHALPHA7X.md" size=31B
+2026-10-16T19:30:46.359+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] >>> path="scene_blocks/SYNTHBETA9Z.md" timestamp=2026-10-16T19:30:46.358Z
+2026-10-16T19:30:46.360+00:00 [plugins] [memory-tencentdb][read_cos] [COS_TOOL_CALL] <<< NOT_FOUND path="scene_blocks/SYNTHBETA9Z.md"
+2026-10-16T19:30:46.382+00:00 [admission] closed: stop (SIGTERM)
+2026-10-16T19:30:46.383+00:00 [gateway] received SIGTERM; shutting down
+2026-10-16T19:30:46.388+00:00 [state/database-verify] database integrity verifier failed error="Error: database verification worker exited with signal SIGTERM"
+2026-10-16T19:30:46.449+00:00 [gateway] shutdown budget at shutdown: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T19:30:46.451+00:00 [gateway] draining active work before stop with timeout 315000ms: rootRequests=1
+2026-10-16T19:30:46.586+00:00 [gateway] sidecars.restart-sentinel failed after gateway ready: GatewayDrainingError: Gateway is shutting down. Please try again once it is back online.
+2026-10-16T19:30:46.587+00:00 [main-session-restart-recovery] main-session restart recovery failed: GatewayDrainingError: Gateway is shutting down. Please try again once it is back online.
+2026-10-16T19:30:46.591+00:00 [cron] failed to enter start root: GatewayDrainingError: Gateway is shutting down. Please try again once it is back online.
+2026-10-16T19:30:46.601+00:00 [gateway] restart sentinel refresh failed: GatewayDrainingError: Gateway is shutting down. Please try again once it is back online.
+2026-10-16T19:30:46.604+00:00 [gateway] update check readiness wait failed: GatewayDrainingError: Gateway is shutting down. Please try again once it is back online.
+2026-10-16T19:30:46.702+00:00 [gateway] active-work drain settled; beginning server close
+2026-10-16T19:30:46.710+00:00 [plugins] [memory-tdai] [gateway_stop] Cleanup finished, all resources released (1ms)
+2026-10-16T19:30:46.713+00:00 [gmail-watcher] gmail watcher stopped
+2026-10-16T19:30:47.865+00:00 [shutdown] completed cleanly in 1160ms

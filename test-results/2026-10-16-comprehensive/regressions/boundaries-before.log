@@ -1,0 +1,71 @@
+✖ COS refuses an allowed filename that hardlinks an external file (42.371508ms)
+✖ oversized MCP input is rejected and the following request still works (43.007647ms)
+✖ test client correlates asynchronous MCP replies by id (28.396593ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 151.385646
+
+✖ failing tests:
+
+test at integrations/codex-tdai-local/boundary-extra.test.mjs:15:1
+✖ COS refuses an allowed filename that hardlinks an external file (42.371508ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - true
+
+      at TestContext.<anonymous> (file:///lab/repo/integrations/codex-tdai-local/boundary-extra.test.mjs:22:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at integrations/codex-tdai-local/boundary-extra.test.mjs:26:1
+✖ oversized MCP input is rejected and the following request still works (43.007647ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - -32600
+
+      at TestContext.<anonymous> (file:///lab/repo/integrations/codex-tdai-local/boundary-extra.test.mjs:30:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: -32600,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at integrations/codex-tdai-local/boundary-extra.test.mjs:35:1
+✖ test client correlates asynchronous MCP replies by id (28.396593ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  22 !== 21
+
+      at TestContext.<anonymous> (file:///lab/repo/integrations/codex-tdai-local/boundary-extra.test.mjs:43:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 22,
+    expected: 21,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

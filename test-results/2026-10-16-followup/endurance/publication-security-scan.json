@@ -1,0 +1,25 @@
+{
+  "gateway": {
+    "checkedAt": "2026-10-19T20:41:33.944Z",
+    "passed": true,
+    "files": 147,
+    "decompressedBytes": 48301661,
+    "actualGatewayTokenCount": 2,
+    "encodedVariantsChecked": true,
+    "genericCredentialPatternScan": true,
+    "failures": [],
+    "scope": "All tracked repository files plus the complete dated follow-up artifact directory; gzip files scanned after decompression. Private deployment configuration is not a candidate publication."
+  },
+  "apiKey": {
+    "checkedAt": "2026-10-19T20:43:15.302Z",
+    "passed": true,
+    "streamBytes": 48312534,
+    "actualPrivateApiKeyCompared": true,
+    "encodedVariantsChecked": true,
+    "secretReturned": false,
+    "secretStoredOutsidePrivateVolume": false,
+    "method": "Streaming byte comparison within UID1002 private proxy container; candidate gzip data decompressed before input.",
+    "userAuthorizedPrivateComparison": true
+  },
+  "limitations": "Manifest and scan receipt contain only generated hashes/counts and are added after this content scan; final staged blobs are rechecked before publication."
+}

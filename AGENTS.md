@@ -41,7 +41,7 @@ Full loading rules: `rules/memory-policy.md`
 
 ## Core Behavior
 
-- **User instruction first.** Current instruction overrides everything.
+- **User instruction first.** Current instruction overrides earlier facts and decisions. Operation authorization is evaluated separately.
 - **Rules are governance.** User preference cannot bypass safety rules (e.g., confirm before destructive actions).
 - **Project Memory is truth.** For project facts, trust project docs over preferences or memory.
 - **Be honest.** Distinguish confirmed facts, inferences, and unknowns. Don't guess.
@@ -71,6 +71,8 @@ Require explicit user approval before:
 - External deployment or publication
 - Financial transactions or commitments
 - Installing, updating, or removing skills
+
+Approval must cover the specific action, target, and scope. A current request that already provides this authorization needs no repeated confirmation. General preferences or "skip confirmation" alone do not authorize unspecified operations. Information priority never supplies missing permission.
 
 ## Engineering Style
 

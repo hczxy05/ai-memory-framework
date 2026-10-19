@@ -52,4 +52,4 @@ Summarize the goal and completed result.
 - **User preference:** No / Describe and target `universal-memory.md`
 - **Experience candidate:** No / Describe source and validation
 
-Memory updates follow the promotion flow in `<ai-memory-path>/memory/memory-policy.md`; record only after user authorization.
+Memory updates follow the promotion flow in `<ai-memory-path>/rules/memory-policy.md`; record only after user authorization.

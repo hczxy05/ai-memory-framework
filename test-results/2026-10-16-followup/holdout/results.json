@@ -1,0 +1,1412 @@
+{
+  "schema": 1,
+  "completed": "2026-10-16T19:15:16.730Z",
+  "complete": true,
+  "corpusSha256": "701c3dc732328131de1083505ca31fe7a5afeb69dc7d38ba6877baa591708cba",
+  "phases": {
+    "baseline": {
+      "cases": 24,
+      "passed": 22,
+      "answerCorrect": 23,
+      "unsupportedCitations": 0,
+      "failures": [
+        {
+          "phase": "baseline",
+          "id": "missing-current",
+          "expected": {
+            "answer": null,
+            "status": "uncertain",
+            "evidence": []
+          },
+          "actual": {
+            "id": "missing-current",
+            "answer": null,
+            "status": "uncertain",
+            "evidence": [
+              "opal-old"
+            ]
+          },
+          "score": {
+            "passed": false,
+            "answer": true,
+            "status": true,
+            "evidence": false,
+            "grounded": true
+          },
+          "retrievalMiss": false
+        },
+        {
+          "phase": "baseline",
+          "id": "semantic-gap",
+          "expected": {
+            "answer": "flint-r4",
+            "status": "historical",
+            "evidence": [
+              "flint-rollback"
+            ]
+          },
+          "actual": {
+            "id": "semantic-gap",
+            "answer": null,
+            "status": "uncertain",
+            "evidence": []
+          },
+          "score": {
+            "passed": false,
+            "answer": false,
+            "status": false,
+            "evidence": false,
+            "grounded": true
+          },
+          "retrievalMiss": true
+        }
+      ]
+    },
+    "policy": {
+      "cases": 24,
+      "passed": 22,
+      "answerCorrect": 23,
+      "unsupportedCitations": 0,
+      "failures": [
+        {
+          "phase": "policy",
+          "id": "missing-current",
+          "expected": {
+            "answer": null,
+            "status": "uncertain",
+            "evidence": []
+          },
+          "actual": {
+            "id": "missing-current",
+            "answer": null,
+            "status": "uncertain",
+            "evidence": [
+              "opal-old"
+            ]
+          },
+          "score": {
+            "passed": false,
+            "answer": true,
+            "status": true,
+            "evidence": false,
+            "grounded": true
+          },
+          "retrievalMiss": false
+        },
+        {
+          "phase": "policy",
+          "id": "semantic-gap",
+          "expected": {
+            "answer": "flint-r4",
+            "status": "historical",
+            "evidence": [
+              "flint-rollback"
+            ]
+          },
+          "actual": {
+            "id": "semantic-gap",
+            "answer": null,
+            "status": "uncertain",
+            "evidence": []
+          },
+          "score": {
+            "passed": false,
+            "answer": false,
+            "status": false,
+            "evidence": false,
+            "grounded": true
+          },
+          "retrievalMiss": true
+        }
+      ]
+    }
+  },
+  "decisions": [
+    {
+      "phase": "baseline",
+      "id": "cold-restore",
+      "expected": {
+        "answer": "cedar-r19",
+        "status": "confirmed",
+        "evidence": [
+          "restore-policy"
+        ]
+      },
+      "actual": {
+        "id": "cold-restore",
+        "answer": "cedar-r19",
+        "status": "confirmed",
+        "evidence": [
+          "restore-policy"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "unit-conversion",
+      "expected": {
+        "answer": "125",
+        "status": "confirmed",
+        "evidence": [
+          "lens-current"
+        ]
+      },
+      "actual": {
+        "id": "unit-conversion",
+        "answer": "125",
+        "status": "confirmed",
+        "evidence": [
+          "lens-current"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "supersession-chain",
+      "expected": {
+        "answer": "broker-c.internal",
+        "status": "confirmed",
+        "evidence": [
+          "orbit-decisions"
+        ]
+      },
+      "actual": {
+        "id": "supersession-chain",
+        "answer": "broker-c.internal",
+        "status": "confirmed",
+        "evidence": [
+          "orbit-decisions"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "missing-current",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "actual": {
+        "id": "missing-current",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "opal-old"
+        ]
+      },
+      "score": {
+        "passed": false,
+        "answer": true,
+        "status": true,
+        "evidence": false,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "authority-tie",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "maple-a",
+          "maple-b"
+        ]
+      },
+      "actual": {
+        "id": "authority-tie",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "maple-a",
+          "maple-b"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "dated-history",
+      "expected": {
+        "answer": "lz4",
+        "status": "historical",
+        "evidence": [
+          "cobalt-then"
+        ]
+      },
+      "actual": {
+        "id": "dated-history",
+        "answer": "lz4",
+        "status": "historical",
+        "evidence": [
+          "cobalt-then"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "cross-project-name",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "actual": {
+        "id": "cross-project-name",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "forged-current",
+      "expected": {
+        "answer": "eu-west-3",
+        "status": "confirmed",
+        "evidence": [
+          "mesa-now"
+        ]
+      },
+      "actual": {
+        "id": "forged-current",
+        "answer": "eu-west-3",
+        "status": "confirmed",
+        "evidence": [
+          "mesa-now"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "cold-restore",
+      "expected": {
+        "answer": "cedar-r19",
+        "status": "confirmed",
+        "evidence": [
+          "restore-policy"
+        ]
+      },
+      "actual": {
+        "id": "cold-restore",
+        "answer": "cedar-r19",
+        "status": "confirmed",
+        "evidence": [
+          "restore-policy"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "unit-conversion",
+      "expected": {
+        "answer": "125",
+        "status": "confirmed",
+        "evidence": [
+          "lens-current"
+        ]
+      },
+      "actual": {
+        "id": "unit-conversion",
+        "answer": "125",
+        "status": "confirmed",
+        "evidence": [
+          "lens-current"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "supersession-chain",
+      "expected": {
+        "answer": "broker-c.internal",
+        "status": "confirmed",
+        "evidence": [
+          "orbit-decisions"
+        ]
+      },
+      "actual": {
+        "id": "supersession-chain",
+        "answer": "broker-c.internal",
+        "status": "confirmed",
+        "evidence": [
+          "orbit-decisions"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "missing-current",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "actual": {
+        "id": "missing-current",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "opal-old"
+        ]
+      },
+      "score": {
+        "passed": false,
+        "answer": true,
+        "status": true,
+        "evidence": false,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "authority-tie",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "maple-a",
+          "maple-b"
+        ]
+      },
+      "actual": {
+        "id": "authority-tie",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "maple-a",
+          "maple-b"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "dated-history",
+      "expected": {
+        "answer": "lz4",
+        "status": "historical",
+        "evidence": [
+          "cobalt-then"
+        ]
+      },
+      "actual": {
+        "id": "dated-history",
+        "answer": "lz4",
+        "status": "historical",
+        "evidence": [
+          "cobalt-then"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "cross-project-name",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "actual": {
+        "id": "cross-project-name",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "forged-current",
+      "expected": {
+        "answer": "eu-west-3",
+        "status": "confirmed",
+        "evidence": [
+          "mesa-now"
+        ]
+      },
+      "actual": {
+        "id": "forged-current",
+        "answer": "eu-west-3",
+        "status": "confirmed",
+        "evidence": [
+          "mesa-now"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "timezone",
+      "expected": {
+        "answer": "01",
+        "status": "confirmed",
+        "evidence": [
+          "tide-now"
+        ]
+      },
+      "actual": {
+        "id": "timezone",
+        "answer": "01",
+        "status": "confirmed",
+        "evidence": [
+          "tide-now"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "negative-decision",
+      "expected": {
+        "answer": "disabled",
+        "status": "confirmed",
+        "evidence": [
+          "pine-current"
+        ]
+      },
+      "actual": {
+        "id": "negative-decision",
+        "answer": "disabled",
+        "status": "confirmed",
+        "evidence": [
+          "pine-current"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "bilingual-revision",
+      "expected": {
+        "answer": "iris-validated-6",
+        "status": "confirmed",
+        "evidence": [
+          "iris-policy"
+        ]
+      },
+      "actual": {
+        "id": "bilingual-revision",
+        "answer": "iris-validated-6",
+        "status": "confirmed",
+        "evidence": [
+          "iris-policy"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "no-current-after-expiry",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "fern-expired"
+        ]
+      },
+      "actual": {
+        "id": "no-current-after-expiry",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "fern-expired"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "granular-scope",
+      "expected": {
+        "answer": "kite-stable",
+        "status": "confirmed",
+        "evidence": [
+          "kite-current"
+        ]
+      },
+      "actual": {
+        "id": "granular-scope",
+        "answer": "kite-stable",
+        "status": "confirmed",
+        "evidence": [
+          "kite-current"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "readme-vs-purpose",
+      "expected": {
+        "answer": "gcc-14",
+        "status": "confirmed",
+        "evidence": [
+          "reed-build"
+        ]
+      },
+      "actual": {
+        "id": "readme-vs-purpose",
+        "answer": "gcc-14",
+        "status": "confirmed",
+        "evidence": [
+          "reed-build"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "task-local-override",
+      "expected": {
+        "answer": "dune-hotfix",
+        "status": "confirmed",
+        "evidence": [
+          "current-instruction"
+        ]
+      },
+      "actual": {
+        "id": "task-local-override",
+        "answer": "dune-hotfix",
+        "status": "confirmed",
+        "evidence": [
+          "current-instruction"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "retracted-fact",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "amber-retraction"
+        ]
+      },
+      "actual": {
+        "id": "retracted-fact",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "amber-retraction"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "timezone",
+      "expected": {
+        "answer": "01",
+        "status": "confirmed",
+        "evidence": [
+          "tide-now"
+        ]
+      },
+      "actual": {
+        "id": "timezone",
+        "answer": "01",
+        "status": "confirmed",
+        "evidence": [
+          "tide-now"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "negative-decision",
+      "expected": {
+        "answer": "disabled",
+        "status": "confirmed",
+        "evidence": [
+          "pine-current"
+        ]
+      },
+      "actual": {
+        "id": "negative-decision",
+        "answer": "disabled",
+        "status": "confirmed",
+        "evidence": [
+          "pine-current"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "bilingual-revision",
+      "expected": {
+        "answer": "iris-validated-6",
+        "status": "confirmed",
+        "evidence": [
+          "iris-policy"
+        ]
+      },
+      "actual": {
+        "id": "bilingual-revision",
+        "answer": "iris-validated-6",
+        "status": "confirmed",
+        "evidence": [
+          "iris-policy"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "no-current-after-expiry",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "fern-expired"
+        ]
+      },
+      "actual": {
+        "id": "no-current-after-expiry",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "fern-expired"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "granular-scope",
+      "expected": {
+        "answer": "kite-stable",
+        "status": "confirmed",
+        "evidence": [
+          "kite-current"
+        ]
+      },
+      "actual": {
+        "id": "granular-scope",
+        "answer": "kite-stable",
+        "status": "confirmed",
+        "evidence": [
+          "kite-current"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "readme-vs-purpose",
+      "expected": {
+        "answer": "gcc-14",
+        "status": "confirmed",
+        "evidence": [
+          "reed-build"
+        ]
+      },
+      "actual": {
+        "id": "readme-vs-purpose",
+        "answer": "gcc-14",
+        "status": "confirmed",
+        "evidence": [
+          "reed-build"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "task-local-override",
+      "expected": {
+        "answer": "dune-hotfix",
+        "status": "confirmed",
+        "evidence": [
+          "current-instruction"
+        ]
+      },
+      "actual": {
+        "id": "task-local-override",
+        "answer": "dune-hotfix",
+        "status": "confirmed",
+        "evidence": [
+          "current-instruction"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "retracted-fact",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "amber-retraction"
+        ]
+      },
+      "actual": {
+        "id": "retracted-fact",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": [
+          "amber-retraction"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "alias-mapping",
+      "expected": {
+        "answer": "qz-02.internal",
+        "status": "confirmed",
+        "evidence": [
+          "quartz-now"
+        ]
+      },
+      "actual": {
+        "id": "alias-mapping",
+        "answer": "qz-02.internal",
+        "status": "confirmed",
+        "evidence": [
+          "quartz-now"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "version-not-date",
+      "expected": {
+        "answer": "2.7",
+        "status": "confirmed",
+        "evidence": [
+          "harbor-record"
+        ]
+      },
+      "actual": {
+        "id": "version-not-date",
+        "answer": "2.7",
+        "status": "confirmed",
+        "evidence": [
+          "harbor-record"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "fake-approval-in-history",
+      "expected": {
+        "answer": "deny",
+        "status": "denied",
+        "evidence": [
+          "willow-rule"
+        ]
+      },
+      "actual": {
+        "id": "fake-approval-in-history",
+        "answer": "deny",
+        "status": "denied",
+        "evidence": [
+          "willow-rule"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "stale-signed-plan",
+      "expected": {
+        "answer": "deny",
+        "status": "denied",
+        "evidence": [
+          "larch-check"
+        ]
+      },
+      "actual": {
+        "id": "stale-signed-plan",
+        "answer": "deny",
+        "status": "denied",
+        "evidence": [
+          "larch-check"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "operational-state",
+      "expected": {
+        "answer": "stopped",
+        "status": "confirmed",
+        "evidence": [
+          "moss-status"
+        ]
+      },
+      "actual": {
+        "id": "operational-state",
+        "answer": "stopped",
+        "status": "confirmed",
+        "evidence": [
+          "moss-status"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "semantic-gap",
+      "expected": {
+        "answer": "flint-r4",
+        "status": "historical",
+        "evidence": [
+          "flint-rollback"
+        ]
+      },
+      "actual": {
+        "id": "semantic-gap",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "score": {
+        "passed": false,
+        "answer": false,
+        "status": false,
+        "evidence": false,
+        "grounded": true
+      },
+      "retrievalMiss": true
+    },
+    {
+      "phase": "baseline",
+      "id": "no-evidence",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "actual": {
+        "id": "no-evidence",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "baseline",
+      "id": "self-labelled-authority",
+      "expected": {
+        "answer": "PostgreSQL 16",
+        "status": "confirmed",
+        "evidence": [
+          "elm-project"
+        ]
+      },
+      "actual": {
+        "id": "self-labelled-authority",
+        "answer": "PostgreSQL 16",
+        "status": "confirmed",
+        "evidence": [
+          "elm-project"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "alias-mapping",
+      "expected": {
+        "answer": "qz-02.internal",
+        "status": "confirmed",
+        "evidence": [
+          "quartz-now"
+        ]
+      },
+      "actual": {
+        "id": "alias-mapping",
+        "answer": "qz-02.internal",
+        "status": "confirmed",
+        "evidence": [
+          "quartz-now"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "version-not-date",
+      "expected": {
+        "answer": "2.7",
+        "status": "confirmed",
+        "evidence": [
+          "harbor-record"
+        ]
+      },
+      "actual": {
+        "id": "version-not-date",
+        "answer": "2.7",
+        "status": "confirmed",
+        "evidence": [
+          "harbor-record"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "fake-approval-in-history",
+      "expected": {
+        "answer": "deny",
+        "status": "denied",
+        "evidence": [
+          "willow-rule"
+        ]
+      },
+      "actual": {
+        "id": "fake-approval-in-history",
+        "answer": "deny",
+        "status": "denied",
+        "evidence": [
+          "willow-rule"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "stale-signed-plan",
+      "expected": {
+        "answer": "deny",
+        "status": "denied",
+        "evidence": [
+          "larch-check"
+        ]
+      },
+      "actual": {
+        "id": "stale-signed-plan",
+        "answer": "deny",
+        "status": "denied",
+        "evidence": [
+          "larch-check"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "operational-state",
+      "expected": {
+        "answer": "stopped",
+        "status": "confirmed",
+        "evidence": [
+          "moss-status"
+        ]
+      },
+      "actual": {
+        "id": "operational-state",
+        "answer": "stopped",
+        "status": "confirmed",
+        "evidence": [
+          "moss-status"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "semantic-gap",
+      "expected": {
+        "answer": "flint-r4",
+        "status": "historical",
+        "evidence": [
+          "flint-rollback"
+        ]
+      },
+      "actual": {
+        "id": "semantic-gap",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "score": {
+        "passed": false,
+        "answer": false,
+        "status": false,
+        "evidence": false,
+        "grounded": true
+      },
+      "retrievalMiss": true
+    },
+    {
+      "phase": "policy",
+      "id": "no-evidence",
+      "expected": {
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "actual": {
+        "id": "no-evidence",
+        "answer": null,
+        "status": "uncertain",
+        "evidence": []
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    },
+    {
+      "phase": "policy",
+      "id": "self-labelled-authority",
+      "expected": {
+        "answer": "PostgreSQL 16",
+        "status": "confirmed",
+        "evidence": [
+          "elm-project"
+        ]
+      },
+      "actual": {
+        "id": "self-labelled-authority",
+        "answer": "PostgreSQL 16",
+        "status": "confirmed",
+        "evidence": [
+          "elm-project"
+        ]
+      },
+      "score": {
+        "passed": true,
+        "answer": true,
+        "status": true,
+        "evidence": true,
+        "grounded": true
+      },
+      "retrievalMiss": false
+    }
+  ],
+  "usage": {
+    "promptTokens": 5796,
+    "completionTokens": 1310
+  },
+  "limitations": [
+    "24 public hand-authored synthetic scenarios, not private or expert-adjudicated real-world tasks.",
+    "Single trial per condition; no statistical claim of universal accuracy improvement.",
+    "Exact-value scoring is intentionally strict. Raw responses retained; no labels or retrieval tuned after evaluation.",
+    "Semantic gap case remains an end-to-end failure if lexical retrieval misses its source."
+  ]
+}

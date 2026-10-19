@@ -1,0 +1,346 @@
+[gateway] startup phase: entry.run-main-import starting total=68.7ms
+[gateway] startup phase: entry.run-main-import 22.7ms total=91.4ms start=68.7ms
+[gateway] startup phase: cli.main.gateway-run-select-environment starting total=257.2ms
+[gateway] startup phase: cli.main.gateway-run-select-environment 138.7ms total=395.9ms start=257.2ms
+[gateway] startup phase: cli.main.gateway-run-imports starting total=407.1ms
+[gateway] startup phase: cli.main.gateway-run-imports 2.6ms total=409.7ms start=407.1ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap starting total=414.5ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap 7.6ms total=422.1ms start=414.5ms
+[gateway] startup phase: cli.main.gateway-run-bootstrap starting total=422.2ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=462.9ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 1.6ms total=464.6ms start=462.9ms agentCount=1 schemaProcessCount=0 schemaInspectionCount=0 schemaSnapshotCount=0
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=979.7ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 294.8ms total=1274.6ms start=979.7ms agentCount=1 schemaProcessCount=0 schemaInspectionCount=0 schemaSnapshotCount=0
+[gateway] startup phase: cli.main.gateway-run-bootstrap 2532.2ms total=2954.4ms start=422.2ms
+2026-10-16T18:19:47.322+00:00 [gateway] loading configuration…
+2026-10-16T18:19:47.336+00:00 [gateway] resolving authentication…
+2026-10-16T18:19:47.338+00:00 [gateway] starting...
+2026-10-16T18:19:47.555+00:00 [gateway] shutdown budget at startup: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T18:19:47.627+00:00 [gateway] spawn broker ready pid=4688
+[gateway] startup phase: gateway.server-start-import starting total=3483.6ms
+[gateway] startup phase: gateway.server-start-import 360.8ms total=3844.3ms start=3483.6ms
+2026-10-16T18:19:48.039+00:00 [gateway] startup phase: process.bootstrap 3894.2ms total=3894.2ms
+2026-10-16T18:19:48.263+00:00 [gateway] startup phase: state.schema-preflight starting total=4118.0ms
+2026-10-16T18:19:48.424+00:00 [gateway] startup phase: state.schema-preflight 161.0ms total=4279.0ms
+2026-10-16T18:19:48.473+00:00 [gateway] startup phase: config.auth starting total=4328.5ms
+2026-10-16T18:19:48.527+00:00 [gateway] startup phase: config.auth 53.2ms total=4381.7ms
+2026-10-16T18:19:49.086+00:00 [gateway] startup phase: startup.maintenance starting total=4940.5ms
+2026-10-16T18:19:49.107+00:00 [gateway] startup phase: startup.maintenance 22.0ms total=4962.6ms
+2026-10-16T18:19:49.409+00:00 [gateway] starting HTTP server...
+2026-10-16T18:19:49.525+00:00 [health-monitor] started (interval: 300s, startup-grace: 60s, channel-connect-grace: 120s)
+2026-10-16T18:19:50.048+00:00 [gateway] startup phase: http.bound 0.0ms total=5902.9ms
+2026-10-16T18:20:10.104+00:00 [plugins] [memory-tdai][sqlite] nested vec0.so not found under sqlite-vec/node_modules/sqlite-vec-linux-x64; falling back to sqlite-vec loader
+2026-10-16T18:20:10.122+00:00 [plugins] [memory-tdai] Registered tool: tdai_read_cos (storage backend resolved lazily on first call)
+2026-10-16T18:20:10.148+00:00 [gateway] agent model: lab/deepseek-flash (thinking=off, fast=off)
+2026-10-16T18:20:10.149+00:00 [gateway] http server listening (1 plugin: memory-tencentdb; 22.6s)
+2026-10-16T18:20:10.149+00:00 [gateway] log file: /tmp/openclaw/openclaw-2026-10-16.log
+2026-10-16T18:20:10.149+00:00 [gateway] Older local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; legacy direct writers remain supported.
+2026-10-16T18:20:10.150+00:00 [gateway] native runtime: {"pid":4615,"platform":"linux","arch":"x64","node":"24.22.0","v8":"13.6.233.17-node.57","uv":"1.52.1","openssl":"3.5.8","sqlite":"3.53.4","sqliteClose":{"explicitSqliteCloseReleasesNativeResources":true,"decided":true,"reason":"Node runtime"}}
+2026-10-16T18:20:10.150+00:00 [gateway] worker startup state: {"workerCount":6,"workerLifecycle":[{"script":"other","started":1,"retired":[{"reason":"exit","count":1}]},{"script":"gateway-state-owner-heartbeat.worker.js","started":2,"retired":[{"reason":"exit","count":1}]},{"script":"sqlite-store.worker.js","started":1,"retired":[]},{"script":"openclaw-state-lease-heartbeat.worker.js","started":1,"retired":[]},{"script":"worker-native-lifecycle.worker.js","started":1,"retired":[]},{"script":"openclaw-state-read.worker.js","started":2,"retired":[]}],"compute":{"limit":1,"active":0,"waitingPools":0,"pendingTasks":0,"pendingBytes":0}}
+2026-10-16T18:20:10.185+00:00 [gateway] starting channels and sidecars...
+2026-10-16T18:20:10.829+00:00 [gateway] startup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=skipped (no-handlers-loaded); gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)
+2026-10-16T18:20:10.831+00:00 [gateway] ready
+2026-10-16T18:20:10.838+00:00 [gateway] startup phase: ready 5.0ms total=26694.8ms
+2026-10-16T18:20:10.855+00:00 [skill-workshop] scheduled skill collection reviews are disabled because the cron scheduler is disabled; enable cron and restart the gateway
+2026-10-16T18:20:10.856+00:00 [heartbeat] disabled
+2026-10-16T18:20:11.512+00:00 [gateway] remote model catalog refresh failed
+2026-10-16T18:20:36.884+00:00 [ws] ⇄ res ✓ agent 1469ms runId=54c25214-e057-4c5e-9a8b-90e1052190e2 bytes=243 conn=69bddd04…f69c id=2:7251ee2c-c…3ab5
+2026-10-16T18:20:36.893+00:00 [session-sqlite] slow SQLite reclamation Worker operation pid=4615 threadId=0 isMainThread=true reclamationKind=maintenance-plan workerThreadId=13 elapsedMs=1364 outcome=resolved
+2026-10-16T18:20:37.791+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:20:39.379+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1219 dispatcher=new contentType=text/event-stream
+2026-10-16T18:20:39.429+00:00 [plugins] [memory-tdai] [pipeline] Restored 0 session state(s) from checkpoint
+2026-10-16T18:20:39.430+00:00 [plugins] [memory-tdai] [pipeline] Pipeline started
+2026-10-16T18:20:39.526+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=95ms, l0Record+checkpoint=6ms, l0VecIndex=73ms (metadata-only, embed=background, msgs=2), notify=16ms
+2026-10-16T18:20:39.527+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (100ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:20:39.529+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:long-75b94a73e6: l1_cursor=(start)
+2026-10-16T18:20:39.530+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=(all), limit=20, returned 2 row(s)
+2026-10-16T18:20:39.530+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=(all), 2 messages across 1 group(s)
+2026-10-16T18:20:39.531+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:long-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:20:39.547+00:00 ACK
+2026-10-16T18:20:39.548+00:00 [agents/agent-command] [agent] run 54c25214-e057-4c5e-9a8b-90e1052190e2 ended with stopReason=stop
+2026-10-16T18:20:40.785+00:00 [plugins] [memory-tdai][l1-writer] [CR-2 guard] writeMemory called without storage adapter; falling back to local fs at /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-a/state/memory-tdai/records/2026-10-16.jsonl. In service mode this means JSONL is written to ephemeral pod fs and will be lost on restart. Caller must pass 'storage' to writeMemory.
+2026-10-16T18:20:40.789+00:00 [plugins] [memory-tdai][l1-extractor] Extraction complete: extracted=1, stored=1
+2026-10-16T18:20:40.791+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:long-75b94a73e6: extracted=1, cursor=1792174839436, lastScene="我（AI）在和用户确认项目监控配置信息"
+2026-10-16T18:20:40.792+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=1, stored=1 (1 group(s))
+2026-10-16T18:20:41.702+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:20:42.857+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1078 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:20:42.904+00:00 ACK
+2026-10-16T18:20:42.905+00:00 [agents/agent-command] [agent] run e44cf077-84cb-4cec-9f5e-92cc1b5caea3 ended with stopReason=stop
+2026-10-16T18:20:42.915+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=36ms, l0Record+checkpoint=11ms, l0VecIndex=7ms (metadata-only, embed=background, msgs=2), notify=18ms
+2026-10-16T18:20:42.915+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (38ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:20:42.931+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:chinese-75b94a73e6: l1_cursor=(start)
+2026-10-16T18:20:42.932+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:chinese-75b94a73e6, afterRecordedAtMs=(all), limit=20, returned 2 row(s)
+2026-10-16T18:20:42.932+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:chinese-75b94a73e6, afterRecordedAtMs=(all), 2 messages across 1 group(s)
+2026-10-16T18:20:42.933+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:chinese-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:20:44.582+00:00 [plugins] [memory-tdai][l1-writer] [CR-2 guard] writeMemory called without storage adapter; falling back to local fs at /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-a/state/memory-tdai/records/2026-10-16.jsonl. In service mode this means JSONL is written to ephemeral pod fs and will be lost on restart. Caller must pass 'storage' to writeMemory.
+2026-10-16T18:20:44.586+00:00 [plugins] [memory-tdai][l1-extractor] Extraction complete: extracted=1, stored=1
+2026-10-16T18:20:44.588+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:chinese-75b94a73e6: extracted=1, cursor=1792174842888, lastScene="我在与用户确认项目 ORION75b94a73e6ZH 的传感器采样周期"
+2026-10-16T18:20:44.588+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=1, stored=1 (1 group(s))
+2026-10-16T18:20:45.578+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:20:45.643+00:00 [agent/embedded] [prompt-cache] message 0 (user) differs from the previous request; history must be append-only sessionKey=agent:tdai-poc:long-75b94a73e6
+2026-10-16T18:20:47.292+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1644 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:20:47.327+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=14ms, l0Record+checkpoint=8ms, l0VecIndex=4ms (metadata-only, embed=background, msgs=2), notify=2ms
+2026-10-16T18:20:47.327+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (15ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:20:47.333+00:00 ACK
+2026-10-16T18:20:47.333+00:00 [agents/agent-command] [agent] run f31b3fe1-7421-40a1-a19c-46ed88d7721e ended with stopReason=stop
+2026-10-16T18:20:47.343+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:long-75b94a73e6: l1_cursor=1792174839436
+2026-10-16T18:20:47.343+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174839436, limit=20, returned 2 row(s)
+2026-10-16T18:20:47.344+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174839436, 2 messages across 1 group(s)
+2026-10-16T18:20:47.344+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:long-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:20:47.963+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:20:47.998+00:00 [agent/embedded] [context-pressure-diagnostic] admitted provider attempt for lab/deepseek-flash route=compact_only estimatedPromptTokens=26791 promptBudgetBeforeReserve=24576
+2026-10-16T18:20:48.870+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:long-75b94a73e6: extracted=0, cursor=1792174847320, lastScene="我（AI）在和用户确认项目监控配置信息"
+2026-10-16T18:20:48.870+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=0, stored=0 (1 group(s))
+2026-10-16T18:20:49.377+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1348 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:20:49.416+00:00 ACK
+2026-10-16T18:20:49.417+00:00 [agents/agent-command] [agent] run 9f2d4fd6-ee6c-4927-ad92-8931dff8d232 ended with stopReason=stop
+2026-10-16T18:20:49.427+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=30ms, l0Record+checkpoint=9ms, l0VecIndex=4ms (metadata-only, embed=background, msgs=2), notify=16ms
+2026-10-16T18:20:49.429+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (32ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:20:49.432+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:long-75b94a73e6: l1_cursor=1792174847320
+2026-10-16T18:20:49.432+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174847320, limit=20, returned 2 row(s)
+2026-10-16T18:20:49.433+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174847320, 2 messages across 1 group(s)
+2026-10-16T18:20:49.433+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:long-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:20:50.069+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:20:50.106+00:00 [agent/embedded] [context-pressure-diagnostic] admitted provider attempt for lab/deepseek-flash route=compact_only estimatedPromptTokens=25053 promptBudgetBeforeReserve=24576
+2026-10-16T18:20:50.505+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:long-75b94a73e6: extracted=0, cursor=1792174849406, lastScene="我（AI）在和用户确认项目监控配置信息"
+2026-10-16T18:20:50.505+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=0, stored=0 (1 group(s))
+2026-10-16T18:20:51.369+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1236 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:20:51.404+00:00 ACK
+2026-10-16T18:20:51.405+00:00 [agents/agent-command] [agent] run 2055b324-44f4-441f-8803-391f2273eb8e ended with stopReason=stop
+2026-10-16T18:20:51.413+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=25ms, l0Record+checkpoint=3ms, l0VecIndex=2ms (metadata-only, embed=background, msgs=2), notify=20ms
+2026-10-16T18:20:51.413+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (26ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:20:51.425+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:long-75b94a73e6: l1_cursor=1792174849406
+2026-10-16T18:20:51.426+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174849406, limit=20, returned 2 row(s)
+2026-10-16T18:20:51.426+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174849406, 2 messages across 1 group(s)
+2026-10-16T18:20:51.427+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:long-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:20:52.040+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:20:52.073+00:00 [agent/embedded] [context-pressure-diagnostic] admitted provider attempt for lab/deepseek-flash route=compact_only estimatedPromptTokens=25083 promptBudgetBeforeReserve=24576
+2026-10-16T18:20:52.292+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:long-75b94a73e6: extracted=0, cursor=1792174851390, lastScene="我（AI）在和用户确认项目监控配置信息"
+2026-10-16T18:20:52.292+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=0, stored=0 (1 group(s))
+2026-10-16T18:20:53.100+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=12ms, l0Record+checkpoint=3ms, l0VecIndex=4ms (metadata-only, embed=background, msgs=2), notify=5ms
+2026-10-16T18:20:53.100+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (13ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:20:53.102+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:long-75b94a73e6: l1_cursor=1792174851390
+2026-10-16T18:20:53.103+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174851390, limit=20, returned 2 row(s)
+2026-10-16T18:20:53.103+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174851390, 2 messages across 1 group(s)
+2026-10-16T18:20:53.103+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:long-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:20:53.110+00:00 ACK
+2026-10-16T18:20:53.110+00:00 [agents/agent-command] [agent] run b6caa972-f71c-45df-b69b-64f7b388e97e ended with stopReason=stop
+2026-10-16T18:20:53.757+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:20:53.788+00:00 [agent/embedded] [context-pressure-diagnostic] admitted provider attempt for lab/deepseek-flash route=compact_only estimatedPromptTokens=25113 promptBudgetBeforeReserve=24576
+2026-10-16T18:20:54.609+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:long-75b94a73e6: extracted=0, cursor=1792174853090, lastScene="我（AI）在和用户确认项目监控配置信息"
+2026-10-16T18:20:54.609+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=0, stored=0 (1 group(s))
+2026-10-16T18:20:55.092+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1281 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:20:55.118+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=9ms, l0Record+checkpoint=3ms, l0VecIndex=2ms (metadata-only, embed=background, msgs=2), notify=4ms
+2026-10-16T18:20:55.118+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (10ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:20:55.120+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:long-75b94a73e6: l1_cursor=1792174853090
+2026-10-16T18:20:55.120+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174853090, limit=20, returned 2 row(s)
+2026-10-16T18:20:55.121+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174853090, 2 messages across 1 group(s)
+2026-10-16T18:20:55.121+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:long-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:20:55.131+00:00 ACK
+2026-10-16T18:20:55.132+00:00 [agents/agent-command] [agent] run 759761df-de01-4658-ad31-667824189821 ended with stopReason=stop
+2026-10-16T18:20:55.762+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:20:55.795+00:00 [agent/embedded] [context-pressure-diagnostic] admitted provider attempt for lab/deepseek-flash route=compact_only estimatedPromptTokens=25183 promptBudgetBeforeReserve=24576
+2026-10-16T18:20:56.143+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:long-75b94a73e6: extracted=0, cursor=1792174855112, lastScene="我（AI）在和用户确认项目监控配置信息"
+2026-10-16T18:20:56.143+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=0, stored=0 (1 group(s))
+2026-10-16T18:20:56.918+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1100 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:20:56.947+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=11ms, l0Record+checkpoint=5ms, l0VecIndex=2ms (metadata-only, embed=background, msgs=2), notify=4ms
+2026-10-16T18:20:56.948+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (12ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:20:56.949+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:long-75b94a73e6: l1_cursor=1792174855112
+2026-10-16T18:20:56.949+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174855112, limit=20, returned 2 row(s)
+2026-10-16T18:20:56.950+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174855112, 2 messages across 1 group(s)
+2026-10-16T18:20:56.950+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:long-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:20:56.959+00:00 ACK
+2026-10-16T18:20:56.959+00:00 [agents/agent-command] [agent] run 4a7b0b87-b04a-464f-8e5c-61cdb4595a71 ended with stopReason=stop
+2026-10-16T18:20:58.533+00:00 [plugins] [memory-tdai][l1-writer] [CR-2 guard] writeMemory called without storage adapter; falling back to local fs at /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-a/state/memory-tdai/records/2026-10-16.jsonl. In service mode this means JSONL is written to ephemeral pod fs and will be lost on restart. Caller must pass 'storage' to writeMemory.
+2026-10-16T18:20:58.535+00:00 [plugins] [memory-tdai][l1-extractor] Extraction complete: extracted=1, stored=1
+2026-10-16T18:20:58.537+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:long-75b94a73e6: extracted=1, cursor=1792174856941, lastScene="我（AI）在和用户确认ORION75b94a73e6遥测端口配置修正"
+2026-10-16T18:20:58.537+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=1, stored=1 (1 group(s))
+2026-10-16T18:20:59.656+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:20:59.690+00:00 [agent/embedded] [context-pressure-diagnostic] admitted provider attempt for lab/deepseek-flash route=compact_only estimatedPromptTokens=25248 promptBudgetBeforeReserve=24576
+2026-10-16T18:21:00.876+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1160 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:21:01.990+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1025 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:21:02.037+00:00 4699
+2026-10-16T18:21:02.037+00:00 [agents/agent-command] [agent] run f8f676f5-32ea-4607-9604-516a9bad0312 ended with stopReason=stop
+2026-10-16T18:21:02.046+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=36ms, l0Record+checkpoint=11ms, l0VecIndex=8ms (metadata-only, embed=background, msgs=2), notify=17ms
+2026-10-16T18:21:02.047+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (37ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:21:02.050+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:long-75b94a73e6: l1_cursor=1792174856941
+2026-10-16T18:21:02.050+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174856941, limit=20, returned 2 row(s)
+2026-10-16T18:21:02.051+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174856941, 2 messages across 1 group(s)
+2026-10-16T18:21:02.051+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:long-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:21:03.608+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:long-75b94a73e6: extracted=0, cursor=1792174862020, lastScene="我（AI）在和用户确认ORION75b94a73e6遥测端口配置修正"
+2026-10-16T18:21:03.608+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=0, stored=0 (1 group(s))
+2026-10-16T18:21:03.782+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:21:03.898+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:21:03.990+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:21:05.112+00:00 ACK
+2026-10-16T18:21:05.112+00:00 [agents/agent-command] [agent] run b49d62f4-8dbc-409e-8968-fc38b0cd28ec ended with stopReason=stop
+2026-10-16T18:21:05.124+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=32ms, l0Record+checkpoint=10ms, l0VecIndex=3ms (metadata-only, embed=background, msgs=2), notify=19ms
+2026-10-16T18:21:05.125+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (33ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:21:05.135+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:parallel-0-75b94a73e6: l1_cursor=(start)
+2026-10-16T18:21:05.136+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:parallel-0-75b94a73e6, afterRecordedAtMs=(all), limit=20, returned 2 row(s)
+2026-10-16T18:21:05.137+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:parallel-0-75b94a73e6, afterRecordedAtMs=(all), 2 messages across 1 group(s)
+2026-10-16T18:21:05.137+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:parallel-0-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:21:05.191+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1069 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:21:05.225+00:00 ACK
+2026-10-16T18:21:05.226+00:00 [agents/agent-command] [agent] run c703aa06-f4fd-4613-b2dd-0313e542c321 ended with stopReason=stop
+2026-10-16T18:21:05.242+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=32ms, l0Record+checkpoint=7ms, l0VecIndex=3ms (metadata-only, embed=background, msgs=2), notify=22ms
+2026-10-16T18:21:05.243+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (33ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:21:05.326+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1189 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:21:05.351+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=10ms, l0Record+checkpoint=7ms, l0VecIndex=2ms (metadata-only, embed=background, msgs=2), notify=1ms
+2026-10-16T18:21:05.352+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (11ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:21:05.356+00:00 ACK
+2026-10-16T18:21:05.356+00:00 [agents/agent-command] [agent] run 88c8a68c-ef0c-43fb-89b4-71c8e6b4cb9d ended with stopReason=stop
+2026-10-16T18:21:06.519+00:00 [plugins] [memory-tdai][l1-writer] [CR-2 guard] writeMemory called without storage adapter; falling back to local fs at /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-a/state/memory-tdai/records/2026-10-16.jsonl. In service mode this means JSONL is written to ephemeral pod fs and will be lost on restart. Caller must pass 'storage' to writeMemory.
+2026-10-16T18:21:06.522+00:00 [plugins] [memory-tdai][l1-extractor] Extraction complete: extracted=1, stored=1
+2026-10-16T18:21:06.524+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:parallel-0-75b94a73e6: extracted=1, cursor=1792174865101, lastScene="I am being told by the user about the port used by a synthetic project"
+2026-10-16T18:21:06.524+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=1, stored=1 (1 group(s))
+2026-10-16T18:21:06.526+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:parallel-2-75b94a73e6: l1_cursor=(start)
+2026-10-16T18:21:06.527+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:parallel-2-75b94a73e6, afterRecordedAtMs=(all), limit=20, returned 2 row(s)
+2026-10-16T18:21:06.527+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:parallel-2-75b94a73e6, afterRecordedAtMs=(all), 2 messages across 1 group(s)
+2026-10-16T18:21:06.528+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:parallel-2-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:21:07.927+00:00 [plugins] [memory-tdai][l1-writer] [CR-2 guard] writeMemory called without storage adapter; falling back to local fs at /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-a/state/memory-tdai/records/2026-10-16.jsonl. In service mode this means JSONL is written to ephemeral pod fs and will be lost on restart. Caller must pass 'storage' to writeMemory.
+2026-10-16T18:21:07.930+00:00 [plugins] [memory-tdai][l1-extractor] Extraction complete: extracted=1, stored=1
+2026-10-16T18:21:07.932+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:parallel-2-75b94a73e6: extracted=1, cursor=1792174865217, lastScene="我在和用户确认可复用项目的端口分配信息"
+2026-10-16T18:21:07.932+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=1, stored=1 (1 group(s))
+2026-10-16T18:21:07.934+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:parallel-1-75b94a73e6: l1_cursor=(start)
+2026-10-16T18:21:07.935+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:parallel-1-75b94a73e6, afterRecordedAtMs=(all), limit=20, returned 2 row(s)
+2026-10-16T18:21:07.935+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:parallel-1-75b94a73e6, afterRecordedAtMs=(all), 2 messages across 1 group(s)
+2026-10-16T18:21:07.936+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:parallel-1-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:21:09.637+00:00 [plugins] [memory-tdai][l1-writer] [CR-2 guard] writeMemory called without storage adapter; falling back to local fs at /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-a/state/memory-tdai/records/2026-10-16.jsonl. In service mode this means JSONL is written to ephemeral pod fs and will be lost on restart. Caller must pass 'storage' to writeMemory.
+2026-10-16T18:21:09.640+00:00 [plugins] [memory-tdai][l1-extractor] Extraction complete: extracted=1, stored=1
+2026-10-16T18:21:09.642+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:parallel-1-75b94a73e6: extracted=1, cursor=1792174865347, lastScene="我（AI）在与用户确认合成项目 PARALLEL175b94a73e6 使用的端口号"
+2026-10-16T18:21:09.642+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=1, stored=1 (1 group(s))
+2026-10-16T18:21:10.012+00:00 [tools] tools.profile (minimal) allowlist contains unknown entries (read). These entries are shipped core tools but unavailable in the current runtime/provider/model/config.
+2026-10-16T18:21:10.013+00:00 [tools] agents.tdai-poc.tools.allow allowlist contains unknown entries (read). These entries are shipped core tools but unavailable in the current runtime/provider/model/config.
+2026-10-16T18:21:16.925+00:00 [admission] closed: stop (SIGTERM)
+2026-10-16T18:21:16.926+00:00 [gateway] received SIGTERM; shutting down
+2026-10-16T18:21:16.928+00:00 [gateway] shutdown budget at shutdown: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T18:21:16.929+00:00 [gateway] active-work drain settled; beginning server close
+2026-10-16T18:21:16.938+00:00 [plugins] [memory-tdai] [pipeline] Destroying pipeline (timeout=2000ms)...
+2026-10-16T18:21:16.942+00:00 [plugins] [memory-tdai][sqlite] [L1-query] filter={sessionKey=agent:tdai-poc:long-75b94a73e6, sessionId=(all), updatedAfter=(none)}, returned 2 record(s)
+2026-10-16T18:21:16.944+00:00 [plugins] [memory-tdai] [extractor] extract() start: 2 memories
+[state/agent-db] agent database clean-close receipt: active-leases
+2026-10-16T18:21:18.940+00:00 [plugins] [memory-tdai] [pipeline] Pipeline flush timed out or failed: destroy timeout. Pending work will be recovered on next startup.
+2026-10-16T18:21:18.942+00:00 [plugins] [memory-tdai] [pipeline] Pipeline destroyed
+2026-10-16T18:21:18.946+00:00 [plugins] [memory-tdai] [gateway_stop] Cleanup finished, all resources released (2008ms)
+2026-10-16T18:21:18.949+00:00 [gmail-watcher] gmail watcher stopped
+2026-10-16T18:21:19.685+00:00 [state/agent-db] agent database clean-close receipt: written
+2026-10-16T18:21:19.767+00:00 [shutdown] completed cleanly in 2835ms
+2026-10-16T18:21:19.768+00:00 (node:4615) Warning: Plugin source capture cleanup: retained-by-loaded-module: /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-a/state/tmp/plugin-captures/dc873ba0-a4e8-4f4e-a42c-37d277b56327; cleanup deferred until the next startup
+(Use `node --trace-warnings ...` to show where the warning was created)
+[gateway] startup phase: entry.run-main-import starting total=70.0ms
+[gateway] startup phase: entry.run-main-import 23.4ms total=93.4ms start=70.0ms
+[gateway] startup phase: cli.main.gateway-run-select-environment starting total=286.3ms
+[gateway] startup phase: cli.main.gateway-run-select-environment 146.2ms total=432.5ms start=286.3ms
+[gateway] startup phase: cli.main.gateway-run-imports starting total=442.2ms
+[gateway] startup phase: cli.main.gateway-run-imports 2.3ms total=444.5ms start=442.2ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap starting total=454.1ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap 3.1ms total=457.2ms start=454.1ms
+[gateway] startup phase: cli.main.gateway-run-bootstrap starting total=457.3ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=487.1ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 536.6ms total=1023.7ms start=487.1ms agentCount=1 schemaProcessCount=1 schemaInspectionCount=1 schemaSnapshotCount=0
+[gateway] startup phase: cli.main.gateway-run-bootstrap 2198.8ms total=2656.0ms start=457.3ms
+2026-10-16T18:21:24.297+00:00 [gateway] loading configuration…
+2026-10-16T18:21:24.480+00:00 [gateway] resolving authentication…
+2026-10-16T18:21:24.482+00:00 [gateway] starting...
+2026-10-16T18:21:24.854+00:00 [gateway] shutdown budget at startup: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T18:21:24.937+00:00 [gateway] spawn broker ready pid=5478
+[gateway] startup phase: gateway.server-start-import starting total=3423.6ms
+[gateway] startup phase: gateway.server-start-import 211.4ms total=3635.0ms start=3423.6ms
+2026-10-16T18:21:25.181+00:00 [gateway] startup phase: process.bootstrap 3665.8ms total=3665.8ms
+2026-10-16T18:21:25.386+00:00 [gateway] startup phase: state.schema-preflight starting total=3871.3ms
+2026-10-16T18:21:25.551+00:00 [gateway] startup phase: state.schema-preflight 165.1ms total=4036.4ms
+2026-10-16T18:21:25.587+00:00 [gateway] startup phase: config.auth starting total=4071.5ms
+2026-10-16T18:21:25.702+00:00 [gateway] startup phase: config.auth 115.7ms total=4187.2ms
+2026-10-16T18:21:26.203+00:00 [gateway] startup phase: startup.maintenance starting total=4687.7ms
+[state/agent-db] agent database clean-close receipt: written
+2026-10-16T18:21:26.789+00:00 [session-sqlite] reclamation worker retired reason=exclusive-handoff kind=canonical-validation ageMs=555 opsServed=2
+2026-10-16T18:21:27.146+00:00 [gateway] startup phase: startup.maintenance 943.4ms total=5631.1ms
+2026-10-16T18:21:27.334+00:00 [gateway] starting HTTP server...
+2026-10-16T18:21:27.431+00:00 [health-monitor] started (interval: 300s, startup-grace: 60s, channel-connect-grace: 120s)
+2026-10-16T18:21:28.396+00:00 [gateway] startup phase: http.bound 0.0ms total=6881.0ms
+2026-10-16T18:21:51.335+00:00 [plugins] [memory-tdai][sqlite] nested vec0.so not found under sqlite-vec/node_modules/sqlite-vec-linux-x64; falling back to sqlite-vec loader
+2026-10-16T18:21:51.340+00:00 [plugins] [memory-tdai] Registered tool: tdai_read_cos (storage backend resolved lazily on first call)
+2026-10-16T18:21:51.351+00:00 [gateway] agent model: lab/deepseek-flash (thinking=off, fast=off)
+2026-10-16T18:21:51.351+00:00 [gateway] http server listening (1 plugin: memory-tencentdb; 26.5s)
+2026-10-16T18:21:51.352+00:00 [gateway] log file: /tmp/openclaw/openclaw-2026-10-16.log
+2026-10-16T18:21:51.352+00:00 [gateway] Older local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; legacy direct writers remain supported.
+2026-10-16T18:21:51.352+00:00 [gateway] native runtime: {"pid":5376,"platform":"linux","arch":"x64","node":"24.22.0","v8":"13.6.233.17-node.57","uv":"1.52.1","openssl":"3.5.8","sqlite":"3.53.4","sqliteClose":{"explicitSqliteCloseReleasesNativeResources":true,"decided":true,"reason":"Node runtime"}}
+2026-10-16T18:21:51.353+00:00 [gateway] worker startup state: {"workerCount":8,"workerLifecycle":[{"script":"other","started":1,"retired":[{"reason":"exit","count":1}]},{"script":"sqlite-store.worker.js","started":1,"retired":[]},{"script":"gateway-state-owner-heartbeat.worker.js","started":2,"retired":[{"reason":"exit","count":1}]},{"script":"openclaw-state-lease-heartbeat.worker.js","started":1,"retired":[]},{"script":"worker-native-lifecycle.worker.js","started":1,"retired":[]},{"script":"openclaw-state-read.worker.js","started":2,"retired":[]},{"script":"session-accessor.sqlite-archive.worker.js","started":1,"retired":[{"reason":"closed","count":1}]},{"script":"session-transcript.worker.js","started":2,"retired":[]}],"compute":{"limit":1,"active":0,"waitingPools":0,"pendingTasks":0,"pendingBytes":0}}
+2026-10-16T18:21:51.397+00:00 [gateway] starting channels and sidecars...
+2026-10-16T18:21:52.145+00:00 [gateway] startup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=skipped (no-handlers-loaded); gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)
+2026-10-16T18:21:52.146+00:00 [gateway] ready
+2026-10-16T18:21:52.152+00:00 [gateway] startup phase: ready 3.5ms total=30638.4ms
+2026-10-16T18:21:52.169+00:00 [skill-workshop] scheduled skill collection reviews are disabled because the cron scheduler is disabled; enable cron and restart the gateway
+2026-10-16T18:21:52.170+00:00 [heartbeat] disabled
+2026-10-16T18:21:52.407+00:00 [state/database-verify] database integrity verification passed
+2026-10-16T18:21:52.858+00:00 [gateway] remote model catalog refresh failed
+2026-10-16T18:21:54.371+00:00 [ws] ⇄ res ✓ agent 879ms runId=2f92fa38-3381-4bd0-bf8e-7b3326a833da bytes=243 conn=af051b88…91a3 id=2:f7cd80e3-7…76f1
+2026-10-16T18:21:54.808+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:21:55.308+00:00 [agent/embedded] [context-pressure-diagnostic] admitted provider attempt for lab/deepseek-flash route=compact_only estimatedPromptTokens=25352 promptBudgetBeforeReserve=24576
+2026-10-16T18:21:57.153+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1525 dispatcher=new contentType=text/event-stream
+2026-10-16T18:21:58.234+00:00 [plugins] [memory-tdai] [pipeline] Restored 5 session state(s) from checkpoint
+2026-10-16T18:21:58.235+00:00 [plugins] [memory-tdai] [pipeline] Pipeline started
+2026-10-16T18:21:58.329+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=92ms, l0Record+checkpoint=7ms, l0VecIndex=70ms (metadata-only, embed=background, msgs=2), notify=15ms
+2026-10-16T18:21:58.329+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (99ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:21:58.331+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:long-75b94a73e6: l1_cursor=1792174862020
+2026-10-16T18:21:58.332+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174862020, limit=20, returned 2 row(s)
+2026-10-16T18:21:58.333+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:long-75b94a73e6, afterRecordedAtMs=1792174862020, 2 messages across 1 group(s)
+2026-10-16T18:21:58.333+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:long-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:21:58.351+00:00 4699
+2026-10-16T18:21:58.352+00:00 [agents/agent-command] [agent] run 2f92fa38-3381-4bd0-bf8e-7b3326a833da ended with stopReason=stop
+2026-10-16T18:21:59.691+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:long-75b94a73e6: extracted=0, cursor=1792174918242, lastScene="我（AI）在和用户确认ORION75b94a73e6遥测端口配置修正"
+2026-10-16T18:21:59.692+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=0, stored=0 (1 group(s))
+2026-10-16T18:22:19.038+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:22:20.114+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=14ms, l0Record+checkpoint=3ms, l0VecIndex=4ms (metadata-only, embed=background, msgs=2), notify=7ms
+2026-10-16T18:22:20.115+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (16ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:22:20.121+00:00 ACK
+2026-10-16T18:22:20.122+00:00 [agents/agent-command] [agent] run 06a8e57c-e357-4302-a978-b2e9b6bb7f06 ended with stopReason=stop
+2026-10-16T18:22:20.133+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:soak-75b94a73e6: l1_cursor=(start)
+2026-10-16T18:22:20.134+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:soak-75b94a73e6, afterRecordedAtMs=(all), limit=20, returned 2 row(s)
+2026-10-16T18:22:20.135+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:soak-75b94a73e6, afterRecordedAtMs=(all), 2 messages across 1 group(s)
+2026-10-16T18:22:20.135+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:soak-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:22:21.883+00:00 [plugins] [memory-tdai][l1-writer] [CR-2 guard] writeMemory called without storage adapter; falling back to local fs at /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-a/state/memory-tdai/records/2026-10-16.jsonl. In service mode this means JSONL is written to ephemeral pod fs and will be lost on restart. Caller must pass 'storage' to writeMemory.
+2026-10-16T18:22:21.888+00:00 [plugins] [memory-tdai][l1-extractor] Extraction complete: extracted=1, stored=1
+2026-10-16T18:22:21.891+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:soak-75b94a73e6: extracted=1, cursor=1792174940102, lastScene="我（AI）在和用户确认合成项目 SOAK75b94a73e6 的遥测端口配置"
+2026-10-16T18:22:21.892+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=1, stored=1 (1 group(s))
+2026-10-16T18:22:40.867+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:22:42.581+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1636 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:22:42.614+00:00 ACK
+2026-10-16T18:22:42.615+00:00 [agents/agent-command] [agent] run 917510b5-7ebd-4904-b650-ebf2fa1652c4 ended with stopReason=stop
+2026-10-16T18:22:42.625+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=26ms, l0Record+checkpoint=8ms, l0VecIndex=3ms (metadata-only, embed=background, msgs=2), notify=16ms
+2026-10-16T18:22:42.625+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (28ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:22:42.629+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:soak-75b94a73e6: l1_cursor=1792174940102
+2026-10-16T18:22:42.630+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:soak-75b94a73e6, afterRecordedAtMs=1792174940102, limit=20, returned 2 row(s)
+2026-10-16T18:22:42.630+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:soak-75b94a73e6, afterRecordedAtMs=1792174940102, 2 messages across 1 group(s)
+2026-10-16T18:22:42.630+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:soak-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:22:44.091+00:00 [plugins] [memory-tdai][l1-writer] [CR-2 guard] writeMemory called without storage adapter; falling back to local fs at /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-a/state/memory-tdai/records/2026-10-16.jsonl. In service mode this means JSONL is written to ephemeral pod fs and will be lost on restart. Caller must pass 'storage' to writeMemory.
+2026-10-16T18:22:44.095+00:00 [plugins] [memory-tdai][l1-extractor] Extraction complete: extracted=1, stored=1
+2026-10-16T18:22:44.097+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:soak-75b94a73e6: extracted=1, cursor=1792174962605, lastScene="我（AI）在和用户确认合成项目 SOAK75b94a73e6 的遥测端口配置"
+2026-10-16T18:22:44.098+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=1, stored=1 (1 group(s))
+2026-10-16T18:23:03.447+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:23:04.621+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1085 dispatcher=reused contentType=text/event-stream
+2026-10-16T18:23:04.669+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=21ms, l0Record+checkpoint=13ms, l0VecIndex=5ms (metadata-only, embed=background, msgs=2), notify=3ms
+2026-10-16T18:23:04.670+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (23ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:23:04.677+00:00 ACK
+2026-10-16T18:23:04.678+00:00 [agents/agent-command] [agent] run 8e1c8263-a70e-40b7-b96f-45c374ab3603 ended with stopReason=stop
+2026-10-16T18:23:04.690+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:soak-75b94a73e6: l1_cursor=1792174962605
+2026-10-16T18:23:04.691+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:soak-75b94a73e6, afterRecordedAtMs=1792174962605, limit=20, returned 2 row(s)
+2026-10-16T18:23:04.692+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:soak-75b94a73e6, afterRecordedAtMs=1792174962605, 2 messages across 1 group(s)
+2026-10-16T18:23:04.692+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:soak-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:23:04.758+00:00 [admission] closed: stop (SIGTERM)
+2026-10-16T18:23:04.758+00:00 [gateway] received SIGTERM; shutting down
+2026-10-16T18:23:04.760+00:00 [gateway] shutdown budget at shutdown: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T18:23:04.763+00:00 [gateway] active-work drain settled; beginning server close
+2026-10-16T18:23:04.772+00:00 [plugins] [memory-tdai] [pipeline] Destroying pipeline (timeout=2000ms)...
+[state/agent-db] agent database clean-close receipt: active-leases
+2026-10-16T18:23:06.011+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:soak-75b94a73e6: extracted=0, cursor=1792174984660, lastScene="我（AI）在和用户确认合成项目 SOAK75b94a73e6 的遥测端口配置"
+2026-10-16T18:23:06.012+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=0, stored=0 (1 group(s))
+2026-10-16T18:23:06.016+00:00 [plugins] [memory-tdai][sqlite] [L1-query] filter={sessionKey=agent:tdai-poc:long-75b94a73e6, sessionId=(all), updatedAfter=(none)}, returned 2 record(s)
+2026-10-16T18:23:06.018+00:00 [plugins] [memory-tdai] [extractor] extract() start: 2 memories
+2026-10-16T18:23:06.774+00:00 [plugins] [memory-tdai] [pipeline] Pipeline flush timed out or failed: destroy timeout. Pending work will be recovered on next startup.
+2026-10-16T18:23:06.777+00:00 [plugins] [memory-tdai] [pipeline] Pipeline destroyed
+2026-10-16T18:23:06.780+00:00 [plugins] [memory-tdai] [gateway_stop] Cleanup finished, all resources released (2009ms)
+2026-10-16T18:23:06.785+00:00 [gmail-watcher] gmail watcher stopped
+2026-10-16T18:23:07.397+00:00 [state/agent-db] agent database clean-close receipt: written
+2026-10-16T18:23:07.495+00:00 [shutdown] completed cleanly in 2728ms

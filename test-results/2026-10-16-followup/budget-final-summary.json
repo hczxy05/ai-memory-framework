@@ -1,0 +1,32 @@
+{
+  "maxCalls": 350,
+  "maxReservedRmb": 90,
+  "calls": 324,
+  "completedUsage": 323,
+  "reservedRmb": 87.87895999999996,
+  "expiresAt": 1792523702247,
+  "expiresAtIso": "2026-10-20T19:15:02.247Z",
+  "userAuthorizationRmb": 100,
+  "promptTokens": 660453,
+  "completionTokens": 37196,
+  "estimateMethod": "Conservative peak estimate using all recorded input tokens at 2 RMB / million and output tokens at 8 RMB / million; cache discounts and off-peak pricing ignored, consistent with the prior campaign estimate.",
+  "estimatedPeakKnownRmb": 1.618474,
+  "oldMissingUsageReserveRmb": 0.34011,
+  "estimatedWithOldMissingReserveRmb": 1.958584,
+  "missingUsageRequests": 1,
+  "notProviderInvoice": true,
+  "notAccountWideBillLimit": true,
+  "reservationIsNotSpending": true,
+  "health": {
+    "ready": true,
+    "calls": 324,
+    "reservedRmb": 87.87895999999996,
+    "expiresAt": 1792523702247,
+    "limits": {
+      "maxCalls": 350,
+      "maxReservedRmb": 90
+    },
+    "completed": 323
+  },
+  "checkedAt": "2026-10-19T20:38:53.601397+00:00"
+}

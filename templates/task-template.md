@@ -1,6 +1,6 @@
 # Task Template
 
-> Loading, classification, query, and promotion rules: see `<ai-memory-path>/memory/memory-policy.md`.
+> Loading, classification, query, and promotion rules: see `<ai-memory-path>/rules/memory-policy.md`.
 
 ## Task
 

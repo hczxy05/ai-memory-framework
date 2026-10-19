@@ -1,0 +1,13 @@
+✔ COS refuses an allowed filename that hardlinks a non-allowlisted file (35.50639ms)
+✔ oversized MCP input is rejected and the following request still works (33.914599ms)
+✔ test client correlates asynchronous MCP replies by id (32.82548ms)
+✔ fallback ranks lexical coverage before its bounded candidate cutoff (45.394464ms)
+✔ scene candidate cutoff retains the best term coverage when FTS also matches (49.402143ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 234.651056

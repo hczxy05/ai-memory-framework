@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "date": "2026-10-16",
+  "platform": "linux",
+  "arch": "x64",
+  "node": "v24.22.0",
+  "sqlite": "3.53.4",
+  "image": "node@sha256:14078204b6bb268c107ceff6d3c43f45a888105e5c2b18b14c32b3409d93a1b0",
+  "openclaw": "2026.10.4",
+  "tdai": "1.0.3",
+  "sourceHead": "a134818be7e220eb9a8a8d2a2fd12570fc48b5f1",
+  "lab": {
+    "uid": 1000,
+    "cpuLimit": 2,
+    "memoryLimitBytes": 4294967296,
+    "readOnlyRoot": true,
+    "hostBindMounts": 0,
+    "publishedPorts": 0,
+    "dockerSocketMounted": false,
+    "network": "internal; only the separate model proxy had egress"
+  },
+  "resources": {
+    "currentBytes": 363974656,
+    "peakBytes": 4294975488,
+    "memoryEvents": {
+      "low": 0,
+      "high": 0,
+      "max": 14494,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    },
+    "memoryStat": {
+      "anon": 152358912,
+      "file": 182398976,
+      "kernel": 24141824,
+      "inactive_file": 15978496,
+      "active_file": 34869248
+    },
+    "note": "cgroup peak includes the preexisting lab and dependency file cache, not solely this campaign; runner RSS samples are separate.",
+    "finalCurrentBytes": 228909056,
+    "finalMemoryEvents": {
+      "low": 0,
+      "high": 0,
+      "max": 14494,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    }
+  },
+  "modelApi": "fixed DeepSeek HTTPS endpoint; Flash; thinking disabled; max 2048 output tokens",
+  "publishedData": "synthetic fixtures only",
+  "harnessSha256": {
+    "tests/comprehensive/model-eval.mjs": "2b4e82176b5db9516ee1b71d6e1d95f4faad38380f73840e65c52d7de215c3d8",
+    "tests/comprehensive/openclaw-eval.mjs": "2f06db378ab782be3441f984268dfde551ca2ab449c27827c0ceef4131ef9b88",
+    "tests/comprehensive/offline.mjs": "7982bb787fe1e222443747bf4c157c32ca4261b09b9f50fb0802cf0dd674b8a7",
+    "tests/comprehensive/authority-fixture.mjs": "ec088f6c7ce6ff81761df78599f14fd10b35052eb93ee945a6dea7c09e8d137c"
+  },
+  "capturedAt": "2026-10-16T18:48:40.699Z",
+  "checkpoints": {
+    "primaryModelSource": "ce221ca157ea56726c2490f70b7a8ffd387777d7",
+    "primaryGatewayHarnessPublished": "27dc38f0719aeac95609f89b80cb35bae4762ab9",
+    "finalBudgetGuard": "a134818be7e220eb9a8a8d2a2fd12570fc48b5f1"
+  },
+  "exploratoryProfileHarnessSha256": "7e08fdb479d357cbf918af45d4e854b900b7f7e2d95a2f5ad88167d77c10afda"
+}

@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "allRequiredProgressEventsTurnsAndGatewayLogsArchived": true,
+  "retainedMcpFiles": [
+    {
+      "volume": "ai-memory-followup-alpha_state",
+      "path": "/home/node/.openclaw/validation/endurance/mcp/vectors.db",
+      "bytes": 126976,
+      "sha256": "5e5fdf3e1a5cc5ecdb0525ebf4259704e65a63c6720dddec7141da6a37801350",
+      "uploaded": false,
+      "reason": "Runtime SQLite data retained in Docker volume; synthetic request/response evidence is archived separately."
+    },
+    {
+      "volume": "ai-memory-followup-beta_state",
+      "path": "/home/node/.openclaw/validation/endurance/mcp/vectors.db",
+      "bytes": 126976,
+      "sha256": "d6a632ca662b30d4902655b6f8d84cea16d89c33f8d89d1894061720aff0cac2",
+      "uploaded": false,
+      "reason": "Runtime SQLite data retained in Docker volume; synthetic request/response evidence is archived separately."
+    }
+  ],
+  "files": [
+    {
+      "project": "alpha",
+      "originalVolume": "ai-memory-followup-alpha_state",
+      "originalPath": "/home/node/.openclaw/validation/endurance/events.jsonl",
+      "bytes": 1807,
+      "sha256": "2c9b2d493d2eb474a86fa42c5b55089b5c65becd06a952736624acfa6afd3760",
+      "archivedPath": "endurance/alpha/events.jsonl",
+      "archivedBytes": 1807,
+      "archivedSha256": "2c9b2d493d2eb474a86fa42c5b55089b5c65becd06a952736624acfa6afd3760",
+      "complete": true,
+      "compression": null
+    },
+    {
+      "project": "alpha",
+      "originalVolume": "ai-memory-followup-alpha_state",
+      "originalPath": "/home/node/.openclaw/validation/endurance/gateway.log",
+      "bytes": 22171748,
+      "sha256": "fa8bf3cdcb1542e55ca8c1350eba238dd55b734a96fac8834ff71b8adddbb18e",
+      "archivedPath": "endurance/alpha/gateway.log.gz",
+      "archivedBytes": 1038838,
+      "archivedSha256": "d092913886fcfdae3e8fc4e3e485a84354cbef3bc93c3e6140cb6fcaa26fe57f",
+      "complete": true,
+      "compression": "gzip"
+    },
+    {
+      "project": "alpha",
+      "originalVolume": "ai-memory-followup-alpha_state",
+      "originalPath": "/home/node/.openclaw/validation/endurance/isolation.json",
+      "bytes": 302,
+      "sha256": "e16d1343045bbfe58dcdbfe79f000b3303b3cd408840b1cc96878426a6050cfd",
+      "archivedPath": "endurance/alpha/isolation.json",
+      "archivedBytes": 302,
+      "archivedSha256": "e16d1343045bbfe58dcdbfe79f000b3303b3cd408840b1cc96878426a6050cfd",
+      "complete": true,
+      "compression": null
+    },
+    {
+      "project": "alpha",
+      "originalVolume": "ai-memory-followup-alpha_state",
+      "originalPath": "/home/node/.openclaw/validation/endurance/progress.json",
+      "bytes": 334767,
+      "sha256": "b504cdee2d727821fb1f626cc6c90441a99380ec2adde73da1959ab661566ded",
+      "archivedPath": "endurance/alpha/progress.json",
+      "archivedBytes": 334767,
+      "archivedSha256": "b504cdee2d727821fb1f626cc6c90441a99380ec2adde73da1959ab661566ded",
+      "complete": true,
+      "compression": null
+    },
+    {
+      "project": "alpha",
+      "originalVolume": "ai-memory-followup-alpha_state",
+      "originalPath": "/home/node/.openclaw/validation/endurance/turns.jsonl",
+      "bytes": 18674,
+      "sha256": "4e6f982ed761bd688bc3e55d3be1e51b35f2a93623ed4bf6feacba2a5757ad52",
+      "archivedPath": "endurance/alpha/turns.jsonl",
+      "archivedBytes": 18674,
+      "archivedSha256": "4e6f982ed761bd688bc3e55d3be1e51b35f2a93623ed4bf6feacba2a5757ad52",
+      "complete": true,
+      "compression": null
+    },
+    {
+      "project": "beta",
+      "originalVolume": "ai-memory-followup-beta_state",
+      "originalPath": "/home/node/.openclaw/validation/endurance/events.jsonl",
+      "bytes": 1800,
+      "sha256": "4b18041776975afb7761026707375a58e22fd6d7f376b67ee64985166ae1049d",
+      "archivedPath": "endurance/beta/events.jsonl",
+      "archivedBytes": 1800,
+      "archivedSha256": "4b18041776975afb7761026707375a58e22fd6d7f376b67ee64985166ae1049d",
+      "complete": true,
+      "compression": null
+    },
+    {
+      "project": "beta",
+      "originalVolume": "ai-memory-followup-beta_state",
+      "originalPath": "/home/node/.openclaw/validation/endurance/gateway.log",
+      "bytes": 22175817,
+      "sha256": "54e32b57d5a932cc5c2cbad62d41a0214b268d16f59e45bfa391cb970590e18c",
+      "archivedPath": "endurance/beta/gateway.log.gz",
+      "archivedBytes": 1034653,
+      "archivedSha256": "f648bc1fa5fd977b19813dec78e5c25ea97fe1fa1c4942330ec3fdcfa2fe8149",
+      "complete": true,
+      "compression": "gzip"
+    },
+    {
+      "project": "beta",
+      "originalVolume": "ai-memory-followup-beta_state",
+      "originalPath": "/home/node/.openclaw/validation/endurance/isolation.json",
+      "bytes": 301,
+      "sha256": "09e1a7bc6757de9cc69b9c9079d51f73a2d5ad1d82208a893797e990a244b62c",
+      "archivedPath": "endurance/beta/isolation.json",
+      "archivedBytes": 301,
+      "archivedSha256": "09e1a7bc6757de9cc69b9c9079d51f73a2d5ad1d82208a893797e990a244b62c",
+      "complete": true,
+      "compression": null
+    },
+    {
+      "project": "beta",
+      "originalVolume": "ai-memory-followup-beta_state",
+      "originalPath": "/home/node/.openclaw/validation/endurance/progress.json",
+      "bytes": 334526,
+      "sha256": "8194a8a3603e10dd02190a2eecfaf3607a96cff8232f3ac65d37618294098319",
+      "archivedPath": "endurance/beta/progress.json",
+      "archivedBytes": 334526,
+      "archivedSha256": "8194a8a3603e10dd02190a2eecfaf3607a96cff8232f3ac65d37618294098319",
+      "complete": true,
+      "compression": null
+    },
+    {
+      "project": "beta",
+      "originalVolume": "ai-memory-followup-beta_state",
+      "originalPath": "/home/node/.openclaw/validation/endurance/turns.jsonl",
+      "bytes": 13990,
+      "sha256": "6fd35bcc9e4a20dc1aad8d8636f4d7e49a4757995e7767fce3a2540ed3ff1263",
+      "archivedPath": "endurance/beta/turns.jsonl",
+      "archivedBytes": 13990,
+      "archivedSha256": "6fd35bcc9e4a20dc1aad8d8636f4d7e49a4757995e7767fce3a2540ed3ff1263",
+      "complete": true,
+      "compression": null
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{"time":"2026-10-16T19:26:35.349Z","type":"start-or-resume","sourceSha256":"46fc3c736105f1b08b6241dc862885d23d99e8c9b0b155a888fca2483253015d"}
+{"time":"2026-10-16T19:27:40.956Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":1}
+{"time":"2026-10-16T19:28:45.641Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":1}
+{"time":"2026-10-16T19:29:47.945Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":1}
+{"time":"2026-10-16T19:30:52.650Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":1}
+{"time":"2026-10-16T19:30:52.652Z","type":"completed"}

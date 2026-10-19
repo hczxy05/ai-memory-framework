@@ -1,0 +1,82 @@
+[gateway] startup phase: entry.run-main-import starting total=73.1ms
+[gateway] startup phase: entry.run-main-import 23.0ms total=96.1ms start=73.1ms
+[gateway] startup phase: cli.main.gateway-run-select-environment starting total=258.0ms
+[gateway] startup phase: cli.main.gateway-run-select-environment 148.5ms total=406.5ms start=258.0ms
+[gateway] startup phase: cli.main.gateway-run-imports starting total=416.6ms
+[gateway] startup phase: cli.main.gateway-run-imports 2.2ms total=418.7ms start=416.6ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap starting total=428.1ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap 3.0ms total=431.0ms start=428.1ms
+[gateway] startup phase: cli.main.gateway-run-bootstrap starting total=431.1ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=460.3ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 1.8ms total=462.1ms start=460.3ms agentCount=1 schemaProcessCount=0 schemaInspectionCount=0 schemaSnapshotCount=0
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=882.3ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 257.0ms total=1139.2ms start=882.3ms agentCount=1 schemaProcessCount=0 schemaInspectionCount=0 schemaSnapshotCount=0
+[gateway] startup phase: cli.main.gateway-run-bootstrap 2464.2ms total=2895.3ms start=431.1ms
+2026-10-16T18:20:15.167+00:00 [gateway] loading configuration…
+2026-10-16T18:20:15.180+00:00 [gateway] resolving authentication…
+2026-10-16T18:20:15.182+00:00 [gateway] starting...
+2026-10-16T18:20:15.389+00:00 [gateway] shutdown budget at startup: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T18:20:15.462+00:00 [gateway] spawn broker ready pid=4840
+[gateway] startup phase: gateway.server-start-import starting total=3320.5ms
+[gateway] startup phase: gateway.server-start-import 218.1ms total=3538.6ms start=3320.5ms
+2026-10-16T18:20:15.713+00:00 [gateway] startup phase: process.bootstrap 3570.2ms total=3570.2ms
+2026-10-16T18:20:16.003+00:00 [gateway] startup phase: state.schema-preflight starting total=3860.0ms
+2026-10-16T18:20:16.167+00:00 [gateway] startup phase: state.schema-preflight 164.6ms total=4024.6ms
+2026-10-16T18:20:16.199+00:00 [gateway] startup phase: config.auth starting total=4056.2ms
+2026-10-16T18:20:16.240+00:00 [gateway] startup phase: config.auth 40.9ms total=4097.1ms
+2026-10-16T18:20:16.766+00:00 [gateway] startup phase: startup.maintenance starting total=4622.5ms
+2026-10-16T18:20:16.786+00:00 [gateway] startup phase: startup.maintenance 21.4ms total=4643.9ms
+2026-10-16T18:20:17.001+00:00 [gateway] starting HTTP server...
+2026-10-16T18:20:17.088+00:00 [health-monitor] started (interval: 300s, startup-grace: 60s, channel-connect-grace: 120s)
+2026-10-16T18:20:17.598+00:00 [gateway] startup phase: http.bound 0.0ms total=5455.5ms
+2026-10-16T18:20:33.083+00:00 [plugins] [memory-tdai][sqlite] nested vec0.so not found under sqlite-vec/node_modules/sqlite-vec-linux-x64; falling back to sqlite-vec loader
+2026-10-16T18:20:33.104+00:00 [plugins] [memory-tdai] Registered tool: tdai_read_cos (storage backend resolved lazily on first call)
+2026-10-16T18:20:33.130+00:00 [gateway] agent model: lab/deepseek-flash (thinking=off, fast=off)
+2026-10-16T18:20:33.130+00:00 [gateway] http server listening (1 plugin: memory-tencentdb; 17.7s)
+2026-10-16T18:20:33.131+00:00 [gateway] log file: /tmp/openclaw/openclaw-2026-10-16.log
+2026-10-16T18:20:33.131+00:00 [gateway] Older local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; legacy direct writers remain supported.
+2026-10-16T18:20:33.132+00:00 [gateway] native runtime: {"pid":4755,"platform":"linux","arch":"x64","node":"24.22.0","v8":"13.6.233.17-node.57","uv":"1.52.1","openssl":"3.5.8","sqlite":"3.53.4","sqliteClose":{"explicitSqliteCloseReleasesNativeResources":true,"decided":true,"reason":"Node runtime"}}
+2026-10-16T18:20:33.132+00:00 [gateway] worker startup state: {"workerCount":6,"workerLifecycle":[{"script":"other","started":1,"retired":[{"reason":"exit","count":1}]},{"script":"gateway-state-owner-heartbeat.worker.js","started":2,"retired":[{"reason":"exit","count":1}]},{"script":"sqlite-store.worker.js","started":1,"retired":[]},{"script":"openclaw-state-lease-heartbeat.worker.js","started":1,"retired":[]},{"script":"worker-native-lifecycle.worker.js","started":1,"retired":[]},{"script":"openclaw-state-read.worker.js","started":2,"retired":[]}],"compute":{"limit":1,"active":0,"waitingPools":0,"pendingTasks":0,"pendingBytes":0}}
+2026-10-16T18:20:33.164+00:00 [gateway] starting channels and sidecars...
+2026-10-16T18:20:33.791+00:00 [gateway] startup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=skipped (no-handlers-loaded); gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)
+2026-10-16T18:20:33.793+00:00 [gateway] ready
+2026-10-16T18:20:33.800+00:00 [gateway] startup phase: ready 4.9ms total=21657.0ms
+2026-10-16T18:20:33.815+00:00 [skill-workshop] scheduled skill collection reviews are disabled because the cron scheduler is disabled; enable cron and restart the gateway
+2026-10-16T18:20:33.816+00:00 [heartbeat] disabled
+2026-10-16T18:20:34.436+00:00 [gateway] remote model catalog refresh failed
+2026-10-16T18:21:12.680+00:00 [ws] ⇄ res ✓ agent 1976ms runId=302bf197-0f5e-4868-a5f1-e4a848498b10 bytes=245 conn=fe757d1d…c9cd id=2:54fd7e72-c…5c17
+2026-10-16T18:21:12.688+00:00 [session-sqlite] slow SQLite reclamation Worker operation pid=4755 threadId=0 isMainThread=true reclamationKind=maintenance-plan workerThreadId=13 elapsedMs=1799 outcome=resolved
+2026-10-16T18:21:13.569+00:00 [agent/embedded] tool-search: cataloged 8 tools behind compact prompt surface
+2026-10-16T18:21:15.137+00:00 [provider-transport-fetch] [model-fetch] response provider=lab api=openai-completions model=deepseek-flash status=200 elapsedMs=1194 dispatcher=new contentType=text/event-stream
+2026-10-16T18:21:15.187+00:00 [plugins] [memory-tdai] [pipeline] Restored 0 session state(s) from checkpoint
+2026-10-16T18:21:15.187+00:00 [plugins] [memory-tdai] [pipeline] Pipeline started
+2026-10-16T18:21:15.281+00:00 [plugins] [memory-tdai] [capture] ⏱ Capture timing: total=92ms, l0Record+checkpoint=23ms, l0VecIndex=67ms (metadata-only, embed=background, msgs=2), notify=3ms
+2026-10-16T18:21:15.282+00:00 [plugins] [memory-tdai] [agent_end] Auto-capture complete (97ms), l0Recorded=2, schedulerNotified=true
+2026-10-16T18:21:15.294+00:00 ACK
+2026-10-16T18:21:15.295+00:00 [agents/agent-command] [agent] run 302bf197-0f5e-4868-a5f1-e4a848498b10 ended with stopReason=stop
+2026-10-16T18:21:15.312+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Session agent:tdai-poc:storeb-75b94a73e6: l1_cursor=(start)
+2026-10-16T18:21:15.313+00:00 [plugins] [memory-tdai][sqlite] [L0-query] session=agent:tdai-poc:storeb-75b94a73e6, afterRecordedAtMs=(all), limit=20, returned 2 row(s)
+2026-10-16T18:21:15.314+00:00 [plugins] [memory-tdai][sqlite] [L0-query-grouped] session=agent:tdai-poc:storeb-75b94a73e6, afterRecordedAtMs=(all), 2 messages across 1 group(s)
+2026-10-16T18:21:15.314+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] Processing 2 L0 messages across 1 sessionId group(s) for session agent:tdai-poc:storeb-75b94a73e6 (queried=2, sliceEnd=2, hasMore=false, hasFullBacklog=false)
+2026-10-16T18:21:16.675+00:00 [plugins] [memory-tdai][l1-writer] [CR-2 guard] writeMemory called without storage adapter; falling back to local fs at /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-b/state/memory-tdai/records/2026-10-16.jsonl. In service mode this means JSONL is written to ephemeral pod fs and will be lost on restart. Caller must pass 'storage' to writeMemory.
+2026-10-16T18:21:16.678+00:00 [plugins] [memory-tdai][l1-extractor] Extraction complete: extracted=1, stored=1
+2026-10-16T18:21:16.680+00:00 [plugins] [checkpoint] markL1ExtractionComplete session=agent:tdai-poc:storeb-75b94a73e6: extracted=1, cursor=1792174875210, lastScene="I'm confirming synthetic fixture setup details with the user"
+2026-10-16T18:21:16.680+00:00 [plugins] [memory-tdai] [pipeline-factory] [l1] L1 complete: extracted=1, stored=1 (1 group(s))
+2026-10-16T18:21:16.901+00:00 [tools] tools.profile (minimal) allowlist contains unknown entries (read). These entries are shipped core tools but unavailable in the current runtime/provider/model/config.
+2026-10-16T18:21:16.902+00:00 [tools] agents.tdai-poc.tools.allow allowlist contains unknown entries (read). These entries are shipped core tools but unavailable in the current runtime/provider/model/config.
+2026-10-16T18:23:07.749+00:00 [admission] closed: stop (SIGTERM)
+2026-10-16T18:23:07.751+00:00 [gateway] received SIGTERM; shutting down
+2026-10-16T18:23:07.753+00:00 [gateway] shutdown budget at shutdown: drain=315000ms shutdown=325000ms reserve=10000ms exitMargin=5000ms; source=Gateway stop policy=330000ms
+2026-10-16T18:23:07.756+00:00 [gateway] active-work drain settled; beginning server close
+2026-10-16T18:23:07.766+00:00 [plugins] [memory-tdai] [pipeline] Destroying pipeline (timeout=2000ms)...
+2026-10-16T18:23:07.772+00:00 [plugins] [memory-tdai][sqlite] [L1-query] filter={sessionKey=agent:tdai-poc:storeb-75b94a73e6, sessionId=(all), updatedAfter=(none)}, returned 1 record(s)
+[state/agent-db] agent database clean-close receipt: active-leases
+2026-10-16T18:23:07.775+00:00 [plugins] [memory-tdai] [extractor] extract() start: 1 memories
+2026-10-16T18:23:09.766+00:00 [plugins] [memory-tdai] [pipeline] Pipeline flush timed out or failed: destroy timeout. Pending work will be recovered on next startup.
+2026-10-16T18:23:09.769+00:00 [plugins] [memory-tdai] [pipeline] Pipeline destroyed
+2026-10-16T18:23:09.773+00:00 [plugins] [memory-tdai] [gateway_stop] Cleanup finished, all resources released (2009ms)
+2026-10-16T18:23:09.777+00:00 [gmail-watcher] gmail watcher stopped
+2026-10-16T18:23:10.580+00:00 [state/agent-db] agent database clean-close receipt: written
+2026-10-16T18:23:10.605+00:00 [shutdown] completed cleanly in 2844ms
+2026-10-16T18:23:10.606+00:00 (node:4755) Warning: Plugin source capture cleanup: retained-by-loaded-module: /lab/comprehensive/openclaw-0388da6d-0709-4081-b026-7c7711d7997a/store-b/state/tmp/plugin-captures/16947d8d-309c-4cbe-bf10-5283dc7bc935; cleanup deferred until the next startup
+(Use `node --trace-warnings ...` to show where the warning was created)

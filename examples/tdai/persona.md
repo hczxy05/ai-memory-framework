@@ -1,6 +1,6 @@
 # Example Experience Persona
 
-> Illustrative provider-generated L3 output. It is historical evidence, not a user profile source of truth. Promote a confirmed stable preference to `memory/universal-memory.md` only through the authorized memory flow.
+> Illustrative provider-generated L3 output. It is historical evidence, not a user profile source of truth. Promote a confirmed stable preference to `<ai-memory-path>/personal/universal-memory.md` only through the authorized memory flow.
 
 ## Narrative Profile
 

@@ -1,5 +1,6 @@
+import { createDatabase, startServer, toolCall } from "./test-support.mjs";
 import assert from "node:assert/strict";
-import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { mkdtempSync, mkdirSync, writeFileSync, symlinkSync, rmSync } from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
 import { spawn } from "node:child_process";
@@ -11,29 +12,7 @@ const SERVER_PATH = path.join(import.meta.dirname, "server.mjs");
 function createFixture() {
   const dataDir = mkdtempSync(path.join(import.meta.dirname, "tdai-test-"));
   const dbPath = path.join(dataDir, "vectors.db");
-  const db = new DatabaseSync(dbPath);
-  db.exec(`
-    CREATE TABLE l1_records (
-      record_id TEXT PRIMARY KEY, content TEXT NOT NULL, type TEXT DEFAULT '', priority INTEGER DEFAULT 50,
-      scene_name TEXT DEFAULT '', session_key TEXT DEFAULT '', session_id TEXT DEFAULT '', timestamp_str TEXT DEFAULT '',
-      timestamp_start TEXT DEFAULT '', timestamp_end TEXT DEFAULT '', created_time TEXT DEFAULT '', updated_time TEXT DEFAULT '',
-      metadata_json TEXT DEFAULT '{}'
-    );
-    CREATE VIRTUAL TABLE l1_fts USING fts5(
-      content, content_original UNINDEXED, record_id UNINDEXED, type UNINDEXED, priority UNINDEXED,
-      scene_name UNINDEXED, session_key UNINDEXED, session_id UNINDEXED, timestamp_str UNINDEXED,
-      timestamp_start UNINDEXED, timestamp_end UNINDEXED, metadata_json UNINDEXED
-    );
-    CREATE TABLE l0_conversations (
-      record_id TEXT PRIMARY KEY, session_key TEXT NOT NULL, session_id TEXT DEFAULT '', role TEXT NOT NULL DEFAULT '',
-      message_text TEXT NOT NULL, recorded_at TEXT DEFAULT '', timestamp INTEGER DEFAULT 0
-    );
-    CREATE VIRTUAL TABLE l0_fts USING fts5(
-      message_text, message_text_original UNINDEXED, record_id UNINDEXED, session_key UNINDEXED,
-      session_id UNINDEXED, role UNINDEXED, recorded_at UNINDEXED, timestamp UNINDEXED
-    );
-  `);
-
+  const db = createDatabase(dbPath);
   const insertL1 = db.prepare(`INSERT INTO l1_records (
     record_id, content, type, priority, scene_name, session_key, session_id, timestamp_str,
     timestamp_start, timestamp_end, created_time, updated_time, metadata_json
@@ -71,35 +50,7 @@ function createFixture() {
   return { dataDir, dbPath };
 }
 
-function startServer(dataDir) {
-  const child = spawn(process.execPath, [SERVER_PATH], {
-    env: { ...process.env, TDAI_DATA_DIR: dataDir },
-    stdio: ["pipe", "pipe", "pipe"],
-  });
-  const lines = readline.createInterface({ input: child.stdout, crlfDelay: Infinity });
-  const pending = [];
-  let stderr = "";
-  child.stderr.on("data", (chunk) => { stderr += chunk.toString(); });
-  lines.on("line", (line) => pending.shift()?.resolve(JSON.parse(line)));
-
-  return {
-    request(message) {
-      return new Promise((resolve) => {
-        pending.push({ resolve });
-        child.stdin.write(`${JSON.stringify(message)}\n`);
-      });
-    },
-    async close() {
-      child.stdin.end();
-      await new Promise((resolve) => child.once("exit", resolve));
-      assert.equal(stderr.trim(), "", "server should produce no stderr output");
-    },
-  };
-}
-
-function toolCall(client, id, name, args) {
-  return client.request({ jsonrpc: "2.0", id, method: "tools/call", params: { name, arguments: args } });
-}
+const ADMISSION = { user_authorized: true, confirmed: true, stable: true, reusable: true };
 
 // ── Tests ────────────────────────────────────────────────────────────────────
 
@@ -196,6 +147,7 @@ test("tdai_experience_store rejects without authorization flags", async () => {
   try {
     const res = await toolCall(client, 7, "tdai_experience_store", { content: "Confirmed reusable test memory." });
     assert.equal(res.result.isError, true);
+    assert.match(res.result.content[0].text, /must all be true/);
   } finally {
     await client.close();
     rmSync(fixture.dataDir, { recursive: true, force: true });
@@ -212,6 +164,7 @@ test("tdai_experience_store rejects sensitive content", async () => {
       content: "Fake github_pat_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA must never persist.",
     });
     assert.equal(res.result.isError, true);
+    assert.match(res.result.content[0].text, /credential or secret/);
   } finally {
     await client.close();
     rmSync(fixture.dataDir, { recursive: true, force: true });
@@ -229,6 +182,7 @@ test("tdai_experience_store rejects sensitive scene_name", async () => {
       scene_name: "password=abcdefghijk",
     });
     assert.equal(res.result.isError, true);
+    assert.match(res.result.content[0].text, /credential or secret/);
   } finally {
     await client.close();
     rmSync(fixture.dataDir, { recursive: true, force: true });
@@ -286,6 +240,229 @@ test("tdai_read_cos rejects '..' traversal", async () => {
   }
 });
 
+test("writes are hidden and rejected by default even with all admission flags", async () => {
+  const fixture = createFixture();
+  const client = startServer(fixture.dataDir, { TDAI_ALLOW_STORE: undefined });
+  try {
+    const list = await client.request({ jsonrpc: "2.0", id: 1, method: "tools/list" });
+    assert.equal(list.result.tools.length, 3);
+    assert.ok(!list.result.tools.some((tool) => tool.name === "tdai_experience_store"));
+    const res = await toolCall(client, 2, "tdai_experience_store", { ...ADMISSION, content: "Confirmed reusable test memory." });
+    assert.equal(res.result.isError, true);
+    assert.match(res.result.content[0].text, /host must enable/);
+    const db = new DatabaseSync(fixture.dbPath, { readOnly: true });
+    assert.equal(db.prepare("SELECT count(*) AS n FROM l1_records WHERE content = ?").get("Confirmed reusable test memory.").n, 0);
+    db.close();
+  } finally {
+    await client.close();
+    rmSync(fixture.dataDir, { recursive: true, force: true });
+  }
+});
+
+test("truthy non-boolean admission flags cannot authorize writes", async () => {
+  const fixture = createFixture();
+  const client = startServer(fixture.dataDir);
+  try {
+    for (const flag of Object.keys(ADMISSION)) {
+      const res = await toolCall(client, 1, "tdai_experience_store", { ...ADMISSION, [flag]: "true", content: "Confirmed reusable test memory." });
+      assert.equal(res.result.isError, true);
+      assert.match(res.result.content[0].text, /must all be true/);
+    }
+  } finally {
+    await client.close();
+    rmSync(fixture.dataDir, { recursive: true, force: true });
+  }
+});
+
+test("search and store fail closed without a host-configured scope", async () => {
+  const fixture = createFixture();
+  const client = startServer(fixture.dataDir, { TDAI_SESSION_KEY: "" });
+  try {
+    for (const name of ["tdai_memory_search", "tdai_conversation_search", "tdai_experience_store"]) {
+      const res = await toolCall(client, 1, name, { query: "SCARA", ...ADMISSION, content: "Confirmed reusable test memory." });
+      assert.equal(res.result.isError, true);
+      assert.match(res.result.content[0].text, /TDAI_SESSION_KEY/);
+    }
+  } finally {
+    await client.close();
+    rmSync(fixture.dataDir, { recursive: true, force: true });
+  }
+});
+
+for (const fallback of [false, true]) {
+  test(`searches and deduplication respect host scope (${fallback ? "LIKE" : "FTS5"})`, async () => {
+    const fixture = createFixture();
+    if (fallback) {
+      const db = new DatabaseSync(fixture.dbPath);
+      db.exec("DROP TABLE l1_fts; DROP TABLE l0_fts");
+      db.close();
+    }
+    const client = startServer(fixture.dataDir, { TDAI_SESSION_KEY: "other-user:other-project:other-agent" });
+    try {
+      for (const name of ["tdai_memory_search", "tdai_conversation_search"]) {
+        const res = await toolCall(client, 1, name, { query: "SCARA STM32", session_key: "fixture" });
+        assert.deepEqual(res.result.structuredContent.results, []);
+      }
+      const scene = await toolCall(client, 1, "tdai_memory_search", { query: "ranking fixture" });
+      assert.deepEqual(scene.result.structuredContent.results, [], "scene-only matches must also stay inside the scope");
+      if (!fallback) {
+        const stored = await toolCall(client, 2, "tdai_experience_store", { ...ADMISSION, content: "SCARA STM32 test memory" });
+        assert.equal(stored.result.structuredContent.stored, true, "another scope must not suppress the write as a duplicate");
+        const res = await toolCall(client, 3, "tdai_memory_search", { query: "SCARA STM32" });
+        assert.equal(res.result.structuredContent.results.length, 1);
+        assert.equal(res.result.structuredContent.results[0].id, stored.result.structuredContent.id);
+        assert.equal(res.result.structuredContent.results[0].session_key, "other-user:other-project:other-agent");
+      }
+    } finally {
+      await client.close();
+      rmSync(fixture.dataDir, { recursive: true, force: true });
+    }
+  });
+}
+
+test("bounded LIKE fallback preserves older exact matches and clamps result counts", async () => {
+  const fixture = createFixture();
+  const db = new DatabaseSync(fixture.dbPath);
+  db.exec("DROP TABLE l1_fts; DROP TABLE l0_fts");
+  db.close();
+  const client = startServer(fixture.dataDir);
+  try {
+    for (const [name, expected] of [["tdai_memory_search", "old-exact-memory"], ["tdai_conversation_search", "old-exact-conversation"]]) {
+      const res = await toolCall(client, 1, name, { query: "alpha beta", limit: 10000 });
+      assert.equal(res.result.structuredContent.retrieval, "like");
+      assert.equal(res.result.structuredContent.results[0].id, expected);
+      assert.equal(res.result.structuredContent.results.length, 3);
+    }
+  } finally {
+    await client.close();
+    rmSync(fixture.dataDir, { recursive: true, force: true });
+  }
+});
+
+test("new writes distinguish process sessions within the same host scope", async () => {
+  const fixture = createFixture();
+  const sessions = [];
+  try {
+    for (let index = 0; index < 2; index++) {
+      const client = startServer(fixture.dataDir);
+      try {
+        const res = await toolCall(client, 1, "tdai_experience_store", {
+          ...ADMISSION, content: `Confirmed stable session regression memory ${index}.`,
+        });
+        assert.equal(res.result.structuredContent.stored, true);
+        const db = new DatabaseSync(fixture.dbPath, { readOnly: true });
+        const row = db.prepare("SELECT session_key, session_id FROM l1_records WHERE record_id = ?").get(res.result.structuredContent.id);
+        assert.equal(row.session_key, "fixture");
+        assert.ok(row.session_id);
+        sessions.push(row.session_id);
+        db.close();
+      } finally {
+        await client.close();
+      }
+    }
+    assert.notEqual(sessions[0], sessions[1]);
+  } finally {
+    rmSync(fixture.dataDir, { recursive: true, force: true });
+  }
+});
+
+test("failed FTS insertion rolls back the L1 write", async () => {
+  const fixture = createFixture();
+  const db = new DatabaseSync(fixture.dbPath);
+  db.exec("DROP TABLE l1_fts");
+  db.close();
+  const client = startServer(fixture.dataDir);
+  try {
+    const content = "Confirmed transaction rollback regression fixture.";
+    const res = await toolCall(client, 1, "tdai_experience_store", { ...ADMISSION, content });
+    assert.equal(res.result.isError, true);
+    const verify = new DatabaseSync(fixture.dbPath, { readOnly: true });
+    assert.equal(verify.prepare("SELECT count(*) AS n FROM l1_records WHERE content = ?").get(content).n, 0);
+    verify.close();
+  } finally {
+    await client.close();
+    rmSync(fixture.dataDir, { recursive: true, force: true });
+  }
+});
+
+test("read_cos permits bounded Markdown and denies metadata, databases, directories and oversized UTF-8", async () => {
+  const fixture = createFixture();
+  mkdirSync(path.join(fixture.dataDir, "scene_blocks", "nested"), { recursive: true });
+  mkdirSync(path.join(fixture.dataDir, "scene_blocks", "directory.md"));
+  mkdirSync(path.join(fixture.dataDir, ".metadata"));
+  writeFileSync(path.join(fixture.dataDir, "persona.md"), "Historical persona 画像");
+  writeFileSync(path.join(fixture.dataDir, "scene_blocks", "nested", "valid.md"), "x".repeat(64 * 1024));
+  writeFileSync(path.join(fixture.dataDir, "scene_blocks", "large.md"), "中".repeat(22000));
+  writeFileSync(path.join(fixture.dataDir, "scene_blocks", "large-ascii.md"), "x".repeat(64 * 1024 + 1));
+  writeFileSync(path.join(fixture.dataDir, ".metadata", "secret.md"), "must not be disclosed");
+  const client = startServer(fixture.dataDir);
+  try {
+    for (const file of ["persona.md", "scene_blocks/nested/valid.md"]) {
+      const res = await toolCall(client, 1, "tdai_read_cos", { path: file });
+      assert.ok(!res.result.isError, res.result.content[0].text);
+      assert.match(res.result.content[0].text, /authority="historical-evidence"/);
+    }
+    for (const file of ["vectors.db", ".metadata/secret.md", "scene_blocks/directory.md", "scene_blocks/nested/valid.md:secret", "scene_blocks/large.md", "scene_blocks/large-ascii.md"]) {
+      const res = await toolCall(client, 1, "tdai_read_cos", { path: file });
+      assert.equal(res.result.isError, true, file);
+      assert.match(res.result.content[0].text, /Access denied|64 KiB/);
+    }
+    const missing = await toolCall(client, 1, "tdai_read_cos", { path: "scene_blocks/missing.md" });
+    assert.equal(missing.result.isError, true);
+    assert.match(missing.result.content[0].text, /File not found/);
+  } finally {
+    await client.close();
+    rmSync(fixture.dataDir, { recursive: true, force: true });
+  }
+});
+
+test("read_cos blocks directory symlink/junction escapes and metadata aliases", async () => {
+  const fixture = createFixture();
+  const outside = mkdtempSync(path.join(import.meta.dirname, "tdai-test-outside-"));
+  mkdirSync(path.join(fixture.dataDir, "scene_blocks"));
+  mkdirSync(path.join(fixture.dataDir, ".metadata"));
+  writeFileSync(path.join(outside, "secret.md"), "outside secret must not be disclosed");
+  writeFileSync(path.join(fixture.dataDir, ".metadata", "secret.md"), "metadata secret must not be disclosed");
+  symlinkSync(outside, path.join(fixture.dataDir, "scene_blocks", "escape"), process.platform === "win32" ? "junction" : "dir");
+  symlinkSync(path.join(fixture.dataDir, ".metadata"), path.join(fixture.dataDir, "scene_blocks", "alias"), process.platform === "win32" ? "junction" : "dir");
+  const client = startServer(fixture.dataDir);
+  try {
+    for (const file of ["scene_blocks/escape/secret.md", "scene_blocks/alias/secret.md"]) {
+      const res = await toolCall(client, 1, "tdai_read_cos", { path: file });
+      assert.equal(res.result.isError, true);
+      assert.match(res.result.content[0].text, /Access denied/);
+      assert.ok(!res.result.content[0].text.includes("must not be disclosed"));
+    }
+  } finally {
+    await client.close();
+    rmSync(fixture.dataDir, { recursive: true, force: true });
+    rmSync(outside, { recursive: true, force: true });
+  }
+});
+
+test("read_cos rejects a file symlink even when its target is an allowed file", async (t) => {
+  const fixture = createFixture();
+  writeFileSync(path.join(fixture.dataDir, "persona.md"), "Historical persona");
+  mkdirSync(path.join(fixture.dataDir, "scene_blocks"));
+  try {
+    symlinkSync(path.join(fixture.dataDir, "persona.md"), path.join(fixture.dataDir, "scene_blocks", "alias.md"), "file");
+  } catch (error) {
+    rmSync(fixture.dataDir, { recursive: true, force: true });
+    if (error.code !== "EPERM") throw error;
+    t.skip("file symlinks require Windows developer mode or elevated privileges");
+    return;
+  }
+  const client = startServer(fixture.dataDir);
+  try {
+    const res = await toolCall(client, 1, "tdai_read_cos", { path: "scene_blocks/alias.md" });
+    assert.equal(res.result.isError, true);
+    assert.match(res.result.content[0].text, /symbolic links/);
+  } finally {
+    await client.close();
+    rmSync(fixture.dataDir, { recursive: true, force: true });
+  }
+});
+
 test("unknown method returns error, does not crash", async () => {
   const fixture = createFixture();
   const client = startServer(fixture.dataDir);
@@ -300,7 +477,7 @@ test("unknown method returns error, does not crash", async () => {
 
 test("malformed JSON does not crash the server", async () => {
   const fixture = createFixture();
-  const child = spawn(process.execPath, [SERVER_PATH], {
+  const child = spawn(process.execPath, ["--disable-warning=ExperimentalWarning", SERVER_PATH], {
     env: { ...process.env, TDAI_DATA_DIR: fixture.dataDir },
     stdio: ["pipe", "pipe", "pipe"],
   });

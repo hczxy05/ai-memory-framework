@@ -16,8 +16,8 @@
 git clone https://github.com/hczxy05/ai-memory-framework.git ~/ai-memory
 ```
 
-1. 在 `memory/universal-memory.md` 填写稳定的用户信息和偏好。
-2. 在 `memory/projects.md` 添加项目路径；按需调整 `memory/conventions.md`。
+1. 在 `personal/universal-memory.md` 填写稳定的用户信息和偏好。
+2. 在 `project/projects.md` 添加项目路径；按需调整 `rules/conventions.md`。
 3. 让你的 Agent 每次任务先读 `~/ai-memory/AGENTS.md`。
 
 这时 Git Markdown 记忆已经可以独立工作；TDAI 经验记忆是可选增强。
@@ -50,12 +50,16 @@ AI 助手容易在会话之间丢失上下文，也容易把旧对话误当成�
 ```text
 ai-memory-framework/
 ├── AGENTS.md                    # 每次任务加载的行为摘要
-├── memory/
+├── rules/                       # Agent 行为与治理规则
+│   ├── authority.md             # 信息来源优先级与操作授权
 │   ├── memory-policy.md         # 完整权威规范
+│   ├── memory-promotion.md      # 记忆晋升流程
 │   ├── conventions.md           # 稳定协作约定
-│   ├── universal-memory.md      # 用户信息模板
-│   ├── projects.md              # 项目索引模板
 │   └── changelog.md
+├── personal/
+│   └── universal-memory.md      # 用户信息模板
+├── project/
+│   └── projects.md              # 项目索引模板
 ├── templates/
 │   ├── project-template.md
 │   ├── task-template.md
@@ -129,7 +133,7 @@ OpenClaw 用户可以复制 `workspace-example/`，再填写其中的身份、�
 
 1. 使用 `templates/project-template.md` 在项目仓库中创建 `STATUS.md` 或组合式 `PROJECT.md`。
 2. 大型项目按需增加 `ARCHITECTURE.md`、`DECISIONS.md`、`BUGS.md`、`LESSONS.md`。
-3. 在 `memory/projects.md` 中登记项目路径。
+3. 在 `project/projects.md` 中登记项目路径。
 
 ## 兼容平台
 
@@ -138,6 +142,8 @@ OpenClaw 用户可以复制 `workspace-example/`，再填写其中的身份、�
 - **其他 AI 助手** — 只要能读取 Markdown，即可使用权威记忆层。
 
 ## 安全
+
+本项目是一套记忆治理规范及本地 MCP 适配器。适配器通过代码限制 SQLite 检索作用域、文件读取范围与字节数，并由宿主控制是否开放写入。可选的 [Promotion Gate](integrations/promotion-gate/README.md) 校验绑定具体候选的签名审批，并原子追加到权威项目文档；事实审查和操作系统权限隔离仍由宿主负责。
 
 - 不在记忆中存储密码、API Key、Token 或私钥。
 - 不把运行时数据库、原始对话或完整工具配置提交到本仓库。
@@ -150,3 +156,11 @@ OpenClaw 用户可以复制 `workspace-example/`，再填写其中的身份、�
 ## Credits
 
 Built through iterative human-AI collaboration across real engineering workflows.
+
+## 验证证据
+
+[2026-10-16 完整测试报告](test-results/2026-10-16-comprehensive/README.md) 包含合成测试原始数据、失败记录、费用和复现脚本，并明确关键词检索、原生插件共享存储及模型治理提示的限制。
+
+## 后续验证证据
+
+[项目隔离、自由回答与 72 小时完整报告](test-results/2026-10-16-followup/README.md)：两组均完成实际 72 小时观察及真实 L0/L1 检查点。冻结的 24 场景两组成绩相同，未证明准确率提升；报告保留完整运行日志、重启时内存压力和源码换行格式的哈希差异。

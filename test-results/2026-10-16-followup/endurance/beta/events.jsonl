@@ -1,0 +1,15 @@
+{"time":"2026-10-16T19:31:57.697Z","type":"start-or-resume","sourceSha256":"97ae01322f00c4585c850b53d7370be6e92744da89593ab8bb861e44c83f5fee"}
+{"time":"2026-10-17T01:32:39.639Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":1,"recoverySeconds":33.33115545300022}
+{"time":"2026-10-17T07:33:26.546Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":1,"recoverySeconds":35.58295157999545}
+{"time":"2026-10-17T13:34:08.584Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":1,"recoverySeconds":34.10276679699868}
+{"time":"2026-10-17T19:33:57.410Z","type":"real-model-checkpoint","day":1}
+{"time":"2026-10-17T19:34:45.196Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":2,"recoverySeconds":37.691858109012244}
+{"time":"2026-10-18T01:35:37.364Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":2,"recoverySeconds":43.38353552499414}
+{"time":"2026-10-18T07:36:25.521Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":2,"recoverySeconds":37.58284141100943}
+{"time":"2026-10-18T13:37:06.734Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":2,"recoverySeconds":33.01098931801319}
+{"time":"2026-10-18T19:36:25.688Z","type":"real-model-checkpoint","day":2}
+{"time":"2026-10-18T19:37:40.779Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":3,"recoverySeconds":34.9940448770225}
+{"time":"2026-10-19T01:38:34.748Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":3,"recoverySeconds":45.01195473599434}
+{"time":"2026-10-19T07:39:21.650Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":3,"recoverySeconds":35.35629093298316}
+{"time":"2026-10-19T13:40:03.720Z","type":"forced-gateway-kill-and-mcp-restart","retainedL1":3,"recoverySeconds":34.02849643999338}
+{"time":"2026-10-19T19:38:51.700Z","type":"completed"}
