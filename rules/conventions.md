@@ -1,5 +1,7 @@
 # Working Conventions
 
+## Purpose
+
 These are stable collaboration and engineering conventions. Memory authority, admission, and permission rules are defined in `rules/memory-policy.md`.
 
 ## Task Workflow
@@ -15,6 +17,21 @@ Use a workflow proportional to task complexity and risk:
 7. Verify the result in proportion to risk.
 8. Report the outcome, verification, and remaining uncertainty.
 9. Propose any reusable memory update and wait for approval before writing.
+
+## Task Records and Validation
+
+### Minimum Sufficient Records
+
+- For routine document wording or formatting changes with no wider project effect, deliver the edited artifact and a brief reply. Do not create additional logs, completion summaries, or check reports by default.
+- For code changes and experiments, retain a concise record in the appropriate existing project record or change history. Include the source/version, key change and reason, parameters or environment that affect interpretation, actual verification and results, and material failures, regressions, or unresolved/unverified items. Experiments also need the baseline, key metrics, raw evidence references, and the decision to adopt or reject the result. Include only applicable information.
+- Reference existing source, data, and evidence instead of copying them into several reports. Preserve enough information to reproduce or compare a result, explain a decision, and resume work. Shortening a record must not hide important negative results or discard required evidence.
+- Task/report templates are optional; omit empty or irrelevant sections. Recordkeeping does not itself authorize promotion into long-term memory; follow the memory policy's purpose and write-authorization rules.
+
+### Useful Verification
+
+- Choose the smallest relevant check that can detect failure modes introduced by the change. An existing IDE build or target-platform test may be appropriate; distinguish compilation, simulation, and actual target execution in the result.
+- Follow the project's agreed verification workflow. When routine local compilation or simulation adds no independent evidence beyond the relevant target-platform gate, skip that duplicate work. Special or critical logic changes, observed errors, or unresolved correctness questions call for targeted checks.
+- A skipped check is unverified, not passed. Stop after the required checks provide sufficient evidence; expand verification only when new changes, failures, or unresolved concerns justify it. Running a check does not require writing a separate report.
 
 ## Communication
 

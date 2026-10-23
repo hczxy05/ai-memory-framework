@@ -1,6 +1,17 @@
 # Task Template
 
-> Loading, classification, query, and promotion rules: see `<ai-memory-path>/memory/memory-policy.md`.
+> Optional scaffolding. Loading, classification, query, and promotion rules: see `<ai-memory-path>/rules/memory-policy.md`.
+
+Routine document edits with no wider project effect do not need a task file. For other work, use only the fields needed to define, verify, or resume the task; an existing project record can hold them.
+
+## Minimum Task Context
+
+- **Goal and affected source/version:**
+- **Scope and essential constraints or parameters:**
+- **Relevant verification method and expected result:**
+- **Deliverable and blocking unknowns, if any:**
+
+The expanded fields below are optional. Add only material detail not already captured above or in a referenced project file; omit empty and irrelevant sections.
 
 ## Task
 
