@@ -88,6 +88,7 @@ Load conditionally:
 | Review or modify memory | This policy |
 | User background | `personal/universal-memory.md` |
 | Collaboration conventions | `rules/conventions.md` |
+| Task recordkeeping or verification decisions | `rules/conventions.md` and relevant project verification decisions |
 | Locate a project | `project/projects.md` |
 | Understand a project | Project `INDEX.md` (lists all project files) |
 | Current project state | Project `PROJECT.md` or `STATUS.md` |
@@ -219,3 +220,7 @@ Project-internal documents beat `project/projects.md`. Experience remains histor
 ## Efficiency Principle
 
 Prefer summaries over logs, indexes over full documents, and relevant context over complete history: maximize useful information while minimizing context.
+
+Completing a task does not itself require a memory update or a separate report. Routine document edits with no wider project effect need only the edited deliverable and a brief reply. Code changes and experiments require the minimum sufficient project record, preserving material evidence, results, and uncertainty; see `rules/conventions.md` for recordkeeping and verification practices.
+
+Operational change and experiment records are separate from promotion into long-term memory. The admission, purpose, and write-authorization rules above still apply. Prefer updating an existing record and referencing raw evidence over creating duplicate documents. Task/report templates are optional scaffolding, not a requirement to instantiate every section or create a file for every task.

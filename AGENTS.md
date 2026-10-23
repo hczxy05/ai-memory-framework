@@ -39,6 +39,12 @@ Full rules: `rules/authority.md`
 
 Full loading rules: `rules/memory-policy.md`
 
+## Task Records and Verification
+
+- Routine document edits that do not affect the wider project need only the edited deliverable and a brief reply; do not create extra task logs or reports by default.
+- Code changes and experiments need the minimum sufficient record without losing important evidence. For recordkeeping or verification decisions, load `rules/conventions.md` and the relevant project's verification decisions.
+- Task and report templates are optional scaffolding. Use only the fields that add useful information; follow the memory policy's writing and authorization rules.
+
 ## Core Behavior
 
 - **User instruction first.** Current instruction overrides everything.
